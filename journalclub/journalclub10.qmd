@@ -16,5 +16,25 @@ categories:
 
 **Summary:** Adjusting for covariates in randomized controlled trials can enhance the credibility and efficiency of average treatment effect estimation. However, managing numerous covariates and their non-linear transformations is challenging, particularly when outcomes and covariates have missing data. In this tutorial, we propose a principled covariate adjustment framework, "COADVISE," that enables (i) variable selection for covariates most relevant to the outcome, (ii) nonlinear adjustments, and (iii) robust imputation of missing data for both outcomes and covariates. This framework ensures consistent estimates with improved efficiency over unadjusted estimators and provides robust variance estimation, even under outcome model misspecification. We demonstrate efficiency gains through theoretical analysis and conduct extensive simulations to compare alternative variable selection strategies, offering cautionary recommendations. We showcase the framework's practical utility by applying it to the Best Apnea Interventions for Research trial data from the National Sleep Research Resource. A user-friendly R package, Coadvise, facilitates implementation.
 
-Please email Dr. Bingkai Wang at bingkai at umich.edu for the Zoom link.
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/1b6WqT0N72SfQSemtvT-UDT4ql-RBPgLH/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
 ```
