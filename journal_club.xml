@@ -10,7 +10,49 @@
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
 <generator>quarto-1.6.43</generator>
-<lastBuildDate>Fri, 14 Mar 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 09 May 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Efficient Randomized Experiments Using Foundation Models</title>
+  <link>https://carswg.github.io/journalclub/journalclub12.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> Efficient Randomized Experiments Using Foundation Models</p>
+<p><strong>Datetime: May 9th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Piersilvio De Bartolomeis from ETH Zurich</p>
+<p><strong>Summary:</strong> Randomized experiments are the preferred approach for evaluating the effects of interventions, but they are costly and often yield estimates with substantial uncertainty. On the other hand, in silico experiments leveraging foundation models offer a cost-effective alternative that can potentially attain higher statistical precision. However, the benefits of in silico experiments come with a significant risk: statistical inferences are not valid if the models fail to accurately predict experimental responses to interventions. In this paper, we propose a novel approach that integrates the predictions from multiple foundation models with experimental data while preserving valid statistical inference. Our estimator is consistent and asymptotically normal, with asymptotic variance no larger than the standard estimator based on experimental data alone. Importantly, these statistical properties hold even when model predictions are arbitrarily biased. Empirical results across several randomized experiments show that our estimator offers substantial precision gains, equivalent to a reduction of up to 20% in the sample size needed to match the same precision as the standard estimator based on experimental data alone.</p>
+<p>Please email Dr.&nbsp;Bingkai Wang at bingkai at umich.edu for the Zoom link.</p>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub12.html</guid>
+  <pubDate>Fri, 09 May 2025 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Covariate Adjustment Using Treatment-Blinded Covariate Selection Within Randomized Clinical Trials</title>
+  <link>https://carswg.github.io/journalclub/journalclub11.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> Covariate Adjustment Using Treatment-Blinded Covariate Selection Within Randomized Clinical Trials</p>
+<p><strong>Datetime: April 11th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Devan V. Mehrotra, PhD, is Vice President of Biostatistics and Research Decision Sciences at Merck Research Laboratories (MRL), the R&amp;D Division of Merck &amp; Co., Inc.&nbsp;He has made significant contributions towards the research, development and regulatory approval of medical drugs and vaccines across a broad spectrum of therapeutic areas. He was awarded an MRL Presidential Fellowship in 2012. Devan is also an adjunct Professor of Biostatistics at the University of Pennsylvania and an elected Fellow of the American Statistical Association. He has served as a subject matter expert for the Bill and Melinda Gates Foundation (for HIV vaccine development), the US National Academy of Sciences (for missing data issues in clinical trials), the Coalition for Epidemic Preparedness Innovations (for COVID-19 vaccine development), and the International Council on Harmonization (for ICH E9/R1 on estimands and sensitivity analyses).</p>
+<p><strong>Summary:</strong> When estimating treatment effects in randomized clinical trials, the primary goal of covariate-adjustment is to improve precision and/or mitigate bias. In current practice, the covariates for the analysis model are pre-selected. Due to knowledge gaps at the trial design stage, this risks inclusion of covariates that have weak associations with the endpoint of interest and exclusion of those with potentially strong(er) associations. We propose an alternative approach in which a pre-specified treatment-blinded algorithm is applied to the trial data to identify covariates [from a candidate set] that are observed to be jointly associated with the endpoint. The identified covariates are subsequently used in the analysis model for treatment effect estimation and inference. Using real data examples and simulations, we illustrate the utility of our proposed within-trial covariate identification and adjustment (WiTCovIA) approach for continuous, binary, and time-to-event endpoints.</p>
+<p>Please email Dr.&nbsp;Bingkai Wang at bingkai at umich.edu for the Zoom link.</p>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub11.html</guid>
+  <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>COADVISE: Covariate Adjustment with Variable Selection and Missing Data Imputation in Randomized Controlled Trials</title>
   <link>https://carswg.github.io/journalclub/journalclub10.html</link>
