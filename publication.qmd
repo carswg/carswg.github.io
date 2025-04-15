@@ -1,0 +1,94 @@
+---
+title: "Statistical Methodology Publications"
+format: html
+---
+
+## Statistical Methodology Papers by Our Members
+
+### 2006
+- van der Laan, M.J. and Rubin, D.B. (2006). Targeted maximum likelihood learning. *The International Journal of Biostatistics*, 2(1), Article 11.
+
+### 2008
+- Rubin, D.B. and van der Laan, M.J. (2008). Empirical efficiency maximization: improved locally efficient covariate adjustment in randomized experiments and survival analysis. *The International Journal of Biostatistics*, 4(1), Article 5.
+
+### 2011
+- Rubin, D.B. and van der Laan, M.J. (2011). Targeted ANCOVA Estimator in RCTs. In *Targeted Learning: Causal Inference for Observational and Experimental Data* (pp. 201-215). Springer. M.J. van der Laan and S. Rose, editors.
+
+### 2019
+- Wang, B., Ogburn, E.L. and Rosenblum, M. (2019). Analysis of covariance in randomized trials: More precision and valid confidence intervals, without model assumptions. *Biometrics*, 75(4), 1391-1400.
+
+### 2020
+- Mehrotra, D.V. and Marceau West, R. (2020). Survival analysis using a 5‐step stratified testing and amalgamation routine (5‐STAR) in randomized clinical trials. *Statistics in Medicine*, 39(30), 4724-4744.
+- Van Lancker, K., Vandebosch, A., and Vansteelandt, S. (2020). Improving interim decisions in randomized trials by exploiting information on short‐term endpoints and prognostic baseline covariates. *Pharmaceutical Statistics*, 19(5), 583-601.
+- Ye, T. and Shao, J. (2020). Robust tests for treatment effect in survival analysis under covariate-adaptive randomization. *Journal of the Royal Statistical Society Series B*, 82(5), 1301-1323.
+
+### 2022
+- Ye, T., Yi, Y. and Shao, J. (2022). Inference on the average treatment effect under minimization and other covariate-adaptive randomization methods. *Biometrika*, 109(1), 33-47.
+
+### 2023
+- Chipman, J.J., Mayberry, L. and Greevy Jr, R.A. (2023). Rematching on‐the‐fly: Sequential matched randomization and a case for covariate‐adjusted randomization. *Statistics in Medicine*, 42(22), 3981-3995.
+- Johnson, V. P., Gekhtman, M., & Kuznetsova, O. M. (2023). Validity of Tests for Time-to-Event Endpoints in Studies with the Pocock and Simon Covariate-Adaptive Randomization. *Statistics in Biopharmaceutical Research*, 16(4), 468–482. https://doi.org/10.1080/19466315.2023.2261672.
+- Wang, B., Susukida, R., Mojtabai, R., Amin-Esmaeili, M. and Rosenblum, M. (2023). Model-robust inference for clinical trials that improve precision by stratified randomization and covariate adjustment. *Journal of the American Statistical Association*, 118(542), 1152-1163.
+- Ye, T., Bannick, M., Yi, Y. and Shao, J. (2023). Robust variance estimation for covariate-adjusted unconditional treatment effect in randomized clinical trials with binary outcomes. *Statistical Theory and Related Fields*, 7(2), 159-163.
+- Ye, T., Shao, J., Yi, Y. and Zhao, Q. (2023). Toward better practice of covariate adjustment in analyzing randomized clinical trials. *Journal of the American Statistical Association*, 118(544), 2370-2382.
+
+### 2024
+- Bannick, M.S., Heltshe, S.J., Simon, N. (2024). Accounting for inconsistent use of covariate adjustment in group sequential trials. *arXiv*:2206.12393.
+- Bannick, M.S., Shao, J., Liu, J., Du, Y., Yi, Y., Ye, T. (2024). A general form of covariate adjustment in randomized clinical trials. *arXiv*:2306.10213.
+- Liu, J. and Xi, D. (2024). Covariate adjustment and estimation of difference in proportions in randomized clinical trials. *Pharmaceutical Statistics*.
+- Qiu, X., Qian, Y., Yi, J., Wang, J., Du, Y., Yi, Y. and Ye, T. (2024). Clarifying the Role of the Mantel-Haenszel Risk Difference Estimator in Randomized Clinical Trials. *arXiv*:2408.12541.
+- Reluga, K., Ye, T. and Zhao, Q. (2024). A unified analysis of regression adjustment in randomized experiments. *Electronic Journal of Statistics*, 18(1), 1436-1454.
+- Shi, D. and Ye, T. (2024). Behavioral carry-over effect and power consideration in crossover trials. *Biometrics*, 80(2), ujae023.
+- Song, Y., Hughes, J.P. and Ye, T. (2024). Adjusting for incomplete baseline covariates in randomized controlled trials: a cross-world imputation framework. *Biometrics*, 80(3), ujae094.
+- Van Lancker, K., Díaz, I., and Vansteelandt, S. (2024). Automated, efficient and model-free inference for randomized clinical trials via data-driven covariate adjustment. *arXiv*:2404.11150.
+- Wang, B. and Du, Y. (2024). Improving the mixed model for repeated measures to robustly increase precision in randomized trials. *The International Journal of Biostatistics*, 20(2), 585-598.
+- Wang, B. and Li, F. (2024). Asymptotic inference with flexible covariate adjustment under rerandomization and stratified rerandomization. *arXiv*:2406.02834.
+- Wang, B., Harhay, M.O., Tong, J., Small, D.S., Morris, T.P. and Li, F. (2024). On the mixed-model analysis of covariance in cluster-randomized trials. *Statistical Science* (accepted).
+- Wang, B., Park, C., Small, D.S. and Li, F. (2024). Model-robust and efficient covariate adjustment for cluster-randomized experiments. *Journal of the American Statistical Association*, 119(548), 2959-2971.
+- Ye, T., Shao, J. and Yi, Y. (2024). Covariate-adjusted log-rank test: guaranteed efficiency gain and universal applicability. *Biometrika*, 111(2), 691-705.
+
+### 2025
+- Van Lancker, K., Betz, J., and Rosenblum, M. (2025). Combining covariate adjustment with group sequential, information adaptive designs to improve randomized trial efficiency. *Biometrics* (accepted).
+
+## Guidance/Discussion/Review Papers by Our Members
+
+### 2024
+- Mehrotra, D.V. and West, R.M. (2024). Is inadequate risk stratification diluting hazard ratio estimates in randomized clinical trials? *Clinical Trials*, 17407745231222448.
+- Van Lancker, K., Bretz, F., and Dukes, O. (2024). Covariate adjustment in randomized controlled trials: General concepts and practical considerations. *Clinical Trials*, 21(4), 399-411.
+- Van Lancker, K., Bretz, F., and Dukes, O. (2024). Response to Harrell's commentary. *Clinical Trials*.
+- Wei, J., Xu, J., Bornkamp, B., Lin, R., Tian, H., Xi, D., Zhang, X., Zhao, Z. and Roychoudhury, S. (2024). Conditional and Unconditional treatment effects in randomized clinical trials: Estimands, Estimation, and Interpretation. *Statistics in Biopharmaceutical Research*, 16(3), 371-381.
+
+### 2025
+- Thompson, J., Watson, S.I., Middleton, L. and Hemming, K. (2025). Estimating relative risks and risk differences in randomised controlled trials: a systematic review of current practice. *Trials*, 26(1), 1.
+
+## Members' Picks
+
+### 2001
+- Yang, L. and Tsiatis, A.A. (2001). Efficiency study of estimators for a treatment effect in a pretest–posttest trial. *The American Statistician*, 55(4), 314-321.
+
+### 2008
+- Zhang, M., Tsiatis, A.A. and Davidian, M. (2008). Improving efficiency of inferences in randomized clinical trials using auxiliary covariates. *Biometrics*, 64(3), 707-715.
+- Tsiatis, A.A., Davidian, M., Zhang, M. and Lu, X. (2008). Covariate adjustment for two‐sample treatment comparisons in randomized clinical trials: a principled yet flexible approach. *Statistics in Medicine*, 27(23), 4658-4677.
+
+### 2009
+- Moore, K.L. and van der Laan, M.J. (2009). Covariate adjustment in randomized trials with binary outcomes: targeted maximum likelihood estimation. *Statistics in Medicine*, 28(1), 39-64.
+
+### 2013
+- Lin, W. (2013). Agnostic notes on regression adjustments to experimental data: Reexamining Freedman's critique. *Annals of Applied Statistics*, 7(1), 295-318.
+
+### 2014
+- Williamson, E.J., Forbes, A. and White, I.R. (2014). Variance reduction in randomised trials by inverse probability weighting using the propensity score. *Statistics in Medicine*, 33(5), 721-737.
+
+### 2016
+- Qin, Y., Li, Y., Ma, W. and Hu, F. (2016). Pairwise sequential randomization and its properties. *arXiv*:1611.02802.
+
+### 2020
+- Ma, W., Qin, Y., Li, Y. and Hu, F. (2020). Statistical inference for covariate-adaptive randomization procedures. *Journal of the American Statistical Association*, 115(531), 1488-1497.
+
+### 2021
+- Zeng, S., Li, F., Wang, R. and Li, F. (2021). Propensity score weighting for covariate adjustment in randomized clinical trials. *Statistics in Medicine*, 40(4), 842-858.
+- Zhao, A. and Ding, P. (2021). Covariate-adjusted Fisher randomization tests for the average treatment effect. *Journal of Econometrics*, 225(2), 278-294.
+
+### 2023
+- Chang, C.R., Song, Y., Li, F. and Wang, R. (2023). Covariate adjustment in randomized clinical trials with missing covariate and outcome data. *Statistics in Medicine*, 42(22), 3919-3935.
+- Tackney, M.S., Morris, T., White, I., Leyrat, C., Diaz-Ordaz, K. and Williamson, E. (2023). A comparison of covariate adjustment approaches under model misspecification in individually randomized trials. *Trials*, 24(1), 14.
