@@ -17,4 +17,28 @@ categories:
 
 **Summary:** When estimating treatment effects in randomized clinical trials, the primary goal of covariate-adjustment is to improve precision and/or mitigate bias. In current practice, the covariates for the analysis model are pre-selected. Due to knowledge gaps at the trial design stage, this risks inclusion of covariates that have weak associations with the endpoint of interest and exclusion of those with potentially strong(er) associations. We propose an alternative approach in which a pre-specified treatment-blinded algorithm is applied to the trial data to identify covariates [from a candidate set] that are observed to be jointly associated with the endpoint. The identified covariates are subsequently used in the analysis model for treatment effect estimation and inference. Using real data examples and simulations, we illustrate the utility of our proposed within-trial covariate identification and adjustment (WiTCovIA) approach for continuous, binary, and time-to-event endpoints.
 
-Please email Dr. Bingkai Wang at bingkai at umich.edu for the Zoom link.
+
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/15K5S_NK4kt7ydiVPYA5RV_H9FHRcrjSF/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
+
+
