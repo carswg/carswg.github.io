@@ -32,6 +32,8 @@ website:
         menu: 
           - href: journal_club.qmd
             text: Journal Club
+          - href: publication.qmd
+            text: Publications
           - href: conference.qmd
             text: Conference Presentation
       - href: blog.qmd
