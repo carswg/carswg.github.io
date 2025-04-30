@@ -53,7 +53,7 @@
     "href": "news.html",
     "title": "News",
     "section": "",
-    "text": "April 25, 2025\nRobinCar2 R Package Released on CRAN\nThe RobinCar2 R package (ROBust INference for Covariate Adjustment in Randomized Clinical Trials) has officially launched on CRAN. RobinCar2 is a streamlined version of the RobinCar package, specifically targeting generalized linear models. With minimal dependencies and rigorous validation, RobinCar2 is especially suitable for GxP-compliant applications. Additional details, documentation, and vignettes can be found on the Openpharma RobinCar2 site."
+    "text": "April 25, 2025\nRobinCar2 R Package Released on CRAN\nThe RobinCar2 R package (ROBust INference for Covariate Adjustment in Randomized Clinical Trials) made its debut on CRAN. It is a lighter version of the RobinCar R package, focusing on generalized linear models. Low dependency and extensive validations make it useful for GxP purposes. More information about RobinCar2 including vignettes could be found at Openpharma | RobinCar2."
   },
   {
     "objectID": "journalclub/journalclub8.html",
