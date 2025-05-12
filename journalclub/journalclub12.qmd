@@ -1,6 +1,6 @@
 ---
 title: "Efficient Randomized Experiments Using Foundation Models"
-description: "April 2024 Seminar by Devan V. Mehrotra"
+description: "May 2025 Seminar by Piersilvio De Bartolomeis"
 author: ""
 date: "5/9/2025"
 draft: false
@@ -16,4 +16,25 @@ categories:
 
 **Summary:** Randomized experiments are the preferred approach for evaluating the effects of interventions, but they are costly and often yield estimates with substantial uncertainty. On the other hand, in silico experiments leveraging foundation models offer a cost-effective alternative that can potentially attain higher statistical precision. However, the benefits of in silico experiments come with a significant risk: statistical inferences are not valid if the models fail to accurately predict experimental responses to interventions. In this paper, we propose a novel approach that integrates the predictions from multiple foundation models with experimental data while preserving valid statistical inference. Our estimator is consistent and asymptotically normal, with asymptotic variance no larger than the standard estimator based on experimental data alone. Importantly, these statistical properties hold even when model predictions are arbitrarily biased. Empirical results across several randomized experiments show that our estimator offers substantial precision gains, equivalent to a reduction of up to 20% in the sample size needed to match the same precision as the standard estimator based on experimental data alone.
 
-Please email Dr. Bingkai Wang at bingkai at umich.edu for the Zoom link.
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/1dm6VkrwMMvjmT_HGbqqWoFUrlTdmbjL9/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
