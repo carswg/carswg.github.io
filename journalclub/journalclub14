@@ -1,0 +1,41 @@
+
+---
+title: "Increasing the efficiency of randomized trials with machine learning"
+description: "November 2025 Seminar by Alejandro Schuler"
+author: ""
+date: "11/14/2025"
+draft: false
+categories:
+  - journal club
+---
+
+**Topic:** Increasing the efficiency of randomized trials with machine learning
+
+**Datetime: Nov 14th Friday, 11am-12pm ET.**
+
+**Presenter:** Dr. Alejandro Schuler is an Assistant Professor in Residence at UC Berkeley Biostatistics. His research focus is on developing methods for clinical decision-making in the real world that are economically or clinically necessary, statistically rigorous, and frictionless from the user perspective.
+
+**Summary:** Trials enroll a large number of subjects in order to attain power, making them expensive and time-consuming. However, advancements in machine learning can make adjusted trial analyses more efficient, yielding smaller confidence intervals and p-values without sacrificing control of false positives. Adjustment works by explaining away within-treatment-group variability in the outcome using associated variability in baseline covariates. Therefore, the key parameter that determines power and confidence of an adjusted analysis is how predictive the baseline covariates are for the outcome. Machine learning models often predict better than linear models and therefore they boost power. Historical data can also be used to improve predictions and it is possible to do so without incurring bias. The power gain is predictable if we can accurately anticipate model performance, which allows us to trade power gains with the same sample size for smaller trials with equal power. 
+
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/1DxrHYXvRA-cEnmiuemekHLuEo7jyS19G/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
