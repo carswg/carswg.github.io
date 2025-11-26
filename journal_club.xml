@@ -10,7 +10,52 @@
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Fri, 10 Oct 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 12 Dec 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Benchmarking covariate-adjustment strategies for randomized clinical trials</title>
+  <link>https://carswg.github.io/journalclub/journalclub15.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> Benchmarking covariate-adjustment strategies for randomized clinical trials</p>
+<p><strong>Datetime: Dec 12th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Dr.&nbsp;Bingkai Wang is an assistant professor in Department of Biostatistics, School of Public Health, University of Michigan. His research focuses on causal inference, randomized trials, covariate adjustment, and machine learning.</p>
+<p><strong>Summary:</strong> Covariate adjustment is widely recommended to improve statistical efficiency in randomized clinical trials (RCTs), yet empirical evidence comparing available strategies remains scarce. Here we present a large-scale benchmarking of covariate-adjustment methods using data from 50 publicly accessible RCTs encompassing 29,094 participants and 574 treatment–outcome pairs. We systematically evaluate 18 analytical strategies that combine six estimator families—including classical regression, weighting, and doubly robust machine-learning approaches—with three covariate-selection rules. Across diverse therapeutic areas, covariate adjustment consistently improves precision, with median variance reductions of approximately 15 % compared with unadjusted analyses. However, flexible machine-learning estimators provide little or no additional efficiency beyond simple linear models. Regression-based approaches such as analysis of covariance (ANCOVA) achieve stable and reproducible performance even in moderate sample sizes, while prespecified minimal covariate sets perform comparably to data-driven selection. These findings provide the first broad empirical evidence supporting parsimonious, transparent covariate adjustment in randomized trials and challenge the assumption that complex algorithms yield superior efficiency. All datasets and analysis code are openly available, establishing a reproducible benchmark resource for the design and analysis of future clinical and observational studies.</p>
+<p>Please email Dr.&nbsp;Bingkai Wang at bingkai(at)umich.edu for Zoom link</p>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub15.html</guid>
+  <pubDate>Fri, 12 Dec 2025 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Increasing the efficiency of randomized trials with machine learning</title>
+  <link>https://carswg.github.io/journalclub/journalclub14.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> Increasing the efficiency of randomized trials with machine learning</p>
+<p><strong>Datetime: Nov 14th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Dr.&nbsp;Alejandro Schuler is an Assistant Professor in Residence at UC Berkeley Biostatistics. His research focus is on developing methods for clinical decision-making in the real world that are economically or clinically necessary, statistically rigorous, and frictionless from the user perspective.</p>
+<p><strong>Summary:</strong> Trials enroll a large number of subjects in order to attain power, making them expensive and time-consuming. However, advancements in machine learning can make adjusted trial analyses more efficient, yielding smaller confidence intervals and p-values without sacrificing control of false positives. Adjustment works by explaining away within-treatment-group variability in the outcome using associated variability in baseline covariates. Therefore, the key parameter that determines power and confidence of an adjusted analysis is how predictive the baseline covariates are for the outcome. Machine learning models often predict better than linear models and therefore they boost power. Historical data can also be used to improve predictions and it is possible to do so without incurring bias. The power gain is predictable if we can accurately anticipate model performance, which allows us to trade power gains with the same sample size for smaller trials with equal power.</p>
+<p><strong>Recording:</strong></p>
+<iframe src="https://drive.google.com/file/d/1DxrHYXvRA-cEnmiuemekHLuEo7jyS19G/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub14.html</guid>
+  <pubDate>Fri, 14 Nov 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Improve the Precision of Area Under the Curve Estimation for Recurrent Events Through Covariate Adjustment</title>
   <link>https://carswg.github.io/journalclub/journalclub13.html</link>
