@@ -9,7 +9,7 @@
 <link>https://carswg.github.io/blog.html</link>
 <atom:link href="https://carswg.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
-<generator>quarto-1.7.29</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Tue, 24 Sep 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Covariate Adjustment for Linear Models: Understanding FDA Advice on Standard Errors</title>
@@ -78,7 +78,7 @@
 <p>As a demonstration, we would need to simulate multiple (1000, say) trials from the working model above where there is a strong treatment by covariate interaction. For each simulated trial, we would record the estimate of the treatment effect, as well as the estimated variance of the treatment effect estimator according to the three different methods.</p>
 <p>We’ll use the influence function approach as implemented in Ye et al.&nbsp;(2022) using the R package <a href="https://cran.r-project.org/web/packages/RobinCar/index.html">{robincar}</a>, noting this is the same as previous versions (e.g., Tstiatis et al.&nbsp;(2008), Rosenblum and van der Laan (2010)).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(sandwich)</span>
 <span id="cb1-2"><span class="fu" style="color: #4758AB;
@@ -301,45 +301,45 @@ font-style: inherit;">rep</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">200</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">1e3</span>), sim_one_trial)</span></code></pre></div>
+font-style: inherit;">1e3</span>), sim_one_trial)</span></code></pre></div></div>
 </div>
 <p>Empirically, the variance of the point estimates is…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">var</span>(results<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">$</span>estimate)</span></code></pre></div>
+font-style: inherit;">$</span>estimate)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.02753465</code></pre>
 </div>
 </div>
 <p>We can see that the Ye et al.(2022) method is reasonably consistent with this…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mean</span>(results<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">$</span>ye)</span></code></pre></div>
+font-style: inherit;">$</span>ye)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.02499644</code></pre>
 </div>
 </div>
 <p>…while this is not the case for the other two methods…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mean</span>(results<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">$</span>model_based)</span></code></pre></div>
+font-style: inherit;">$</span>model_based)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.02020404</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mean</span>(results<span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">$</span>sandwich)</span></code></pre></div>
+font-style: inherit;">$</span>sandwich)</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.02064523</code></pre>
 </div>
@@ -362,7 +362,7 @@ font-style: inherit;">$</span>sandwich)</span></code></pre></div>
 <p><img src="https://latex.codecogs.com/png.latex?%20%5Chat%7B%5Csigma%7D%5E2%20=%20%5Cfrac%7Bn_0%5Chat%7B%5Csigma%7D_0%5E2%20+%20n_1%5Chat%7B%5Csigma%7D_1%5E2%7D%7Bn_0%20+%20n_1%7D"> and rearranging yields</p>
 <p><img src="https://latex.codecogs.com/png.latex?v%5E%7B%5Cmathrm%7Bmiss%7D%7D%20=%20%5Cfrac%7B%5Chat%7B%5Csigma%7D_0%5E2%7D%7Bn_1%7D%20+%20%5Cfrac%7B%5Chat%7B%5Csigma%7D_1%5E2%7D%7Bn_0%7D,"> whereas when using the correct true model, the MLE based variance estimator is <img src="https://latex.codecogs.com/png.latex?v%5E%7B%5Cmathrm%7Btrue%7D%7D%20=%5Cfrac%7B%5Chat%7B%5Csigma%7D_0%5E2%7D%7Bn_0%7D%20+%20%5Cfrac%7B%5Chat%7B%5Csigma%7D_1%5E2%7D%7Bn_1%7D."> Obviously the two are equivalent under equal allocation, but this is not the case for unequal allocation. We can plot what happens to <img src="https://latex.codecogs.com/png.latex?v%5E%7B%5Cmathrm%7Bmiss%7D%7D%20%20/%20v%5E%7B%5Cmathrm%7Btrue%7D%7D"> as a function of <img src="https://latex.codecogs.com/png.latex?%5Csigma_0%20/%20%5Csigma_1"> for various choices of allocation ratio (Treatment 1: Treatment 0), e.g, 2:1, 1:1 and 1:2 randomization…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">sigma_1 <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">sigma_1 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -508,7 +508,7 @@ font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">3</span>)</span></code></pre></div>
+font-style: inherit;">3</span>)</span></code></pre></div></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
