@@ -30,6 +30,7 @@ title: "People"
 | Bingkai    | Wang         | University of Michigan, Biostatistics       |
 | Bingying   | Xie          | AstraZeneca                                 |
 | Craig      | Wang         | Novartis                                    |
+| Daniel     | Backenroth   | Johnson & Johnson                           |
 | Daniel     | Rubin        | FDA                                         |
 | Darren     | Scott        | Astrazeneca                                 |
 | Devan      | Mehrotra     | Merck                                       |
@@ -37,7 +38,7 @@ title: "People"
 | Dong       | Xi           | Gilead                                      |
 | Frank      | Bretz        | Novartis                                    |
 | Gregory    | Chen         | Merck                                       |
-| Hongfei    | Li           | Incyte                                      |
+| Hongfei    | Li           | Revolution Medicines                        |
 | Jiajun     | Xu           | Johnson & Johnson                           |
 | Jiawei     | Wei          | Novartis                                    |
 | Jingyi     | Liu          | Eli Lilly                                   |
@@ -50,6 +51,7 @@ title: "People"
 | Mark       | Baillie      | Novartis                                    |
 | Marlena    | Bannick      | University of Washington, Biostatistics     |
 | Mike       | Friesenhahn  | Roche/GNE                                   |
+| Oleksandr  | Savenkov     | Bristol Myers Squibb                        |
 | Olga       | Kuznetsova   | Merck                                       |
 | Ray        | Lin          | Genentech                                   |
 | Sarwar     | Mozumder     | AstraZeneca                                 |
