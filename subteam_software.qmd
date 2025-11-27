@@ -6,7 +6,7 @@ title: "Software Subteam"
 
 To develop and maintain an R package family on covariate adjustment for industry/regulatory/academia with the RobinCar verse (**Rob**ust estimation and **In**ference for **C**ovariate **A**djustment in **R**andomized clinical trials).
 
-## RobinCar:
+## [RobinCar](https://cran.r-project.org/package=RobinCar):
 
 To become one of the most comprehensive libraries of existing and future methods on covariate adjustment.
 
@@ -14,7 +14,7 @@ To become one of the most comprehensive libraries of existing and future methods
 
 -   Development version of RobinCar2
 
-## RobinCar2:
+## [RobinCar2](https://cran.r-project.org/web/packages/RobinCar2/index.html):
 
 To become one of the standard R packages for the industry/regulatory on covariate adjustment Selected methods with rigorous validation and clear documentation for GxP compliance.
 
@@ -24,6 +24,6 @@ To become one of the standard R packages for the industry/regulatory on covariat
 
 # People
 
-**Co-leaders:** Dong Xi (Gilead), Yanyao Yi (Eli Lilly) and Liming Li (Roche)
+**Co-leaders:** Dong Xi (Gilead), Yanyao Yi (Eli Lilly) and Liming Li (AstraZeneca)
 
-**Members:** Mark Baillie, Marlenda Bannick, Gregory Chen, Hongfei Li, Ray Lin, Dominic Magirr, Alexander Przybylski, Alex Sverdlov, Craig Wang, Jiawei Wei, Alan Wu, Bingying Xie, Jiajun Xu, Ting Ye, Xin Zhang
+**Members:** Mark Baillie, Marlenda Bannick, Jozefien Buyze, Gregory Chen, Hongfei Li, Ray Lin, Dominic Magirr, Alex Ocampo, Alexander Przybylski, Daniel Sabanés Bové, Oleksandr Savenkov, Alex Sverdlov, Craig Wang, Jiawei Wei, Alan Wu, Bingying Xie, Jiajun Xu, Ting Ye, Xin Zhang
