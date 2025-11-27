@@ -14,7 +14,7 @@ To become one of the most comprehensive libraries of existing and future methods
 
 -   Development version of RobinCar2
 
-## [RobinCar2](https://cran.r-project.org/web/packages/RobinCar2/index.html):
+## [RobinCar2](https://cran.r-project.org/package=RobinCar2):
 
 To become one of the standard R packages for the industry/regulatory on covariate adjustment Selected methods with rigorous validation and clear documentation for GxP compliance.
 
