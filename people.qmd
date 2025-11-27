@@ -50,6 +50,7 @@ title: "People"
 | Kelly Van  | Lancker      | Ghent University, Applied Math/CS/Stat      |
 | Ken        | Wu           | BeOne Medicines                             |
 | Leiya      | Han          | PPD                                         |
+| Liming     | Li           | AstraZeneca                                 |
 | Mark       | Baillie      | Novartis                                    |
 | Marlena    | Bannick      | University of Washington, Biostatistics     |
 | Mike       | Friesenhahn  | Roche/GNE                                   |
