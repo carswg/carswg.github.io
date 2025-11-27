@@ -10,13 +10,13 @@ title: "People"
 
     -   **Education sub-team:** Kelly Van Lancker (Ghent) and Dominic Magirr (Novartis)
 
-    -   **Software sub-team**: Dong Xi (Gilead) and Yanyao Yi (Eli Lilly)
+    -   **Software sub-team**: Dong Xi (Gilead), Yanyao Yi (Eli Lilly), Liming Li (AstraZeneca)
 
-    -   **Standardization and outreach sub-team**: Yu Du (Eli Lilly)
+    -   **Standardization and outreach sub-team**: Yu Du (Eli Lilly) and Daniel Backenroth (Johnson & Johnson)
 
     -   **Advancement sub-team:** Bingkai Wang (University of Michigan)
 
--   **Secretary**: Hongfei Li (Incyte)
+-   **Secretary**: Hongfei Li (Revolution Medicines)
 
 **Members**
 
@@ -31,6 +31,7 @@ title: "People"
 | Bingkai    | Wang         | University of Michigan, Biostatistics       |
 | Bingying   | Xie          | AstraZeneca                                 |
 | Craig      | Wang         | Novartis                                    |
+| Daniel     | Backenroth   | Johnson & Johnson                           |
 | Daniel     | Rubin        | FDA                                         |
 | Daniel     | Sabanés Bové | RCONIS                                      |
 | Darren     | Scott        | Astrazeneca                                 |
@@ -39,7 +40,7 @@ title: "People"
 | Dong       | Xi           | Gilead                                      |
 | Frank      | Bretz        | Novartis                                    |
 | Gregory    | Chen         | Merck                                       |
-| Hongfei    | Li           | Incyte                                      |
+| Hongfei    | Li           | Revolution Medicines                        |
 | Jiajun     | Xu           | Johnson & Johnson                           |
 | Jiawei     | Wei          | Novartis                                    |
 | Jingyi     | Liu          | Eli Lilly                                   |
@@ -50,11 +51,11 @@ title: "People"
 | Kelly Van  | Lancker      | Ghent University, Applied Math/CS/Stat      |
 | Ken        | Wu           | BeOne Medicines                             |
 | Leiya      | Han          | PPD                                         |
-| Liming     | Li           | AstraZeneca                                 |
+| Liming     | Li           | Astrazeneca                                 |
 | Mark       | Baillie      | Novartis                                    |
 | Marlena    | Bannick      | University of Washington, Biostatistics     |
 | Mike       | Friesenhahn  | Roche/GNE                                   |
-| Oleksandr  | Savenkov     | BMS                                         |
+| Oleksandr  | Savenkov     | Bristol Myers Squibb                        |
 | Olga       | Kuznetsova   | Merck                                       |
 | Ray        | Lin          | Genentech                                   |
 | Sarwar     | Mozumder     | AstraZeneca                                 |

@@ -29,3 +29,9 @@ title: "Standardization and Outreach Subteam"
 3.2.   Develop a content calendar for regular posts on key topics, updates from recent research, and highlights from industry conferences.
 
 3.3.   Engage with the wider statistical and clinical community by sharing relevant work, hosting webinars, and participating in conferences/discussions.
+
+# People
+
+**Co-leaders:** Yu Du (Eli Lilly) and Daniel Backenroth (Johnson & Johnson)
+
+**Members:** Leiya Han, Victoria Johnson, Kelly Van Lancker, Hongfei Li, Sarwar Mozumder, Satrajit Roychoudhury, Jiawei Wei, Alan Wu, Dong Xi, Yanyao Yi
