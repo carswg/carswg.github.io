@@ -22,7 +22,8 @@ title: "People"
 
 | First Name | Last Name    | Affiliation                                 |
 |------------|--------------|---------------------------------------------|
-| Alan       | Wu           | Beigene                                     |
+| Alan       | Wu           | BeOne Medicines                             |
+| Alex       | Ocampo       | Roche                                       |
 | Alex       | Sverdlov     | Novartis                                    |
 | Alexander  | Przybylski   | Novartis                                    |
 | Andreas    | Brandt       | BfArM                                       |
@@ -32,6 +33,7 @@ title: "People"
 | Craig      | Wang         | Novartis                                    |
 | Daniel     | Backenroth   | Johnson & Johnson                           |
 | Daniel     | Rubin        | FDA                                         |
+| Daniel     | Sabanés Bové | RCONIS                                      |
 | Darren     | Scott        | Astrazeneca                                 |
 | Devan      | Mehrotra     | Merck                                       |
 | Dominic    | Magirr       | Novartis                                    |
@@ -43,10 +45,11 @@ title: "People"
 | Jiawei     | Wei          | Novartis                                    |
 | Jingyi     | Liu          | Eli Lilly                                   |
 | Jonathan   | Chipman      | University of Utah                          |
+| Jozefien   | Buyze        | Johnson & Johnson                           |
 | Jun        | Shao         | University of Wisconsin-Madison, Statistics |
 | Kayla      | Irish        | University of Washington, Statistics        |
 | Kelly Van  | Lancker      | Ghent University, Applied Math/CS/Stat      |
-| Ken        | Wu           | Beigene                                     |
+| Ken        | Wu           | BeOne Medicines                             |
 | Leiya      | Han          | PPD                                         |
 | Liming     | Li           | Astrazeneca                                 |
 | Mark       | Baillie      | Novartis                                    |
