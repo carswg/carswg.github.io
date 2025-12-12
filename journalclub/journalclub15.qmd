@@ -17,4 +17,25 @@ categories:
 
 **Summary:** Covariate adjustment is widely recommended to improve statistical efficiency in randomized clinical trials (RCTs), yet empirical evidence comparing available strategies remains scarce. Here we present a large-scale benchmarking of covariate-adjustment methods using data from 50 publicly accessible RCTs encompassing 29,094 participants and 574 treatment–outcome pairs. We systematically evaluate 18 analytical strategies that combine six estimator families—including classical regression, weighting, and doubly robust machine-learning approaches—with three covariate-selection rules. Across diverse therapeutic areas, covariate adjustment consistently improves precision, with median variance reductions of approximately 15 % compared with unadjusted analyses. However, flexible machine-learning estimators provide little or no additional efficiency beyond simple linear models. Regression-based approaches such as analysis of covariance (ANCOVA) achieve stable and reproducible performance even in moderate sample sizes, while prespecified minimal covariate sets perform comparably to data-driven selection. These findings provide the first broad empirical evidence supporting parsimonious, transparent covariate adjustment in randomized trials and challenge the assumption that complex algorithms yield superior efficiency. All datasets and analysis code are openly available, establishing a reproducible benchmark resource for the design and analysis of future clinical and observational studies.
 
-Please email Dr. Bingkai Wang at bingkai(at)umich.edu for Zoom link
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/160c2Bpk9kWebidiL7KXjzc078FIjsx31/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
