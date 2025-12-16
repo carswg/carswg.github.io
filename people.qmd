@@ -58,7 +58,7 @@ title: "People"
 | Oleksandr  | Savenkov     | Bristol Myers Squibb                        |
 | Olga       | Kuznetsova   | Merck                                       |
 | Ray        | Lin          | Genentech                                   |
-| Sarwar     | Mozumder     | AstraZeneca                                 |
+| Sarwar     | Mozumder     | GSK                                         |
 | Satrajit   | Roychoudhury | Pfizer                                      |
 | Ting       | Ye           | University of Washington, Biostatistics     |
 | Victoria   | Johnson      | GSK                                         |
