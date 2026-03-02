@@ -10,7 +10,27 @@
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Fri, 13 Feb 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 13 Mar 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Revealing the Truth: Calculating True Values in Causal Inference Simulation Studies via Gaussian Quadrature</title>
+  <link>https://carswg.github.io/journalclub/journalclub17.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> Revealing the Truth: Calculating True Values in Causal Inference Simulation Studies via Gaussian Quadrature</p>
+<p><strong>Datetime: March 13th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Dr.&nbsp;Alex Ocampo is a Principal Statistical Methodologist at Roche.</p>
+<p><strong>Summary:</strong> Simulation studies are used to understand the properties of statistical methods. A key luxury in many simulation studies is knowledge of the true value (i.e.&nbsp;the estimand) being targeted. With this oracle knowledge in-hand, the researcher conducting the simulation study can assess across repeated realizations of the data how well a given method recovers the truth. In causal inference simulation studies, the truth is rarely a simple parameter of the statistical model chosen to generate the data. Instead, the estimand is often an average treatment effect, marginalized over the distribution of confounders and/or mediators. Luckily, these variables are often generated from common distributions such as the normal, uniform, exponential, or gamma. For all these distributions, Gaussian quadratures provide efficient and accurate calculation for integrands with integral kernels that stem from known probability density functions. We demonstrate through four applications how to use Gaussian quadrature to accurately and efficiently compute the true causal estimand. We also compare the pros and cons of Gauss-Hermite quadrature to Monte Carlo integration approaches, which we use as benchmarks. Overall, we demonstrate that the Gaussian quadrature is an accurate tool with negligible computation time, yet is underused for calculating the true causal estimands in simulation studies.</p>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub17.html</guid>
+  <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Clarifying the role of the Mantel–Haenszel risk difference estimator in randomized clinical trials</title>
   <link>https://carswg.github.io/journalclub/journalclub16.html</link>
