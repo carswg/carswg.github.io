@@ -9,7 +9,7 @@
 <link>https://carswg.github.io/journal_club.html</link>
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
-<generator>quarto-1.8.27</generator>
+<generator>quarto-1.9.36</generator>
 <lastBuildDate>Fri, 13 Mar 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Revealing the Truth: Calculating True Values in Causal Inference Simulation Studies via Gaussian Quadrature</title>
@@ -23,6 +23,10 @@
 <p><strong>Datetime: March 13th Friday, 11am-12pm ET.</strong></p>
 <p><strong>Presenter:</strong> Dr.&nbsp;Alex Ocampo is a Principal Statistical Methodologist at Roche.</p>
 <p><strong>Summary:</strong> Simulation studies are used to understand the properties of statistical methods. A key luxury in many simulation studies is knowledge of the true value (i.e.&nbsp;the estimand) being targeted. With this oracle knowledge in-hand, the researcher conducting the simulation study can assess across repeated realizations of the data how well a given method recovers the truth. In causal inference simulation studies, the truth is rarely a simple parameter of the statistical model chosen to generate the data. Instead, the estimand is often an average treatment effect, marginalized over the distribution of confounders and/or mediators. Luckily, these variables are often generated from common distributions such as the normal, uniform, exponential, or gamma. For all these distributions, Gaussian quadratures provide efficient and accurate calculation for integrands with integral kernels that stem from known probability density functions. We demonstrate through four applications how to use Gaussian quadrature to accurately and efficiently compute the true causal estimand. We also compare the pros and cons of Gauss-Hermite quadrature to Monte Carlo integration approaches, which we use as benchmarks. Overall, we demonstrate that the Gaussian quadrature is an accurate tool with negligible computation time, yet is underused for calculating the true causal estimands in simulation studies.</p>
+<p><strong>Recording:</strong></p>
+<iframe src="https://drive.google.com/file/d/1UE_p5bXsAkIGrV1JljVkuF_m18c8X-Ru/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
 
 
 
