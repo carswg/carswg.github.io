@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
-<meta name="dcterms.date" content="2024-09-13">
-<meta name="description" content="September 2024 Journal Club by Kelly Van Lancker">
+<meta name="dcterms.date" content="2026-05-08">
+<meta name="description" content="May 2026 Seminar by Zhiwei Zhang">
 
-<title>Automated, efficient and model-free inference for randomized clinical trials via data-driven covariate adjustment – ASA-BIOP Covariate Adjustment SWG</title>
+<title>Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials – ASA-BIOP Covariate Adjustment SWG</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Automated, efficient and model-free inference for randomized clinical trials via data-driven covariate adjustment</h1>
+<h1 class="title">Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials</h1>
   <div class="quarto-categories">
     <div class="quarto-category">journal club</div>
   </div>
@@ -195,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    September 2024 Journal Club by Kelly Van Lancker
+    May 2026 Seminar by Zhiwei Zhang
   </div>
 </div>
 
@@ -206,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 13, 2024</p>
+      <p class="date">May 8, 2026</p>
     </div>
   </div>
   
@@ -218,15 +218,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Topic:</strong> Automated, efficient and model-free inference for randomized clinical trials via data-driven covariate adjustment</p>
-<p><strong>Datetime: September 13th Friday, 11am-12pm EDT.</strong></p>
-<p><strong>Presenter:</strong> Kelly Van Lancker from Ghent University</p>
-<p><strong>Zoom link:</strong>: https://umich.zoom.us/j/7573650566</p>
-<p><strong>Summary:</strong> In May 2023, the U.S. Food and Drug Administration (FDA) released guidance for industry on “Adjustment for Covariates in Randomized Clinical Trials for Drugs and Biological Products”. Covariate adjustment is a statistical analysis method for improving precision and power in clinical trials by adjusting for pre-specified, prognostic baseline variables. Though recommended by the FDA and the European Medicines Agency (EMA), many trials do not exploit the available information in baseline variables or make use only of the baseline measurement of the outcome. This is likely (partly) due to the regulatory mandate to pre-specify baseline covariates for adjustment, leading to challenges in determining appropriate covariates and their functional forms. We will explore the potential of automated data-adaptive methods, such as machine learning algorithms, for covariate adjustment, addressing the challenge of pre-specification. Specifically, our approach allows the use of complex models or machine learning algorithms without compromising the interpretation or validity of the treatment effect estimate and its corresponding standard error, even in the presence of misspecified outcome working models. This contrasts the majority of competing works which assume correct model specification for the validity of standard errors. Our proposed estimators either necessitate ultra-sparsity in the outcome model (which can be relaxed by limiting the number of predictors in the model) or necessitate integration with sample splitting to enhance their performance. As such, we will arrive at simple estimators and standard errors for the marginal treatment effect in randomized clinical trials, which exploit data-adaptive outcome predictions based on prognostic baseline covariates, and have low (or no) bias in finite samples even when those predictions are themselves biased.</p>
-<p><strong>Recording:</strong></p>
-<iframe src="https://drive.google.com/file/d/11eDNsw1fvUKyMsV7IfoN5Y14xsclij7C/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
-<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
-</script>
+<p><strong>Topic:</strong> Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials</p>
+<p><strong>Datetime: May 8th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Zhiwei Zhang is a senior director at Gilead Sciences. Before joining Gilead, he worked in academia and government agencies, including FDA and NIH. His research interests include causal inference and clinical trial design and analysis. Zhiwei has published over 100 research articles, mostly in statistical journals. He is an elected fellow of the American Statistical Association and the International Statistical Institute.</p>
+<p><strong>Summary:</strong> Covariate adjustment aims to improve the statistical efficiency of randomized trials by incorporating information from baseline covariates. Popular methods for covariate adjustment include analysis of covariance for continuous endpoints and standardized logistic regression for binary endpoints. For survival endpoints, while some covariate adjustment methods have been developed, they are not commonly used in practice for various reasons, including high demands for theoretical and methodological sophistication as well as computational skills. This talk describes two alternative methods: augmentation and inverse probability of treatment weighting (IPTW). Both methods are simple, easy to understand and implement, and widely applicable to different effect measures. The augmentation method is available in an R package, and IPTW requires no special software. The methods are compared with existing methods in simulation studies and illustrated using real data from an HIV treatment trial.</p>
+<p><strong>Zoom link:</strong> Please contact Dr.&nbsp;Bingkai Wang (bingkai at umich dot edu) for the Zoom link.</p>
 
 
 
