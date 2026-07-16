@@ -1,0 +1,20 @@
+
+---
+title: "Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials"
+description: "May 2026 Seminar by Zhiwei Zhang"
+author: ""
+date: "05/08/2026"
+draft: false
+categories:
+  - journal club
+---
+
+**Topic:** Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials
+
+**Datetime: May 8th Friday, 11am-12pm ET.**
+
+**Presenter:** Zhiwei Zhang is a senior director at Gilead Sciences. Before joining Gilead, he worked in academia and government agencies, including FDA and NIH. His research interests include causal inference and clinical trial design and analysis. Zhiwei has published over 100 research articles, mostly in statistical journals. He is an elected fellow of the American Statistical Association and the International Statistical Institute.
+
+**Summary:** Covariate adjustment aims to improve the statistical efficiency of randomized trials by incorporating information from baseline covariates. Popular methods for covariate adjustment include analysis of covariance for continuous endpoints and standardized logistic regression for binary endpoints. For survival endpoints, while some covariate adjustment methods have been developed, they are not commonly used in practice for various reasons, including high demands for theoretical and methodological sophistication as well as computational skills. This talk describes two alternative methods: augmentation and inverse probability of treatment weighting (IPTW). Both methods are simple, easy to understand and implement, and widely applicable to different effect measures. The augmentation method is available in an R package, and IPTW requires no special software. The methods are compared with existing methods in simulation studies and illustrated using real data from an HIV treatment trial.
+
+**Zoom link:** Please contact Dr. Bingkai Wang (bingkai at umich dot edu) for the Zoom link.
