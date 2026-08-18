@@ -9,7 +9,7 @@
 <link>https://carswg.github.io/journal_club.html</link>
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
-<generator>quarto-1.9.38</generator>
+<generator>quarto-1.10.18</generator>
 <lastBuildDate>Fri, 08 May 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials</title>
@@ -23,7 +23,10 @@
 <p><strong>Datetime: May 8th Friday, 11am-12pm ET.</strong></p>
 <p><strong>Presenter:</strong> Zhiwei Zhang is a senior director at Gilead Sciences. Before joining Gilead, he worked in academia and government agencies, including FDA and NIH. His research interests include causal inference and clinical trial design and analysis. Zhiwei has published over 100 research articles, mostly in statistical journals. He is an elected fellow of the American Statistical Association and the International Statistical Institute.</p>
 <p><strong>Summary:</strong> Covariate adjustment aims to improve the statistical efficiency of randomized trials by incorporating information from baseline covariates. Popular methods for covariate adjustment include analysis of covariance for continuous endpoints and standardized logistic regression for binary endpoints. For survival endpoints, while some covariate adjustment methods have been developed, they are not commonly used in practice for various reasons, including high demands for theoretical and methodological sophistication as well as computational skills. This talk describes two alternative methods: augmentation and inverse probability of treatment weighting (IPTW). Both methods are simple, easy to understand and implement, and widely applicable to different effect measures. The augmentation method is available in an R package, and IPTW requires no special software. The methods are compared with existing methods in simulation studies and illustrated using real data from an HIV treatment trial.</p>
-<p><strong>Zoom link:</strong> Please contact Dr.&nbsp;Bingkai Wang (bingkai at umich dot edu) for the Zoom link.</p>
+<p><strong>Recording:</strong></p>
+<iframe src="https://drive.google.com/file/d/1SEQ0eu8uD68jWRtOize8R08pdaFEbeks/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
 
 
 
