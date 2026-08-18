@@ -12,7 +12,7 @@
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Wed, 01 Jul 2026 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Template for language for SAP/protocol incorporating covariate adjustment</title>
+  <title>Template for Language for SAP/Protocol Incorporating Covariate Adjustment</title>
   <link>https://carswg.github.io/posts/cov_adj_sap_language.html</link>
   <description><![CDATA[ 
 
@@ -373,6 +373,8 @@
 <li><p>Zhang X, Chu H, Liu L and Roychoudhury S. A robust score test in g-computation for covariate adjustment in randomized clinical trials leveraging different variance estimators via influence functions. <em>Statistics in Medicine</em>. 2025;44:e70080.</p></li>
 <li><p>Zhao A and Ding P. To adjust or not to adjust? Estimating the average treatment effect in randomized experiments with missing covariates. <em>Journal of the American Statistical Association</em>. 2024;119:450–460.</p></li>
 </ol>
+<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
 
 
 </section>
