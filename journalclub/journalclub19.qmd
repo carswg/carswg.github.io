@@ -17,4 +17,25 @@ categories:
 
 **Summary:** Covariate adjustment aims to improve the statistical efficiency of randomized trials by incorporating information from baseline covariates. Popular methods for covariate adjustment include analysis of covariance for continuous endpoints and standardized logistic regression for binary endpoints. For survival endpoints, while some covariate adjustment methods have been developed, they are not commonly used in practice for various reasons, including high demands for theoretical and methodological sophistication as well as computational skills. This talk describes two alternative methods: augmentation and inverse probability of treatment weighting (IPTW). Both methods are simple, easy to understand and implement, and widely applicable to different effect measures. The augmentation method is available in an R package, and IPTW requires no special software. The methods are compared with existing methods in simulation studies and illustrated using real data from an HIV treatment trial.
 
-**Zoom link:** Please contact Dr. Bingkai Wang (bingkai at umich dot edu) for the Zoom link.
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/1SEQ0eu8uD68jWRtOize8R08pdaFEbeks/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
