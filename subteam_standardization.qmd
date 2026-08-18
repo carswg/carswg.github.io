@@ -2,12 +2,12 @@
 title: "Standardization and Outreach Subteam"
 ---
 
-## Accomplishment
+## Recent Development 
 
-::: {.callout-tip appearance="simple"}
-## New Resource: Protocol and SAP Template Language
+::: {.callout-tip appearance="default"}
+## New Blog: Protocol and SAP Template Language
 
-**Published July 1, 2026**
+**Published July 2026**
 
 The Standardization and Outreach Subteam has published a practical, cross-industry template to support the consistent and transparent use of covariate adjustment in clinical trial protocols and statistical analysis plans.
 
@@ -18,7 +18,7 @@ The template provides adaptable language and guidance for:
 - Primary, sensitivity, and supplementary analyses
 - Covariate selection, missing baseline covariates, and variance estimation
 
-[Read the full template &rarr;](https://carswg.github.io/posts/cov_adj_sap_language.html)
+[Read the full Article &rarr;](https://carswg.github.io/posts/cov_adj_sap_language.html)
 :::
 
 # Aim and Plan
