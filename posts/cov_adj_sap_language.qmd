@@ -1,5 +1,5 @@
 ---
-title: "Template for language for SAP/protocol incorporating covariate adjustment"
+title: "Template for Language for SAP/Protocol Incorporating Covariate Adjustment"
 subtitle: "ASA-BIOP Covariate Adjustment SWG, Standardization and Outreach Subteam"
 date: "July 2026"
 format:
@@ -319,3 +319,22 @@ Potential supplementary analyses include:
 17. Zhang X, Chu H, Liu L and Roychoudhury S. A robust score test in g-computation for covariate adjustment in randomized clinical trials leveraging different variance estimators via influence functions. *Statistics in Medicine*. 2025;44:e70080.
 
 18. Zhao A and Ding P. To adjust or not to adjust? Estimating the average treatment effect in randomized experiments with missing covariates. *Journal of the American Statistical Association*. 2024;119:450--460.
+
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
