@@ -1,5 +1,5 @@
 ---
-title: "Template for language for SAP/protocol incorporating covariate adjustment"
+title: "Template for Language for SAP/Protocol Incorporating Covariate Adjustment"
 subtitle: "ASA-BIOP Covariate Adjustment SWG, Standardization and Outreach Subteam"
 date: "July 2026"
 format:
