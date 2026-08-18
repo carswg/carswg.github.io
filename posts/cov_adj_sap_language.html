@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-07-01">
+
+<title>Template for language for SAP/protocol incorporating covariate adjustment – ASA-BIOP Covariate Adjustment SWG</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">ASA-BIOP Covariate Adjustment SWG</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-us" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About Us</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-about-us">    
+        <li>
+    <a class="dropdown-item" href="../about.html">
+ <span class="dropdown-text">About</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../people.html">
+ <span class="dropdown-text">People</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-task-force" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Task Force</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-task-force">    
+        <li>
+    <a class="dropdown-item" href="../subteam_advancement.html">
+ <span class="dropdown-text">Advancement Subteam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../subteam_software.html">
+ <span class="dropdown-text">Software Subteam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../subteam_standardization.html">
+ <span class="dropdown-text">Standardization and Outreach Subteam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../subteam_education.html">
+ <span class="dropdown-text">Education Subteam</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../news.html"> 
+<span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-event" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Event</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-event">    
+        <li>
+    <a class="dropdown-item" href="../journal_club.html">
+ <span class="dropdown-text">Journal Club</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../publication.html">
+ <span class="dropdown-text">Publications</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../conference.html">
+ <span class="dropdown-text">Conference Presentation</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://www.linkedin.com/in/asa-biopharmaceutical-section-working-group-of-covariate-adjustment-2050b62b8/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <a href="https://twitter.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter-x"></i></a>
+    <a href="https://github.com/carswg/carswg.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="../index.xml" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-rss"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#general-considerations" id="toc-general-considerations" class="nav-link" data-scroll-target="#general-considerations"><span class="header-section-number">2</span> General Considerations</a></li>
+  <li><a href="#continuous-endpoints" id="toc-continuous-endpoints" class="nav-link" data-scroll-target="#continuous-endpoints"><span class="header-section-number">3</span> Continuous endpoints</a>
+  <ul class="collapse">
+  <li><a href="#estimand-description" id="toc-estimand-description" class="nav-link" data-scroll-target="#estimand-description"><span class="header-section-number">3.1</span> Estimand description</a></li>
+  <li><a href="#statistical-analysis-methods" id="toc-statistical-analysis-methods" class="nav-link" data-scroll-target="#statistical-analysis-methods"><span class="header-section-number">3.2</span> Statistical Analysis Methods</a></li>
+  <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis"><span class="header-section-number">3.3</span> Sensitivity analysis</a></li>
+  <li><a href="#supplementary-analysis" id="toc-supplementary-analysis" class="nav-link" data-scroll-target="#supplementary-analysis"><span class="header-section-number">3.4</span> Supplementary analysis</a></li>
+  </ul></li>
+  <li><a href="#binary-endpoints" id="toc-binary-endpoints" class="nav-link" data-scroll-target="#binary-endpoints"><span class="header-section-number">4</span> Binary endpoints</a>
+  <ul class="collapse">
+  <li><a href="#estimand-description-1" id="toc-estimand-description-1" class="nav-link" data-scroll-target="#estimand-description-1"><span class="header-section-number">4.1</span> Estimand description</a></li>
+  <li><a href="#statistical-analysis-methods-1" id="toc-statistical-analysis-methods-1" class="nav-link" data-scroll-target="#statistical-analysis-methods-1"><span class="header-section-number">4.2</span> Statistical Analysis Methods</a></li>
+  <li><a href="#sensitivity-analysis-1" id="toc-sensitivity-analysis-1" class="nav-link" data-scroll-target="#sensitivity-analysis-1"><span class="header-section-number">4.3</span> Sensitivity Analysis</a></li>
+  <li><a href="#supplementary-analysis-1" id="toc-supplementary-analysis-1" class="nav-link" data-scroll-target="#supplementary-analysis-1"><span class="header-section-number">4.4</span> Supplementary Analysis</a></li>
+  </ul></li>
+  <li><a href="#time-to-event-endpoints" id="toc-time-to-event-endpoints" class="nav-link" data-scroll-target="#time-to-event-endpoints"><span class="header-section-number">5</span> Time-to-event endpoints</a>
+  <ul class="collapse">
+  <li><a href="#estimand-description-2" id="toc-estimand-description-2" class="nav-link" data-scroll-target="#estimand-description-2"><span class="header-section-number">5.1</span> Estimand description</a></li>
+  <li><a href="#statistical-analysis-methods-2" id="toc-statistical-analysis-methods-2" class="nav-link" data-scroll-target="#statistical-analysis-methods-2"><span class="header-section-number">5.2</span> Statistical Analysis Methods</a></li>
+  <li><a href="#sensitivity-analysis-2" id="toc-sensitivity-analysis-2" class="nav-link" data-scroll-target="#sensitivity-analysis-2"><span class="header-section-number">5.3</span> Sensitivity analysis</a></li>
+  <li><a href="#supplementary-analysis-2" id="toc-supplementary-analysis-2" class="nav-link" data-scroll-target="#supplementary-analysis-2"><span class="header-section-number">5.4</span> Supplementary analysis</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Template for language for SAP/protocol incorporating covariate adjustment</h1>
+<p class="subtitle lead">ASA-BIOP Covariate Adjustment SWG, Standardization and Outreach Subteam</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Covariate adjustment in randomized clinical trials is a long-established approach to improve precision and power and to provide more reliable treatment effect estimates. In practice, however, implementation and documentation have been heterogeneous across sponsors and trials, with differences in which covariates are used, how analyses are specified, and how results are interpreted. The recent FDA Guidance for Industry on “Adjusting for covariates in randomized clinical trials for drugs and biologics” (FDA 2023) and EMA Guideline on “Adjustment for baseline covariates in clinical trials” (EMA 2015) both give clear regulatory support for covariate adjustment and set expectations for pre-specification, choice of covariates, and appropriate analytic methods. They also highlight the distinction between conditional and marginal estimands and the corresponding estimators, in line with the ICH E9(R1) estimand framework (ICH E9 addendum, 2019). These concepts are central to ensuring that the estimand, analysis model, and interpretation of the treatment effect are coherent.</p>
+<p>This document, prepared by the ASA Biopharmaceutical Section Covariate Adjustment Working Group, is intended as a cross-industry template to support consistent and transparent use of covariate adjustment in protocols and statistical analysis plans. The focus is on primary and key secondary endpoints in confirmatory individually randomized trials, with emphasis on continuous, binary, and time-to-event endpoints. For these common endpoint types, the template provides a brief contextual discussion of suitable estimands for two-arm randomized clinical trials, including both conditional estimands (for example, effects defined through regression models that condition on baseline covariates) and marginal estimands (for example, population-average effects obtained by averaging over the entire trial population). It then outlines appropriate covariate-adjusted estimation strategies for these estimands and offers concise example language that can be adapted for protocol and SAP sections.</p>
+<p>A key aim of this template is to clarify, at a practical level, how the choice between conditional and marginal estimands relates to the planned analysis. Conventional regression models with baseline covariates naturally target conditional estimands, while approaches such as marginal standardization or weighting can be used to obtain marginal estimands when those are preferred. When estimating a conditional treatment effect through nonlinear regression, the model assumptions will generally not be exactly correct, and results can be difficult to interpret if the model is mis-specified and treatment effects substantially differ across subgroups. Interpretability increases with the quality of model specification. Sponsors are encouraged to discuss with regulators specific proposals in a protocol or statistical analysis plan containing nonlinear regression to estimate conditional treatment effects for the primary analysis. The template emphasizes that this choice should be made consciously and described explicitly, so that the estimand definition, the modeling strategy, and the reported treatment effect (for example, adjusted mean difference, odds ratio, hazard ratio, or marginal risk difference) are aligned and interpretable.</p>
+<p>The objective is not to provide an exhaustive methodological review or to prescribe a single “correct” approach, but rather to offer concise protocol and SAP language that sponsors can reuse and adapt. By doing so, this document aims to promote principled and harmonized use of covariate adjustment, to facilitate clearer communication about estimands and analyses, and ultimately to support more efficient and transparent evaluation of treatment effects in randomized clinical trials.</p>
+<p>In the sections that follow, we put these general principles into practical guidance. Section 2 presents the general considerations, and outlines practical approaches and example text that can be applied regardless of the endpoint type. Section 3 focuses on continuous endpoints and describes estimand definitions (conditional and marginal), statistical analysis method, sensitivity analyses and supplementary analyses, with example protocol and high level SAP language. Section 4 discusses analysis options of binary endpoints for marginal and conditional effect estimators and relevant example protocol and high level SAP language. Section 5 addresses time-to-event endpoints, discussing covariate-adjusted Cox-type analyses and the corresponding estimands and estimators.</p>
+</section>
+<section id="general-considerations" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> General Considerations</h1>
+<p>The recently released ICH E9 (R1) by the International Council of Harmonization (ICH) (ICH E9 addendum 2019) emphasized the importance of aligning statistical analyses with the target estimand for regulatory discussion. When incorporating covariate adjustment, it is essential to distinguish between the marginal and conditional effect for appropriate estimand and estimation methodology choices.</p>
+<p>The marginal (unconditional) treatment effect is defined by comparing the marginal outcome distributions between the treatment and control arms across all patients in the target population. On the other hand, the conditional treatment effect is defined by comparing the outcome distributions between the experimental and control arms while holding some specific baseline covariates fixed. If the conditional treatment effect is assumed to be constant across levels of these covariates, it can be represented by a single treatment effect parameter in a covariate-adjusted regression model without treatment-covariate interaction. Moreover, when the chosen measure of treatment effect is collapsible (e.g., difference in means), the conditional treatment effect, if assumed to be constant, coincides with the marginal treatment effect. When the chosen measure of treatment effect is non-collapsible (e.g., odds ratio and hazard ratio), the conditional treatment effect, even if assumed to be constant, can differ from the marginal treatment effect.</p>
+<p>Covariate adjustment usually leads to efficiency gains when the covariates are prognostic for the outcome of interest in the trial. In some circumstances these covariates may be identified from scientific literature. In other cases, previous studies may be used to select prognostic covariates or to form prognostic indices. To ensure balance between treatment arms with respect to a selected set of prognostic covariates, randomization is often stratified by these variables. A covariate adjustment model should generally include stratification variables but can also include covariates not used for stratified randomization. Covariates used for adjustment should be prespecified, clinically justified, limited in number relative to the sample size, and restricted to baseline variables.</p>
+<p>When covariate adjustment is implemented via a working regression model, valid inference also depends on the accuracy of the estimated standard errors. For continuous endpoints, the model-based standard error estimates can be inaccurate when the model is mis-specified or when the design departs from a simple two-arm 1:1 structure. The FDA guideline encourages sponsors to consider the use of a robust standard error method such as the Huber-White “sandwich” standard error when the model does not include treatment by covariate interactions (Rosenblum and van der Laan 2009; Lin 2013). Other robust standard error methods proposed in the literature can also cover cases with interactions (Ye et al.&nbsp;2022). The asymptotically robust methods may be less applicable to very small trials conducted in rare diseases. An appropriate nonparametric bootstrap procedure can also be used (Efron and Tibshirani 1993), although its validity is only established for simple randomization rather than stratified randomization.</p>
+<p>In addition to the primary analysis, it is important to distinguish between sensitivity analyses and supplementary analyses. Sensitivity analyses (e.g., those relying on different variance estimators or distributional assumptions) assess the robustness of conclusions for the same estimand as the primary analysis. Supplementary analyses provide complementary estimates that target different estimands (e.g., conditional vs marginal).</p>
+<p>Sponsors that propose estimating a marginal estimand may be asked to modify the estimation strategy by, for example, omitting adjustment covariates or using an alternative pre-specified set of covariates. The estimand itself is unaffected by a change in adjustment covariates and such an alternative analysis does not interrogate deviations from the assumptions made for the primary analysis. Such an alternative analysis therefore does not satisfy the definition of sensitivity analysis. It is possible for such an alternative analysis to be non-significant and for the primary analysis to be significant (or vice versa), since adjustment covariates will affect both the estimate and its variance. However, the primary pre-specified analysis method should be given priority in assessment of the results. Requiring multiple analyses (e.g., unadjusted as well as adjusted) that target the same estimand to all be significant could substantially reduce power, thereby undermining the rationale for using covariate-adjusted analysis in the first place.</p>
+<p>In the presence of missing values, handling of missing baseline covariate values should be prespecified and consistent with the overall missing data strategy. When multiple imputation is used, the imputation model should, where feasible, include at least the same covariates as the analysis model. Additional covariates or interaction terms could be included when needed, and inferences across imputations should be combined using Rubin’s rules, with robust variance estimators applied at the analysis stage as specified above. Single imputation may also be considered when there are missing baseline covariates, e.g., mean or median imputation for continuous covariates and mode imputation for categorical covariates (Zhao and Ding 2024; Song, Hughes and Ye 2024).</p>
+</section>
+<section id="continuous-endpoints" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Continuous endpoints</h1>
+<p>For continuous endpoints, there is a general agreement among regulatory authorities about the use of analysis of covariance (ANCOVA) to adjust for baseline variables.</p>
+<section id="estimand-description" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="estimand-description"><span class="header-section-number">3.1</span> Estimand description</h2>
+<p>In this setting, we distinguish between conditional and marginal estimands for continuous endpoints.</p>
+<p>A marginal estimand is the difference in population-average means between treatment groups at that timepoint. This can be viewed as the treatment effect for a “typical” patient population, rather than for a population with specific covariate values.</p>
+<p>A conditional estimand is the mean difference in the endpoint between treatment groups at the specified timepoint, conditional on a set of prespecified baseline covariates. In practice, this usually means the expected difference in mean outcome between treatments for patients with the same value of the prespecified baseline covariates.</p>
+<p>Protocols and SAPs should state (e.g., in the population level summary) which of these estimands is primary and if both are of interest, describe the primary and supplementary estimands. Some example protocol and SAP language is provided below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (marginal estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The marginal (population-average) mean difference in [endpoint] at Week X between [Treatment A] and [Treatment B], defined as the difference in mean [endpoint] that would be observed if the target trial population were treated with [Treatment A] versus [Treatment B].</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (conditional estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conditional mean difference in [endpoint] at Week X between [Treatment A] and [Treatment B], at fixed values of pre-specified baseline covariates.</p>
+</div>
+</div>
+</section>
+<section id="statistical-analysis-methods" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="statistical-analysis-methods"><span class="header-section-number">3.2</span> Statistical Analysis Methods</h2>
+<p>For continuous endpoints analyzed with a linear model (e.g., ANCOVA) including treatment and prespecified baseline covariates (with no treatment–covariate interactions), a commonly used estimator of the treatment effect is the adjusted mean difference between treatment groups at the specified timepoint. Under randomization, this adjusted mean difference targets the marginal (population-average) mean difference, a property that holds even if the linear model is misspecified. If in addition the linear model is correctly specified with no treatment–covariate interactions, it also targets the conditional mean difference (given the covariates in the model), which then coincides with the marginal effect if conditional mean difference is assumed to be constant. When there is treatment–covariate interaction, a study’s marginal treatment effect may reflect the study population’s covariate mix and may not be unbiased for the target population’s marginal effect if covariate distributions differ. This is especially important for non-continuous outcomes because interaction is scale-dependent: even with no interaction on the odds-ratio scale (constant conditional OR), there can be meaningful interaction on the absolute scale (e.g., risk differences), leading to different marginal effects across populations. As a result, marginal effects are not automatically transportable to a new population without adjustment for baseline covariate distribution (Dahabreh et al.&nbsp;2019), and if interactions are expected, trials should be designed and powered to estimate treatment effects in relevant subgroups.</p>
+<p>Under the standard linear model assumptions and 1:1 randomization, nominal model-based standard errors are generally adequate (Wang et al.&nbsp;2019); however, consistent with the FDA covariate adjustment guidance, robust (e.g., Huber–White “sandwich”) standard errors are recommended when there is concern about model misspecification or when the design departs from a simple two-arm 1:1 structure. Some example protocol and SAP language is provided below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (either conditional or marginal estimand, under linear regression model without treatment–covariate interactions)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary hypothesis is that there is no difference between treatments in this mean change at Week/Month [X], more specifically: <span class="math inline">\(H_{0}:\beta_{\text{trt}} = 0\)</span> versus <span class="math inline">\(H_{1}:\beta_{\text{trt}} \neq 0\)</span>, where <span class="math inline">\(\beta_{\text{trt}}\)</span> is the treatment coefficient in the ANCOVA model. The primary analysis will use an analysis of covariance (ANCOVA) model including treatment group as a fixed effect and adjust for [baseline covariates]. The null hypothesis of no treatment effect will be tested using a two-sided significance level of 0.05 applied to the treatment effect in this model.</p>
+<p>The primary estimator of the treatment effect is the adjusted mean difference in change from baseline in [Endpoint Name] at Week/Month [X] between [Treatment A] and [Treatment B], derived from the ANCOVA model. Adjusted means for each treatment group (ordinary least-squares means) and their difference will be reported, together with two-sided 95% confidence intervals and p-values. Unless otherwise specified, robust standard errors (such as robust Huber-White sandwich standard errors) will be used to construct confidence intervals and perform hypothesis tests based on normal approximation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (marginal estimand, under linear regression model with treatment covariate interactions)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary hypothesis is that there is no difference between treatments in this mean change at Week/Month [X], more specifically: <span class="math inline">\(H_{0}:\beta_{\text{trt}} = 0\)</span> versus <span class="math inline">\(H_{1}:\beta_{\text{trt}} \neq 0\)</span>, where <span class="math inline">\(\beta_{\text{trt}}\)</span> is the treatment coefficient in the ANCOVA model. The primary analysis will use an analysis of covariance (ANCOVA) model including treatment group as a fixed effect and adjust for [baseline covariates]. The null hypothesis of no treatment effect will be tested using a two-sided significance level of 0.05 applied to the treatment effect in this model.</p>
+<p>Under the linear model with treatment–covariate interactions, treatment specific marginal means will be obtained by standardization: for each subject, predicted outcomes under each treatment will be generated from the fitted model and averaged over all subjects to obtain marginal mean outcomes for [Treatment A] and [Treatment B]. The difference between these marginal means will be reported, together with two-sided 95% confidence intervals based on robust standard errors or resampling methods, as well as the 95% CI for per group means.</p>
+</div>
+</div>
+</section>
+<section id="sensitivity-analysis" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sensitivity-analysis"><span class="header-section-number">3.3</span> Sensitivity analysis</h2>
+<p>For continuous endpoints with covariate adjustment, sensitivity analyses are important to assess robustness of the conclusion when varying aspects of the model or variance estimation while still targeting the same conditional or marginal mean difference specified for the primary estimand.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (marginal estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sensitivity analyses will consist of: (i) an unadjusted analysis of change from baseline in [Endpoint Name] at Week [X] using a two sample t test and a linear model with treatment as the only predictor; (ii) alternative covariate adjusted ANCOVA models in which [specify changes, e.g., age is modeled using categories rather than as a continuous variable, or a less prognostic covariate is omitted].</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (conditional estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sensitivity analysis will re-estimate the primary model using nominal model based standard errors in addition to the primary analysis based on robust standard errors, to assess the impact of variance estimator choice.</p>
+</div>
+</div>
+</section>
+<section id="supplementary-analysis" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="supplementary-analysis"><span class="header-section-number">3.4</span> Supplementary analysis</h2>
+<p>Supplementary analyses are additional, typically more exploratory analyses that provide complementary information beyond the primary estimand, including estimates of related but distinct estimands (e.g., conditional vs marginal) or alternative summaries of treatment effect. For continuous endpoints, supplementary analyses can help illustrate the impact of covariate adjustment (e.g., adjust for different covariates), present different effect measures, or explore treatment effects in subgroups.</p>
+</section>
+</section>
+<section id="binary-endpoints" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Binary endpoints</h1>
+<section id="estimand-description-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="estimand-description-1"><span class="header-section-number">4.1</span> Estimand description</h2>
+<p>Common marginal estimands for binary endpoints are the marginal risk difference or risk ratio. The conditional odds ratio is a common conditional estimand. Some example protocol and SAP language is provided below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (marginal estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The marginal (population-average) difference in the proportion of subjects achieving [endpoint] at [Week X] between [Treatment A] and [Treatment B], defined as the difference in the proportion of subjects achieving [endpoint] if the target trial population were treated with [Treatment A] versus [Treatment B],</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (conditional estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conditional odds ratio of subjects achieving [endpoint] at [Week X] between [Treatment A] and [Treatment B], at fixed values of the stratification variables and baseline [covariates].</p>
+</div>
+</div>
+</section>
+<section id="statistical-analysis-methods-1" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="statistical-analysis-methods-1"><span class="header-section-number">4.2</span> Statistical Analysis Methods</h2>
+<p>For binary endpoints, a common estimator of marginal treatment effects, e.g., the risk difference or risk ratio, which allows for adjustment for either continuous or categorical variables is the g-computation estimator based on a logistic regression working model. Various estimators for the standard error of the g-computation estimator have been proposed (Ye et al.&nbsp;2023; Liu and Xi 2024 (for the risk difference estimator)); see Zhang et al.&nbsp;(2025) for an overview. The nonparametric bootstrap method for a robust standard error of the standardized estimator is an option as well (Steingrimsson et al.&nbsp;2017).</p>
+<p>Mantel-Haenszel stratum-weighted estimators are frequently used for estimating marginal treatment effects with adjustment for only stratification factors under the assumption of common risk difference or constant risk ratio across the strata defined by the covariates or stratification factors (FDA 2023; Agresti 2013). However, the assumption may not be always met in RCTs. Recent work of Qiu et al.&nbsp;(2025) shows that with the risk difference estimand, without this assumption, the Mantel-Haenszel risk difference estimator with the proposed modified Greenland and Robins variance estimator are able to give valid estimates and tests on the marginal risk difference.</p>
+<p>A logistic regression model can be used to estimate an odds ratio conditional on the values of stratification variables and baseline covariates (categorical or continuous). If only categorical covariates are adjusted for, the Cochran-Mantel-Haenszel method can be used to test the existence of a treatment effect conditional on the values of the covariates.</p>
+<p>Some example protocol and SAP language is provided below for a superiority trial.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol/SAP language (marginal estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The marginal risk difference/risk ratio will be estimated using the g-computation method. A logistic regression model will be fit for regressing the outcome on treatment assignments and prespecified baseline covariates, including the stratification variables. For each subject, regardless of treatment group assignment, the model-based prediction of achieving [endpoint] at [Week X] will be computed under both treatment and control, using the subject’s baseline covariates. The average response rates will then be computed under [Treatment A] and [Treatment B], by averaging these model-based predictions across all subjects in the trial. These estimates of average response will then be used to estimate the marginal risk difference/risk ratio. Standard errors and confidence intervals for the average response rates and for the marginal risk difference/risk ratio will be computed using the method of [Ye et al.&nbsp;2023/Liu and Xi 2024/Zhang et al.&nbsp;2025/ Steingrimsson et al.&nbsp;2017].</p>
+<p>The null hypothesis to be tested is that the marginal risk difference is 0/the marginal risk ratio is 1. This null hypothesis will be tested using a Wald test.</p>
+<p>Adjusted response rates for each treatment group (with 95% confidence intervals) will be reported, together with the [difference/ratio] between them (with a 95% confidence interval) and the p-value from the Wald test.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol/SAP language (conditional estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conditional log odds ratio comparing treatment and control and its standard error will be estimated using a logistic regression model where the outcome is whether patient achieved [endpoint] at [Week X], with the treatment indicator, the stratification variables and prespecified baseline covariates. The primary hypothesis is that there is no association between treatment and the outcome conditional on the other covariates in the model. This null hypothesis will be tested using a Wald test. The log odds ratio and its 95% confidence interval, the odds ratio and its 95% confidence interval (calculated by exponentiation), and the p-value from the Wald test will be reported.</p>
+</div>
+</div>
+<p>For a non-inferiority trial, the null and alternative hypotheses must be must be specified according to the chosen effect measure and the direction of benefit. For a risk difference (RD) endpoint where larger proportions are favorable, for example, the hypotheses are <span class="math inline">\(H_0: RD\leq\Delta\)</span> versus <span class="math inline">\(H_1: RD&gt;\Delta\)</span> where <span class="math inline">\(\Delta\)</span> is the pre-specified non-inferiority margin (<span class="math inline">\(\Delta=-x\%\)</span>). Non-inferiority will be declared if the lower bound of the two-sided 95% confidence interval for the risk difference ratio exceeds <span class="math inline">\(\Delta\)</span>.</p>
+</section>
+<section id="sensitivity-analysis-1" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sensitivity-analysis-1"><span class="header-section-number">4.3</span> Sensitivity Analysis</h2>
+<p>Examples of sensitivity analyses include an analysis using a different variance estimator for a marginal treatment effect estimator (Ye et al.&nbsp;2023; Liu and Xi 2024; Zhang et al.&nbsp;2025; Steingrimsson et al.&nbsp;2017).</p>
+</section>
+<section id="supplementary-analysis-1" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="supplementary-analysis-1"><span class="header-section-number">4.4</span> Supplementary Analysis</h2>
+<p>Examples of supplementary analyses include conditional treatment effect estimates (if the primary estimand is marginal, adjusted for a different set of baseline covariates) or, if the primary estimand is conditional, a marginal treatment effect estimate.</p>
+</section>
+</section>
+<section id="time-to-event-endpoints" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Time-to-event endpoints</h1>
+<p>For time-to-event endpoints, covariate adjustment is often included via stratification of the analysis for randomization stratification factors using the stratified log-rank test or the stratified Cox proportional hazards (PH) model. For some commonly used methods, e.g., the log-rank test and the Cox PH model, analytic stratification also serves a second purpose of making the analysis robust to potential differences between baseline hazard functions across the strata.</p>
+<p>If there are additional prognostic variables beyond randomization stratification factors, covariate adjustment may be used to improve precision and power without compromising the validity of the randomized comparison, provided that covariates are prespecified and limited to baseline variables. Typical examples include a baseline laboratory measurement or a prognostic score which incorporates multiple baseline variables.</p>
+<section id="estimand-description-2" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="estimand-description-2"><span class="header-section-number">5.1</span> Estimand description</h2>
+<p>An example of a conditional estimand is the hazard ratio (HR) between treatments under a Cox PH model stratified by, and therefore conditional on, randomization stratification factors. This is a very common estimand in confirmatory clinical trials.</p>
+<p>Another example of a conditional estimand is the hazard ratio (HR) between treatments under a PH model conditional on adjustment variables (and also, potentially, stratified by and therefore conditional on randomization stratification factors). This is the HR between treatments for patients with the same baseline covariate values. This estimand is not commonly used as the primary estimand in confirmatory clinical trials.</p>
+<p>An example of a marginal (population-average) estimand is the marginal hazard ratio, defined as the treatment effect targeted by a Cox PH model that includes only the treatment indicator. Note that HR estimands may be difficult to interpret if the PH assumption is violated. Other estimands for time-to-event endpoints do not rely on a PH assumption, including the difference in restricted mean survival times between treatment groups or the difference in survival probabilities at a landmark time. This document currently focuses on HR estimands.</p>
+<p>Some example protocol and SAP language is provided below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (standard estimand with stratification)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The hazard ratio for [endpoint] between [Treatment A] and [Treatment B], conditional on the values of the stratification factors.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (conditional estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The hazard ratio for [endpoint] between [Treatment A] and [Treatment B], conditional on the values of the stratification factors and the adjustment covariates.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (marginal estimand)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The marginal (population-average) hazard ratio for [endpoint] between [Treatment A] and [Treatment B], defined as the treatment effect in a Cox PH model that includes only the treatment indicator.</p>
+</div>
+</div>
+</section>
+<section id="statistical-analysis-methods-2" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="statistical-analysis-methods-2"><span class="header-section-number">5.2</span> Statistical Analysis Methods</h2>
+<p>If the estimand is conditional only on stratification variables, the stratified log-rank test may be used to test the null hypothesis. The conditional HR may be estimated using a stratified Cox PH model. If additional adjustment for baseline covariates beyond the stratification variables is desired, the covariate-adjusted stratified log-rank test of Ye et al.&nbsp;(2024) may be used to test the same null hypothesis and the corresponding covariate-adjusted estimator of the hazard ratio under the stratified Cox PH model from Ye et al.&nbsp;(2024) may be used for estimation.</p>
+<p>If the estimand is conditional on adjustment variables, a Wald test of the treatment term in a stratified or unstratified Cox PH model adjusted for covariates may be used to test the null hypothesis. The conditional HR may be estimated using a Cox PH model.</p>
+<p>If the estimand is marginal with respect to adjustment variables, the covariate-adjusted unstratified log-rank test of Ye et al.&nbsp;(2024) may be used to test the null hypothesis. Ye et al.&nbsp;(2024) also provide a covariate-adjusted estimator of the hazard ratio under the unstratified Cox PH model.</p>
+<p>Many SAPs will contain language for collapsing sparse strata. This language is out of scope of this document.</p>
+<p>Some example protocol and SAP language is provided below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (with stratification and no adjustment covariates)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary hypothesis is <span class="math inline">\(H_{0}:\lambda_{0}\left( t|z \right) = \lambda_{1}(t|z)\)</span> at all times <span class="math inline">\(t\)</span> and for all strata <span class="math inline">\(z\)</span> where <span class="math inline">\(\lambda_{0}(t|z)\)</span> and <span class="math inline">\(\lambda_{1}(t|z)\)</span> are the hazards at time <span class="math inline">\(t\)</span> in stratum <span class="math inline">\(z\)</span> for [endpoint]. The primary analysis will test this null hypothesis with the stratified log-rank test. A two-sided significance level of 0.05 will be applied.</p>
+<p>The conditional hazard ratio and its two-sided 95% confidence interval will be estimated using a Cox proportional hazards model with a term for treatment, stratified by the randomization stratification factors.</p>
+<p>The hazard ratio and its 95% confidence interval and the p value from the stratified log-rank test will be reported.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (conditional estimand with adjustment covariates)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary hypothesis is <span class="math inline">\(H_{0}:\beta_{trt} = 0\)</span> where <span class="math inline">\(\beta_{trt}\)</span> is the coefficient of the treatment term in a Cox proportional hazards model adjusted for [covariates] [and stratified by the randomization stratification factors]. A two-sided Wald test at the 0.05 significance level will be used to test <span class="math inline">\(H_{0}\)</span>.</p>
+<p>The conditional hazard ratio and its two-sided 95% confidence interval will be estimated using a Cox proportional hazards model with a term for treatment adjusted for [covariates] [and stratified by the randomization stratification factors.]</p>
+<p>The conditional hazard ratio and its 95% confidence interval and the p value from the Wald test will be reported.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (marginal estimand, without stratification)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary hypothesis is <span class="math inline">\(H_{0}:\lambda_{0}(t) = \lambda_{1}(t)\)</span> at all times <span class="math inline">\(t\)</span> where <span class="math inline">\(\lambda_{0}(t)\)</span> and <span class="math inline">\(\lambda_{1}(t)\)</span> are the unconditional hazards at time <span class="math inline">\(t\)</span> for [endpoint] in the control and treatment group, respectively. The primary analysis will test this null hypothesis with the covariate-adjusted log-rank test of Ye et al.&nbsp;(2024), adjusted for the values of [covariates]. A two-sided significance level of 0.05 will be applied.</p>
+<p>The marginal hazard ratio and its two-sided 95% confidence interval will be estimated using the covariate-adjusted estimator of Ye et al.&nbsp;(2024), which estimates the hazard ratio and its standard error under the Cox proportional hazards model. This marginal hazard ratio has the same interpretation as the hazard ratio from a Cox proportional hazards model with only a term for treatment.</p>
+<p>The marginal hazard ratio and its 95% confidence interval and the p value from the covariate-adjusted log-rank test will be reported.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example protocol and SAP language (stratified estimand, with additional covariate adjustment)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The primary hypothesis is <span class="math inline">\(H_{0}:\lambda_{0}\left( t|z \right) = \lambda_{1}(t|z)\)</span> at all times <span class="math inline">\(t\)</span> and for all strata <span class="math inline">\(z\)</span> where <span class="math inline">\(\lambda_{0}(t|z)\)</span> and <span class="math inline">\(\lambda_{1}(t|z)\)</span> are the hazards at time <span class="math inline">\(t\)</span> in stratum <span class="math inline">\(z\)</span> for [endpoint] in the control and treatment group, respectively. The primary analysis will test this null hypothesis with the covariate-adjusted stratified log-rank test of Ye et al.&nbsp;(2024), adjusted for the values of [covariates]. A two-sided significance level of 0.05 will be applied.</p>
+<p>The hazard ratio and its two-sided 95% confidence interval will be estimated using the covariate-adjusted estimator of Ye et al.&nbsp;(2024), which estimates the hazard ratio and its standard error under the stratified Cox proportional hazards model. This estimated hazard ratio is conditional on the strata, and has the same interpretation as the hazard ratio from a stratified Cox proportional hazards model with only a term for treatment.</p>
+<p>The hazard ratio and its 95% confidence interval and the p value from the covariate-adjusted stratified log-rank test will be reported.</p>
+</div>
+</div>
+</section>
+<section id="sensitivity-analysis-2" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sensitivity-analysis-2"><span class="header-section-number">5.3</span> Sensitivity analysis</h2>
+<p>Sensitivity analyses may assess sensitivity to assumptions about censoring, including the assumption of no informative censoring.</p>
+</section>
+<section id="supplementary-analysis-2" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="supplementary-analysis-2"><span class="header-section-number">5.4</span> Supplementary analysis</h2>
+<p>Potential supplementary analyses include:</p>
+<ul>
+<li><p>An unadjusted analysis, with or without stratification, to illustrate the impact of covariate adjustment on the point estimate and precision.</p></li>
+<li><p>If the primary analysis is stratified, an unstratified analysis. Note that standard errors should account for stratified randomization even if the analysis is not stratified (Ye et al.&nbsp;2024).</p></li>
+<li><p>An analysis with a Cox PH model adjusted for covariates and stratified by randomization stratification factors, if the primary analysis is covariate-adjusted but marginal with respect to the covariates.</p></li>
+<li><p>Estimates of different estimands, e.g., differences of the restricted mean survival times or differences of survival probabilities at landmark time points. Such analyses are particularly useful if the PH assumption is violated.</p></li>
+</ul>
+</section>
+</section>
+<section id="references" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> References</h1>
+<ol type="1">
+<li><p>Agresti A. <em>Categorical Data Analysis</em>. 3rd ed.&nbsp;Hoboken, NJ: John Wiley &amp; Sons. 2013.</p></li>
+<li><p>Dahabreh IJ, Robertson SE, Steingrimsson JA, Stuart EA and Hernán MA. Extending inferences from a randomized trial to a target population. <em>European Journal of Epidemiology</em>. 2019;34:719–722.</p></li>
+<li><p>EMA. “Guideline on adjustment for baseline covariates in clinical trials.” Committee for Medicinal Products for Human Use (CHMP), EMA/CHMP/295050/2013. European Medicines Agency. 2015.</p></li>
+<li><p>Efron B and Tibshirani RJ. <em>An Introduction to the Bootstrap</em>. New York: Chapman and Hall/CRC. 1993. doi:10.1201/9780429246593.</p></li>
+<li><p>FDA. “Adjusting for Covariates in Randomized Clinical Trials for Drugs and Biological Products Guidance for Industry”. 2023.</p></li>
+<li><p>ICH E9 (R1). “Addendum on Estimands and Sensitivity Analysis in Clinical Trials to the Guideline on Statistical Principles for Clinical Trials.” International Council for Harmonisation of Technical Requirements for Pharmaceuticals for Human Use. 2019.</p></li>
+<li><p>Lin W. Agnostic notes on regression adjustments to experimental data: Reexamining Freedman’s critique. <em>Annals of Applied Statistics</em>. 2013;7(1):295–318. doi:10.1214/12-AOAS583.</p></li>
+<li><p>Liu J and Xi D. Covariate adjustment and estimation of difference in proportions in randomized clinical trials. <em>Pharmaceutical Statistics</em>. 2024;23(6):884–905. doi:10.1002/pst.2397.</p></li>
+<li><p>Qiu X, Qian Y, Yi J, Wang J, Du Y, Yi Y and Ye T. Clarifying the role of the Mantel–Haenszel risk difference estimator in randomized clinical trials. <em>Biometrics</em>. 2025;81(4).</p></li>
+<li><p>Rosenblum M and van der Laan MJ. Using regression models to analyze randomized trials: asymptotically valid hypothesis tests despite incorrectly specified models. <em>Biometrics</em>. 2009;65(3):937–945.</p></li>
+<li><p>Song Y, Hughes JP and Ye T. Adjusting for incomplete baseline covariates in randomized controlled trials: a cross-world imputation framework. <em>Biometrics</em>. 2024;80:ujae094.</p></li>
+<li><p>Steingrimsson JA, Hanley DF and Rosenblum M. Improving precision by adjusting for prognostic baseline variables in randomized trials with binary outcomes, without regression model assumptions. <em>Contemporary Clinical Trials</em>. 2017;54:18–24. doi:10.1016/j.cct.2016.12.026.</p></li>
+<li><p>Wang B, Ogburn EL and Rosenblum M. Analysis of covariance in randomized trials: more precision and valid confidence intervals, without model assumptions. <em>Biometrics</em>. 2019;75:1391–1400.</p></li>
+<li><p>Ye T, Yi Y and Shao J. Inference on the average treatment effect under minimization and other covariate-adaptive randomization methods. <em>Biometrika</em>. 2022;109(1):33–47. doi:10.1093/biomet/asab015.</p></li>
+<li><p>Ye T, Bannick M, Yi Y and Shao J. Robust variance estimation for covariate-adjusted unconditional treatment effect in randomized clinical trials with binary outcomes. <em>Statistical Theory and Related Fields</em>. 2023;7(2):159–163.</p></li>
+<li><p>Ye T, Shao J and Yi Y. Covariate-adjusted log-rank test: guaranteed efficiency gain and universal applicability. <em>Biometrika</em>. 2024;111:691–705.</p></li>
+<li><p>Zhang X, Chu H, Liu L and Roychoudhury S. A robust score test in g-computation for covariate adjustment in randomized clinical trials leveraging different variance estimators via influence functions. <em>Statistics in Medicine</em>. 2025;44:e70080.</p></li>
+<li><p>Zhao A and Ding P. To adjust or not to adjust? Estimating the average treatment effect in randomized experiments with missing covariates. <em>Journal of the American Statistical Association</em>. 2024;119:450–460.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/carswg\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

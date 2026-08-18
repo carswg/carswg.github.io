@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/cov_adj_sap_language.html",
       "/posts/blog_linear_model.html",
       "/posts/website_launch.html"
     ]
