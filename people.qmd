@@ -40,6 +40,7 @@ title: "People"
 | Dong       | Xi           | Gilead                                      |
 | Frank      | Bretz        | Novartis                                    |
 | Gregory    | Chen         | Merck                                       |
+| Helena     | Chang        | Icahn School of Medicine at Mount Sinai     |
 | Hongfei    | Li           | Revolution Medicines                        |
 | Jiajun     | Xu           | Johnson & Johnson                           |
 | Jiawei     | Wei          | Novartis                                    |
