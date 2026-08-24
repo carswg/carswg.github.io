@@ -2,8 +2,6 @@
 title: "Standardization and Outreach Subteam"
 ---
 
-## Recent Development 
-
 ::: {.callout-tip appearance="default"}
 ## New Blog: Protocol and SAP Template Language
 
