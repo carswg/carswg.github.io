@@ -2,8 +2,6 @@
 title: "Standardization and Outreach Subteam"
 ---
 
-## Recent Development 
-
 ::: {.callout-tip appearance="default"}
 ## New Blog: Protocol and SAP Template Language
 
@@ -54,4 +52,4 @@ Raise awareness of appropriate covariate adjustment in clinical trial analyses a
 
 **Co-leaders:** Yu Du (Eli Lilly) and Daniel Backenroth (Johnson & Johnson)
 
-**Members:** Leiya Han, Victoria Johnson, Kelly Van Lancker, Hongfei Li, Sarwar Mozumder, Satrajit Roychoudhury, Jiawei Wei, Alan Wu, Dong Xi, Yanyao Yi
+**Members:** Helena Chang, Leiya Han, Victoria Johnson, Kelly Van Lancker, Hongfei Li, Sarwar Mozumder, Satrajit Roychoudhury, Jiawei Wei, Alan Wu, Dong Xi, Yanyao Yi
