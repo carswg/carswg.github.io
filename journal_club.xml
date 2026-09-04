@@ -10,7 +10,27 @@
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Fri, 08 May 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>An introduction to win-ratio estimands</title>
+  <link>https://carswg.github.io/journalclub/journalclub21.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> An introduction to win-ratio estimands</p>
+<p><strong>Datetime: Oct 9th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Presenter:</strong> Lu Mao is an associate professor in the Department of Biostatistics at the University of Wisconsin, Madison. His research interests include causal inference, missing or censored data, semiparametric theory, clinical trials, statistical learning in medical studies, diagnostic radiology, cardiovascular disease, and health behavioral intervention.</p>
+<p>Zoom link will be shared via email or upon request.</p>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub21.html</guid>
+  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Covariate Adjustment for Survival Endpoints in Randomized Clinical Trials</title>
   <link>https://carswg.github.io/journalclub/journalclub19.html</link>
@@ -482,32 +502,6 @@
   <category>journal club</category>
   <guid>https://carswg.github.io/journalclub/journalclub2.html</guid>
   <pubDate>Fri, 12 Apr 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Discussion on the FDA Guidance for Covariate Adjustment</title>
-  <link>https://carswg.github.io/journalclub/journalclub1.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><strong>Topic:</strong> Discussion on the FDA Guidance for Covariate Adjustment</p>
-<p><strong>Datetime: March 15th Friday, 11am-12pm EDT</strong></p>
-<p><strong>Host:</strong> Bingkai Wang (<em>UMich</em>)</p>
-<p><strong>Discussants</strong>: Frank Bretz (<em>Novartis</em>), Daniel Rubin (<em>FDA</em>), and Ting Ye (<em>UWashington</em>)</p>
-<p><strong>Open-floor discussion:</strong> 20min.</p>
-<p><strong>Zoom link:</strong> <a href="https://upenn.zoom.us/j/4909817768" class="uri">https://upenn.zoom.us/j/4909817768</a></p>
-<p><strong>Recording:</strong> <!-- [Journal-club-0315.mp4 - Google Drive](https://drive.google.com/file/d/1VSWw40RTpN2RLctit1gqs3Ld7o1FetEz/view?ts=65f481c3) --></p>
-<iframe src="https://drive.google.com/file/d/1VSWw40RTpN2RLctit1gqs3Ld7o1FetEz/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
-<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
-</script>
-
-
-
- ]]></description>
-  <category>journal club</category>
-  <guid>https://carswg.github.io/journalclub/journalclub1.html</guid>
-  <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

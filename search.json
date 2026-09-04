@@ -189,11 +189,67 @@
     "text": "Topic: AStrategies for Practical and Effective Covariate Adjustment of Continuous Outcomes\nDatetime: June 14th Friday, 11am-12pm EDT.\nPresenter: Michel Friesenhahn from Genentech\nZoom link:: https://umich.zoom.us/j/7573650566\nSummary: There has been considerable research that has put covariate adjustment on firm footing, even for use in the primary analysis of confirmatory clinical trials. Several of my colleagues and I saw there was a need to explain the insights generated from this research and to distill them into simple and practical suggestions for implementation. Our recommendations for continuous outcomes when primary interest is in unconditional treatment effect estimands, such as Average Treatment Effects (ATEs), are written up in blog form (https://stats4datascience.com/posts/covariate_adjustment/).\nFor this talk, I will discuss selected proposals from the blog that I think may be of particular interest to the working group, as well as potential areas for future work:\n\nPerformance metrics and their use in analyzing data external to a trial to select and/or construct covariates. In addition, I will discuss how these metrics provide insight into the impacts of Heterogeneous Treatment Effects (HTEs) and strategic implications for sample size determination.\nThe concept of a model budget and suggested rules of thumb to protect the validity of statistical inference when using covariate adjustment.\nSuggestions for constructing the working regression model.\nAccounting for stratified randomization.\nFinally, I will discuss covariate adjustment of longitudinal data with continuous outcomes.\n\nRecording:\n\nSlides: https://drive.google.com/file/d/1ST83aTvH0A40KNusQ6-dg3IqdH3uaN5O/view?usp=drive_link"
   },
   {
-    "objectID": "journalclub/journalclub14.html",
-    "href": "journalclub/journalclub14.html",
-    "title": "Increasing the efficiency of randomized trials with machine learning",
+    "objectID": "journalclub/journalclub21.html",
+    "href": "journalclub/journalclub21.html",
+    "title": "An introduction to win-ratio estimands",
     "section": "",
-    "text": "Topic: Increasing the efficiency of randomized trials with machine learning\nDatetime: Nov 14th Friday, 11am-12pm ET.\nPresenter: Dr. Alejandro Schuler is an Assistant Professor in Residence at UC Berkeley Biostatistics. His research focus is on developing methods for clinical decision-making in the real world that are economically or clinically necessary, statistically rigorous, and frictionless from the user perspective.\nSummary: Trials enroll a large number of subjects in order to attain power, making them expensive and time-consuming. However, advancements in machine learning can make adjusted trial analyses more efficient, yielding smaller confidence intervals and p-values without sacrificing control of false positives. Adjustment works by explaining away within-treatment-group variability in the outcome using associated variability in baseline covariates. Therefore, the key parameter that determines power and confidence of an adjusted analysis is how predictive the baseline covariates are for the outcome. Machine learning models often predict better than linear models and therefore they boost power. Historical data can also be used to improve predictions and it is possible to do so without incurring bias. The power gain is predictable if we can accurately anticipate model performance, which allows us to trade power gains with the same sample size for smaller trials with equal power.\nRecording:"
+    "text": "Topic: An introduction to win-ratio estimands\nDatetime: Oct 9th Friday, 11am-12pm ET.\nPresenter: Lu Mao is an associate professor in the Department of Biostatistics at the University of Wisconsin, Madison. His research interests include causal inference, missing or censored data, semiparametric theory, clinical trials, statistical learning in medical studies, diagnostic radiology, cardiovascular disease, and health behavioral intervention.\nZoom link will be shared via email or upon request."
+  },
+  {
+    "objectID": "journalclub/journalclub13.html",
+    "href": "journalclub/journalclub13.html",
+    "title": "Improve the Precision of Area Under the Curve Estimation for Recurrent Events Through Covariate Adjustment",
+    "section": "",
+    "text": "Topic: Improve the Precision of Area Under the Curve Estimation for Recurrent Events Through Covariate Adjustment\nDatetime: Oct 10th Friday, 11am-12pm ET.\nPresenter: Jiren Sun from Eli Lilly\nSummary: The area under the curve (AUC) of the mean cumulative function (MCF) has recently been introduced as a novel estimand for evaluating treatment effects in recurrent event settings, offering an alternative to the commonly used Lin-Wei-Yang-Ying (LWYY) model. The AUC of the MCF provides a clinically interpretable summary measure that captures the overall burden of disease progression, regardless of whether the proportionality assumption holds. To improve the precision of the AUC estimation while preserving its unconditional interpretability, we propose a nonparametric covariate adjustment approach. This approach guarantees efficiency gain compared to unadjusted analysis, as demonstrated by theoretical asymptotic distributions, and is universally applicable to various randomization schemes, including both simple and covariate-adaptive designs. Extensive simulations across different scenarios further support its advantage in increasing statistical power. Our findings highlight the importance of covariate adjustment for the analysis of AUC in recurrent event settings, offering practical guidance for its application in randomized clinical trials.\nRecording:"
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
+    "section": "",
+    "text": "Founders and co-chairs: Ye Ting (University of Washington) and Jingyi Liu (Eli Lily)\nAdvisor: Frank Bretz (Novartis), Dan Rubin (FDA), and Andreas Brandt (BfArM)\nSubteam co-leaders:\n\nEducation sub-team: Kelly Van Lancker (Ghent) and Dominic Magirr (Novartis)\nSoftware sub-team: Dong Xi (Gilead), Yanyao Yi (Eli Lilly), Liming Li (AstraZeneca)\nStandardization and outreach sub-team: Yu Du (Eli Lilly) and Daniel Backenroth (Johnson & Johnson)\nAdvancement sub-team: Bingkai Wang (University of Michigan)\n\nSecretary: Hongfei Li (Revolution Medicines)\n\nMembers\n\n\n\n\n\n\n\n\nFirst Name\nLast Name\nAffiliation\n\n\n\n\nAlan\nWu\nBeOne Medicines\n\n\nAlex\nOcampo\nRoche\n\n\nAlex\nSverdlov\nNovartis\n\n\nAlexander\nPrzybylski\nNovartis\n\n\nAndreas\nBrandt\nBfArM\n\n\nArjun\nSondhi\nFeinstein Institutes for Medical Research\n\n\nBingkai\nWang\nUniversity of Michigan, Biostatistics\n\n\nBingying\nXie\nAstraZeneca\n\n\nCraig\nWang\nNovartis\n\n\nDaniel\nBackenroth\nJohnson & Johnson\n\n\nDaniel\nRubin\nFDA\n\n\nDaniel\nSabanés Bové\nRCONIS\n\n\nDarren\nScott\nAstrazeneca\n\n\nDevan\nMehrotra\nMerck\n\n\nDominic\nMagirr\nNovartis\n\n\nDong\nXi\nGilead\n\n\nFrank\nBretz\nNovartis\n\n\nGregory\nChen\nMerck\n\n\nHelena\nChang\nIcahn School of Medicine at Mount Sinai\n\n\nHongfei\nLi\nRevolution Medicines\n\n\nJiajun\nXu\nJohnson & Johnson\n\n\nJiawei\nWei\nNovartis\n\n\nJingyi\nLiu\nEli Lilly\n\n\nJonathan\nChipman\nUniversity of Utah\n\n\nJozefien\nBuyze\nJohnson & Johnson\n\n\nJun\nShao\nUniversity of Wisconsin-Madison, Statistics\n\n\nKayla\nIrish\nUniversity of Washington, Statistics\n\n\nKelly Van\nLancker\nGhent University, Applied Math/CS/Stat\n\n\nKen\nWu\nBeOne Medicines\n\n\nLeiya\nHan\nPPD\n\n\nLiming\nLi\nAstrazeneca\n\n\nMark\nBaillie\nNovartis\n\n\nMarlena\nBannick\nUniversity of Washington, Biostatistics\n\n\nMike\nFriesenhahn\nRoche/GNE\n\n\nOleksandr\nSavenkov\nBristol Myers Squibb\n\n\nOlga\nKuznetsova\nMerck\n\n\nRay\nLin\nGenentech\n\n\nSarwar\nMozumder\nGSK\n\n\nSatrajit\nRoychoudhury\nPfizer\n\n\nTing\nYe\nUniversity of Washington, Biostatistics\n\n\nVictoria\nJohnson\nGSK\n\n\nXin\nZhang\nPfizer\n\n\nYanyao\nYi\nEli Lilly\n\n\nYu\nDu\nEli Lilly"
+  },
+  {
+    "objectID": "subteam_software.html",
+    "href": "subteam_software.html",
+    "title": "Software Subteam",
+    "section": "",
+    "text": "To develop and maintain an R package family on covariate adjustment for industry/regulatory/academia with the RobinCar verse (Robust estimation and Inference for Covariate Adjustment in Randomized clinical trials).\n\n\nTo become one of the most comprehensive libraries of existing and future methods on covariate adjustment.\n\nComprehensive coverage of methodologies\nDevelopment version of RobinCar2\n\n\n\n\nTo become one of the standard R packages for the industry/regulatory on covariate adjustment Selected methods with rigorous validation and clear documentation for GxP compliance.\n\nA lite version of RobinCar in terms of methodology coverage\nA more rigorously validated and better documented version of RobinCar, suitable for the GxP environment"
+  },
+  {
+    "objectID": "subteam_software.html#robincar",
+    "href": "subteam_software.html#robincar",
+    "title": "Software Subteam",
+    "section": "",
+    "text": "To become one of the most comprehensive libraries of existing and future methods on covariate adjustment.\n\nComprehensive coverage of methodologies\nDevelopment version of RobinCar2"
+  },
+  {
+    "objectID": "subteam_software.html#robincar2",
+    "href": "subteam_software.html#robincar2",
+    "title": "Software Subteam",
+    "section": "",
+    "text": "To become one of the standard R packages for the industry/regulatory on covariate adjustment Selected methods with rigorous validation and clear documentation for GxP compliance.\n\nA lite version of RobinCar in terms of methodology coverage\nA more rigorously validated and better documented version of RobinCar, suitable for the GxP environment"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Template for Language for SAP/Protocol Incorporating Covariate Adjustment\n\n\nASA-BIOP Covariate Adjustment SWG, Standardization and Outreach Subteam\n\n\n\n\n\n\n\n\nJul 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nCovariate Adjustment for Linear Models: Understanding FDA Advice on Standard Errors\n\n\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\nASA Covariate Adjustment Working Group Education Subteam\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to ASA BIOP Covariate Adjustment SWG’s Webpage!\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ASA-BIOP Covariate Adjustment SWG",
+    "section": "",
+    "text": "This is the home page of American Statistical Association (ASA) Biopharmaceutical Section (BIOP) Covariate Adjustment Scientific Working Group (SWG)."
+  },
+  {
+    "objectID": "conference.html",
+    "href": "conference.html",
+    "title": "Events",
+    "section": "",
+    "text": "This page intends to list all the conference presentation.\nUnder development"
   },
   {
     "objectID": "publication.html",
@@ -224,60 +280,11 @@
     "text": "Members’ Picks\n\n2001\n\nYang, L. and Tsiatis, A.A. (2001). Efficiency study of estimators for a treatment effect in a pretest–posttest trial. The American Statistician, 55(4), 314-321.\n\n\n\n2008\n\nZhang, M., Tsiatis, A.A. and Davidian, M. (2008). Improving efficiency of inferences in randomized clinical trials using auxiliary covariates. Biometrics, 64(3), 707-715.\nTsiatis, A.A., Davidian, M., Zhang, M. and Lu, X. (2008). Covariate adjustment for two‐sample treatment comparisons in randomized clinical trials: a principled yet flexible approach. Statistics in Medicine, 27(23), 4658-4677.\n\n\n\n2009\n\nMoore, K.L. and van der Laan, M.J. (2009). Covariate adjustment in randomized trials with binary outcomes: targeted maximum likelihood estimation. Statistics in Medicine, 28(1), 39-64.\n\n\n\n2013\n\nLin, W. (2013). Agnostic notes on regression adjustments to experimental data: Reexamining Freedman’s critique. Annals of Applied Statistics, 7(1), 295-318.\n\n\n\n2014\n\nWilliamson, E.J., Forbes, A. and White, I.R. (2014). Variance reduction in randomised trials by inverse probability weighting using the propensity score. Statistics in Medicine, 33(5), 721-737.\n\n\n\n2016\n\nQin, Y., Li, Y., Ma, W. and Hu, F. (2016). Pairwise sequential randomization and its properties. arXiv:1611.02802.\n\n\n\n2020\n\nMa, W., Qin, Y., Li, Y. and Hu, F. (2020). Statistical inference for covariate-adaptive randomization procedures. Journal of the American Statistical Association, 115(531), 1488-1497.\n\n\n\n2021\n\nZeng, S., Li, F., Wang, R. and Li, F. (2021). Propensity score weighting for covariate adjustment in randomized clinical trials. Statistics in Medicine, 40(4), 842-858.\nZhao, A. and Ding, P. (2021). Covariate-adjusted Fisher randomization tests for the average treatment effect. Journal of Econometrics, 225(2), 278-294.\n\n\n\n2023\n\nChang, C.R., Song, Y., Li, F. and Wang, R. (2023). Covariate adjustment in randomized clinical trials with missing covariate and outcome data. Statistics in Medicine, 42(22), 3919-3935.\nTackney, M.S., Morris, T., White, I., Leyrat, C., Diaz-Ordaz, K. and Williamson, E. (2023). A comparison of covariate adjustment approaches under model misspecification in individually randomized trials. Trials, 24(1), 14."
   },
   {
-    "objectID": "conference.html",
-    "href": "conference.html",
-    "title": "Events",
+    "objectID": "journalclub/journalclub14.html",
+    "href": "journalclub/journalclub14.html",
+    "title": "Increasing the efficiency of randomized trials with machine learning",
     "section": "",
-    "text": "This page intends to list all the conference presentation.\nUnder development"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ASA-BIOP Covariate Adjustment SWG",
-    "section": "",
-    "text": "This is the home page of American Statistical Association (ASA) Biopharmaceutical Section (BIOP) Covariate Adjustment Scientific Working Group (SWG)."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "Template for Language for SAP/Protocol Incorporating Covariate Adjustment\n\n\nASA-BIOP Covariate Adjustment SWG, Standardization and Outreach Subteam\n\n\n\n\n\n\n\n\nJul 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nCovariate Adjustment for Linear Models: Understanding FDA Advice on Standard Errors\n\n\n\n\n\n\n\n\n\n\n\nSep 24, 2024\n\n\nASA Covariate Adjustment Working Group Education Subteam\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to ASA BIOP Covariate Adjustment SWG’s Webpage!\n\n\n\n\n\n\n\n\n\n\n\nMar 6, 2024\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "subteam_software.html",
-    "href": "subteam_software.html",
-    "title": "Software Subteam",
-    "section": "",
-    "text": "To develop and maintain an R package family on covariate adjustment for industry/regulatory/academia with the RobinCar verse (Robust estimation and Inference for Covariate Adjustment in Randomized clinical trials).\n\n\nTo become one of the most comprehensive libraries of existing and future methods on covariate adjustment.\n\nComprehensive coverage of methodologies\nDevelopment version of RobinCar2\n\n\n\n\nTo become one of the standard R packages for the industry/regulatory on covariate adjustment Selected methods with rigorous validation and clear documentation for GxP compliance.\n\nA lite version of RobinCar in terms of methodology coverage\nA more rigorously validated and better documented version of RobinCar, suitable for the GxP environment"
-  },
-  {
-    "objectID": "subteam_software.html#robincar",
-    "href": "subteam_software.html#robincar",
-    "title": "Software Subteam",
-    "section": "",
-    "text": "To become one of the most comprehensive libraries of existing and future methods on covariate adjustment.\n\nComprehensive coverage of methodologies\nDevelopment version of RobinCar2"
-  },
-  {
-    "objectID": "subteam_software.html#robincar2",
-    "href": "subteam_software.html#robincar2",
-    "title": "Software Subteam",
-    "section": "",
-    "text": "To become one of the standard R packages for the industry/regulatory on covariate adjustment Selected methods with rigorous validation and clear documentation for GxP compliance.\n\nA lite version of RobinCar in terms of methodology coverage\nA more rigorously validated and better documented version of RobinCar, suitable for the GxP environment"
-  },
-  {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "People",
-    "section": "",
-    "text": "Founders and co-chairs: Ye Ting (University of Washington) and Jingyi Liu (Eli Lily)\nAdvisor: Frank Bretz (Novartis), Dan Rubin (FDA), and Andreas Brandt (BfArM)\nSubteam co-leaders:\n\nEducation sub-team: Kelly Van Lancker (Ghent) and Dominic Magirr (Novartis)\nSoftware sub-team: Dong Xi (Gilead), Yanyao Yi (Eli Lilly), Liming Li (AstraZeneca)\nStandardization and outreach sub-team: Yu Du (Eli Lilly) and Daniel Backenroth (Johnson & Johnson)\nAdvancement sub-team: Bingkai Wang (University of Michigan)\n\nSecretary: Hongfei Li (Revolution Medicines)\n\nMembers\n\n\n\n\n\n\n\n\nFirst Name\nLast Name\nAffiliation\n\n\n\n\nAlan\nWu\nBeOne Medicines\n\n\nAlex\nOcampo\nRoche\n\n\nAlex\nSverdlov\nNovartis\n\n\nAlexander\nPrzybylski\nNovartis\n\n\nAndreas\nBrandt\nBfArM\n\n\nArjun\nSondhi\nFeinstein Institutes for Medical Research\n\n\nBingkai\nWang\nUniversity of Michigan, Biostatistics\n\n\nBingying\nXie\nAstraZeneca\n\n\nCraig\nWang\nNovartis\n\n\nDaniel\nBackenroth\nJohnson & Johnson\n\n\nDaniel\nRubin\nFDA\n\n\nDaniel\nSabanés Bové\nRCONIS\n\n\nDarren\nScott\nAstrazeneca\n\n\nDevan\nMehrotra\nMerck\n\n\nDominic\nMagirr\nNovartis\n\n\nDong\nXi\nGilead\n\n\nFrank\nBretz\nNovartis\n\n\nGregory\nChen\nMerck\n\n\nHelena\nChang\nIcahn School of Medicine at Mount Sinai\n\n\nHongfei\nLi\nRevolution Medicines\n\n\nJiajun\nXu\nJohnson & Johnson\n\n\nJiawei\nWei\nNovartis\n\n\nJingyi\nLiu\nEli Lilly\n\n\nJonathan\nChipman\nUniversity of Utah\n\n\nJozefien\nBuyze\nJohnson & Johnson\n\n\nJun\nShao\nUniversity of Wisconsin-Madison, Statistics\n\n\nKayla\nIrish\nUniversity of Washington, Statistics\n\n\nKelly Van\nLancker\nGhent University, Applied Math/CS/Stat\n\n\nKen\nWu\nBeOne Medicines\n\n\nLeiya\nHan\nPPD\n\n\nLiming\nLi\nAstrazeneca\n\n\nMark\nBaillie\nNovartis\n\n\nMarlena\nBannick\nUniversity of Washington, Biostatistics\n\n\nMike\nFriesenhahn\nRoche/GNE\n\n\nOleksandr\nSavenkov\nBristol Myers Squibb\n\n\nOlga\nKuznetsova\nMerck\n\n\nRay\nLin\nGenentech\n\n\nSarwar\nMozumder\nGSK\n\n\nSatrajit\nRoychoudhury\nPfizer\n\n\nTing\nYe\nUniversity of Washington, Biostatistics\n\n\nVictoria\nJohnson\nGSK\n\n\nXin\nZhang\nPfizer\n\n\nYanyao\nYi\nEli Lilly\n\n\nYu\nDu\nEli Lilly"
-  },
-  {
-    "objectID": "journalclub/journalclub13.html",
-    "href": "journalclub/journalclub13.html",
-    "title": "Improve the Precision of Area Under the Curve Estimation for Recurrent Events Through Covariate Adjustment",
-    "section": "",
-    "text": "Topic: Improve the Precision of Area Under the Curve Estimation for Recurrent Events Through Covariate Adjustment\nDatetime: Oct 10th Friday, 11am-12pm ET.\nPresenter: Jiren Sun from Eli Lilly\nSummary: The area under the curve (AUC) of the mean cumulative function (MCF) has recently been introduced as a novel estimand for evaluating treatment effects in recurrent event settings, offering an alternative to the commonly used Lin-Wei-Yang-Ying (LWYY) model. The AUC of the MCF provides a clinically interpretable summary measure that captures the overall burden of disease progression, regardless of whether the proportionality assumption holds. To improve the precision of the AUC estimation while preserving its unconditional interpretability, we propose a nonparametric covariate adjustment approach. This approach guarantees efficiency gain compared to unadjusted analysis, as demonstrated by theoretical asymptotic distributions, and is universally applicable to various randomization schemes, including both simple and covariate-adaptive designs. Extensive simulations across different scenarios further support its advantage in increasing statistical power. Our findings highlight the importance of covariate adjustment for the analysis of AUC in recurrent event settings, offering practical guidance for its application in randomized clinical trials.\nRecording:"
+    "text": "Topic: Increasing the efficiency of randomized trials with machine learning\nDatetime: Nov 14th Friday, 11am-12pm ET.\nPresenter: Dr. Alejandro Schuler is an Assistant Professor in Residence at UC Berkeley Biostatistics. His research focus is on developing methods for clinical decision-making in the real world that are economically or clinically necessary, statistically rigorous, and frictionless from the user perspective.\nSummary: Trials enroll a large number of subjects in order to attain power, making them expensive and time-consuming. However, advancements in machine learning can make adjusted trial analyses more efficient, yielding smaller confidence intervals and p-values without sacrificing control of false positives. Adjustment works by explaining away within-treatment-group variability in the outcome using associated variability in baseline covariates. Therefore, the key parameter that determines power and confidence of an adjusted analysis is how predictive the baseline covariates are for the outcome. Machine learning models often predict better than linear models and therefore they boost power. Historical data can also be used to improve predictions and it is possible to do so without incurring bias. The power gain is predictable if we can accurately anticipate model performance, which allows us to trade power gains with the same sample size for smaller trials with equal power.\nRecording:"
   },
   {
     "objectID": "journalclub/journalclub16.html",
