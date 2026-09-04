@@ -1,0 +1,18 @@
+
+---
+title: "An introduction to win-ratio estimands"
+description: "Oct 2026 Seminar by Lu Mao"
+author: ""
+date: "10/09/2026"
+draft: false
+categories:
+  - journal club
+---
+
+**Topic:** An introduction to win-ratio estimands
+
+**Datetime: Oct 9th Friday, 11am-12pm ET.**
+
+**Presenter:** Lu Mao is an associate professor in the Department of Biostatistics at the University of Wisconsin, Madison. His research interests include causal inference, missing or censored data, semiparametric theory, clinical trials, statistical learning in medical studies, diagnostic radiology, cardiovascular disease, and health behavioral intervention.
+
+Zoom link will be shared via email or upon request. 
