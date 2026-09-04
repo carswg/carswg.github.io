@@ -10,7 +10,28 @@
 <atom:link href="https://carswg.github.io/journal_club.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Improving Variance Estimation for Covariate Adjustment with Binary Outcomes</title>
+  <link>https://carswg.github.io/journalclub/journalclub22.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><strong>Topic:</strong> Improving Variance Estimation for Covariate Adjustment with Binary Outcomes</p>
+<p><strong>Datetime: Nov 13th Friday, 11am-12pm ET.</strong></p>
+<p><strong>Abstract:</strong> Covariate adjustment is a general method for improving precision when estimating treatment effects in randomized trials and is recommended by the FDA in its 2023 guidance when baseline variables are prognostic for the primary outcome. We focus on a method highlighted in that guidance called <code>standardization" (or</code>g-computation”) for estimating the marginal treatment effect. We address the question of how to reliably estimate variance for binary outcomes when marginal outcome probabilities are close to 0 or 1. We propose an influence function-based leave-one-out cross-validated (IF-LOO) variance estimator for the standardized difference-in-means average treatment effect. Through simulation studies, we show that this estimator provides appropriate type-I error control and performs reliably in challenging settings where existing methods can yield inflated type-I error or fail entirely, such as when outcome events are rare or sample sizes are small. In addition to having desirable statistical properties, we derive a closed-form expression for the proposed estimator, enabling straightforward and reliable implementation by study statisticians. The robust finite-sample performance and ease of implementation suggest the IF-LOO variance estimator is a prudent default choice for standardization in clinical trials.</p>
+<p>Paper link: https://arxiv.org/abs/2605.06655</p>
+<p>Zoom link will be shared via email or upon request.</p>
+
+
+
+ ]]></description>
+  <category>journal club</category>
+  <guid>https://carswg.github.io/journalclub/journalclub22.html</guid>
+  <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>An introduction to win-ratio estimands</title>
   <link>https://carswg.github.io/journalclub/journalclub21.html</link>
@@ -477,31 +498,6 @@
   <category>journal club</category>
   <guid>https://carswg.github.io/journalclub/journalclub3.html</guid>
   <pubDate>Fri, 10 May 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Variance Estimation for G-computation with Binary Outcomes</title>
-  <link>https://carswg.github.io/journalclub/journalclub2.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><strong>Topic:</strong> Variance Estimation for G-computation with Binary Outcomes</p>
-<p><strong>Datetime: April 12th Friday, 11am-12pm EDT.</strong></p>
-<p><strong>Presenter:</strong> Dominic Magirr from Novartis (20min presentation about comparisons of different methods)</p>
-<p><strong>Discussants</strong>: Daniel Rubin, Dong Xi, and Ting Ye (20min discussion).</p>
-<p><strong>Open-floor discussion:</strong> 20min.</p>
-<p><strong>Recording:</strong></p>
-<iframe src="https://drive.google.com/file/d/1ZVMlCLA996-nBRkmFbYa9sSn8w6KclDV/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
-<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
-</script>
-
-
-
- ]]></description>
-  <category>journal club</category>
-  <guid>https://carswg.github.io/journalclub/journalclub2.html</guid>
-  <pubDate>Fri, 12 Apr 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
