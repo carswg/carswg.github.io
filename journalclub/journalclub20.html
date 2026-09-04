@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
-<meta name="dcterms.date" content="2025-03-14">
-<meta name="description" content="March 2025 Journal Club by Shu Yang and Yi Liu">
+<meta name="dcterms.date" content="2026-04-09">
+<meta name="description" content="Sep 2026 Seminar by Xin Zhang">
 
-<title>COADVISE: Covariate Adjustment with Variable Selection and Missing Data Imputation in Randomized Controlled Trials – ASA-BIOP Covariate Adjustment SWG</title>
+<title>Bias Reduction in G-Computation for Covariate Adjustment in Randomized Clinical Trials – ASA-BIOP Covariate Adjustment SWG</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -190,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">COADVISE: Covariate Adjustment with Variable Selection and Missing Data Imputation in Randomized Controlled Trials</h1>
+<h1 class="title">Bias Reduction in G-Computation for Covariate Adjustment in Randomized Clinical Trials</h1>
   <div class="quarto-categories">
     <div class="quarto-category">journal club</div>
   </div>
@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    March 2025 Journal Club by Shu Yang and Yi Liu
+    Sep 2026 Seminar by Xin Zhang
   </div>
 </div>
 
@@ -209,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2025</p>
+      <p class="date">April 9, 2026</p>
     </div>
   </div>
   
@@ -221,12 +221,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Topic:</strong> COADVISE: Covariate Adjustment with Variable Selection and Missing Data Imputation in Randomized Controlled Trials</p>
-<p><strong>Datetime: March 14th Friday, 11am-12pm ET.</strong></p>
-<p><strong>Presenter:</strong> Shu Yang and Yi Liu from North Carolina State University</p>
-<p><strong>Summary:</strong> Adjusting for covariates in randomized controlled trials can enhance the credibility and efficiency of average treatment effect estimation. However, managing numerous covariates and their non-linear transformations is challenging, particularly when outcomes and covariates have missing data. In this tutorial, we propose a principled covariate adjustment framework, “COADVISE,” that enables (i) variable selection for covariates most relevant to the outcome, (ii) nonlinear adjustments, and (iii) robust imputation of missing data for both outcomes and covariates. This framework ensures consistent estimates with improved efficiency over unadjusted estimators and provides robust variance estimation, even under outcome model misspecification. We demonstrate efficiency gains through theoretical analysis and conduct extensive simulations to compare alternative variable selection strategies, offering cautionary recommendations. We showcase the framework’s practical utility by applying it to the Best Apnea Interventions for Research trial data from the National Sleep Research Resource. A user-friendly R package, Coadvise, facilitates implementation.</p>
-<p><strong>Recording:</strong></p>
-<iframe src="https://drive.google.com/file/d/1b6WqT0N72SfQSemtvT-UDT4ql-RBPgLH/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+<p><strong>Topic:</strong> Bias Reduction in G-Computation for Covariate Adjustment in Randomized Clinical Trials</p>
+<p><strong>Datetime: Sep 4th Friday, 10am-11am ET.</strong></p>
+<p><strong>Summary:</strong> G-computation is a powerful covariate adjustment method for analyzing randomized clinical trials. It typically relies on fitting canonical generalized linear models. However, this could be problematic when the sample size or event number is small relative to the number of covariates. Common issues include the underestimation of the variance and the potential nonexistence of maximum likelihood estimators. Bias reduction methods are commonly employed to address these issues, including Firth correction, which guarantees the existence of corresponding estimates. Yet, their application within g-computation remains underexplored. In this article, we analyze the asymptotic bias of g-computation estimators and propose a novel bias-reduction method that improves both estimation and inference. Our approach performs bias correction via generalized Oaxaca–Blinder estimators, and thus the resulting estimators are guaranteed to be bounded. The proposed debiased estimators use slightly modified versions of maximum likelihood or Firth correction estimators for nuisance parameters. We also introduce a simple small-sample bias adjustment for variance estimation to improve finite-sample inference validity. Through extensive simulations, we demonstrate that our method offers superior finite-sample performance, effectively addressing the bias-efficiency tradeoff. Finally, we illustrate its practical utility by reanalyzing a completed randomized clinical trial. In this example, our method improves precision in a small subgroup analysis for which the standard method fails to fit the regression model. <strong>Recording:</strong></p>
+<iframe src="https://drive.google.com/file/d/1kSCc3XAF73H8qIqwIjFOFWfEOl1VDZyI/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
 <script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
 </script>
 

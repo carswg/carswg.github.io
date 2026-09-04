@@ -1,17 +1,10 @@
 [
   {
-    "listing": "/blog.html",
-    "items": [
-      "/posts/cov_adj_sap_language.html",
-      "/posts/blog_linear_model.html",
-      "/posts/website_launch.html"
-    ]
-  },
-  {
     "listing": "/journal_club.html",
     "items": [
       "/journalclub/journalclub19.html",
       "/journalclub/journalclub18.html",
+      "/journalclub/journalclub20.html",
       "/journalclub/journalclub17.html",
       "/journalclub/journalclub16.html",
       "/journalclub/journalclub15.html",
@@ -29,6 +22,14 @@
       "/journalclub/journalclub3.html",
       "/journalclub/journalclub2.html",
       "/journalclub/journalclub1.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/cov_adj_sap_language.html",
+      "/posts/blog_linear_model.html",
+      "/posts/website_launch.html"
     ]
   }
 ]
