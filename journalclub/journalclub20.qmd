@@ -3,7 +3,7 @@
 title: "Bias Reduction in G-Computation for Covariate Adjustment in Randomized Clinical Trials"
 description: "Sep 2026 Seminar by Xin Zhang"
 author: ""
-date: "04/09/2026"
+date: "09/04/2026"
 draft: false
 categories:
   - journal club
