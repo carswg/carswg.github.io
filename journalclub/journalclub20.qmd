@@ -1,0 +1,38 @@
+
+---
+title: "Bias Reduction in G-Computation for Covariate Adjustment in Randomized Clinical Trials"
+description: "Sep 2026 Seminar by Xin Zhang"
+author: ""
+date: "04/09/2026"
+draft: false
+categories:
+  - journal club
+---
+
+**Topic:** Bias Reduction in G-Computation for Covariate Adjustment in Randomized Clinical Trials
+
+**Datetime: Sep 4th Friday, 10am-11am ET.**
+
+**Summary:** G-computation is a powerful covariate adjustment method for analyzing randomized clinical trials. It typically relies on fitting canonical generalized linear models. However, this could be problematic when the sample size or event number is small relative to the number of covariates. Common issues include the underestimation of the variance and the potential nonexistence of maximum likelihood estimators. Bias reduction methods are commonly employed to address these issues, including Firth correction, which guarantees the existence of corresponding estimates. Yet, their application within g-computation remains underexplored. In this article, we analyze the asymptotic bias of g-computation estimators and propose a novel bias-reduction method that improves both estimation and inference. Our approach performs bias correction via generalized Oaxaca–Blinder estimators, and thus the resulting estimators are guaranteed to be bounded. The proposed debiased estimators use slightly modified versions of maximum likelihood or Firth correction estimators for nuisance parameters. We also introduce a simple small-sample bias adjustment for variance estimation to improve finite-sample inference validity. Through extensive simulations, we demonstrate that our method offers superior finite-sample performance, effectively addressing the bias-efficiency tradeoff. Finally, we illustrate its practical utility by reanalyzing a completed randomized clinical trial. In this example, our method improves precision in a small subgroup analysis for which the standard method fails to fit the regression model.
+**Recording:** 
+```{=html}
+<iframe src="https://drive.google.com/file/d/1kSCc3XAF73H8qIqwIjFOFWfEOl1VDZyI/preview" width="640" height="480" allowfullscreen="true" allow="autoplay"></iframe>
+```
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
