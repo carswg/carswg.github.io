@@ -15,4 +15,4 @@ categories:
 
 **Presenter:** Lu Mao is an associate professor in the Department of Biostatistics at the University of Wisconsin, Madison. His research interests include causal inference, missing or censored data, semiparametric theory, clinical trials, statistical learning in medical studies, diagnostic radiology, cardiovascular disease, and health behavioral intervention.
 
-Zoom link will be shared via email or upon request. 
+**Slides:** [View slides (PDF)](https://drive.google.com/file/d/1IXtj8ufd9Sb7eZ4kUcXgWhK6Zv0hE-Ru/view?usp=drivesdk)
