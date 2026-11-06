@@ -9,7 +9,7 @@
 <link>https://carswg.github.io/blog.html</link>
 <atom:link href="https://carswg.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
-<generator>quarto-1.10.18</generator>
+<generator>quarto-1.11.9</generator>
 <lastBuildDate>Wed, 01 Jul 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Template for Language for SAP/Protocol Incorporating Covariate Adjustment</title>
