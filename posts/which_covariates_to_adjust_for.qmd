@@ -1,0 +1,165 @@
+---
+title: "Which Covariates to Adjust For?"
+author: "Alex Ocampo"
+date: "2026-11-09"
+categories: [Covariate Adjustment, Study Design, Blog]
+draft: false
+# image: thumbnail.png   # <- optional: add a thumbnail for the blog listing card
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    theme: cosmo
+---
+
+The statistical literature is saturated with methodology for covariate adjustment in the analysis of randomized clinical trials (RCTs), but trialists are often faced with a much more practical consideration:
+
+::: {style="text-align: center; font-size: 1.3em; font-weight: bold; margin: 1.2em 0; letter-spacing: 0.03em;"}
+*which* covariates to adjust for?
+:::
+
+There are, however, a few notable papers that focus on such practical considerations regarding covariate adjustment, emphasizing the importance of adjusting for truly prognostic covariates.
+
+For instance, Morris et al., 2022 comment:
+
+> "For adjustment to be worthwhile, the covariates to be included in the analysis must be prognostic: adjustment for a covariate that is not prognostic is essentially equivalent to an unadjusted analysis, though it can lose power in small samples."
+
+Although they later clarify that, "It is not the purpose of this article to discuss which covariates to choose," focusing instead on methodological best-practices.
+
+Similarly, in a very recent 2026 paper, Pocock states:
+
+> "Priority should be given to covariates that are known (or thought likely) to influence patient prognosis, as manifested in the choice of primary outcome."
+
+and goes on to say,
+
+> "The challenge in any specific trial is to have the insight to pre-define covariates that collectively provide a sufficiently strong prognostic model that can achieve such efficiency gains."
+
+A formidable challenge indeed. What, for instance, is to be considered sufficiently prognostic? The answer is not always so clear.
+
+The challenge to choose covariates for an upcoming study is the focus of this blog post. I aim to offer some practical considerations to guide the crucial consideration on which covariates to adjust for.
+
+## Rules of Thumb
+
+While there are no fully generalizable rules of thumb for covariate adjustment, two general pieces of advice seem consistent enough to almost always be worth considering:
+
+1. **The "Golden Covariate" = Baseline Value**
+
+   Adjusting for the baseline measurement of the primary endpoint is almost always the highest-yield decision. For instance in an Alzheimer's clinical trial where the primary endpoint is change in the Clinical Dementia Rating Sum of Boxes (CDR-SB) score, one would include the CDR-SB score based on the clinical assessment at baseline in the model. Especially with continuous outcomes, the baseline value is a prudent default choice. Of course, a baseline measurement is not always available for certain endpoints, especially for time-to-event outcomes (overall survival being an obvious example, as everyone is alive at randomization). For progression-free survival, however, it is worth asking whether something close to a baseline counterpart exists — for instance, baseline disease burden as measured by the sum of longest diameters of target lesions.
+
+2. **Stratification Factors**
+
+   The norm is that variables used for stratified randomization are included in the primary analysis model as it aligns with the "analyze how you randomize" principle. This may or may not increase efficiency, but typically stratification factors are already chosen due to consistent clinical prior knowledge of their prognostic effects as well as a desire to balance these factors across arms. So they are also generally a solid default. However, dichotomizing stratification factors can lose information and can be modeled more informatively via the underlying continuous variable (see, Qu, 2011; Sullivan, 2024).
+
+Apart from these two general starting points, other covariates may be additionally beneficial. In order to assess this, leveraging historical trial data often provides the most valuable insight.
+
+## Leveraging Historical Datasets
+
+Perhaps the best way to assess if a covariate will be useful in a future trial is to see it repeatedly reduce variance in similar historical trials. However, it is not guaranteed that a statistically significant ($p<0.05$) covariate (e.g. via a Wald-type test) will translate to a meaningful variance reduction in a clinical trial analysis. Therefore, % variance reduction and the associated gain in effective sample size are the best metrics to consider, not $p$-values or statistical significance.
+
+Luckily, the correlation ($R$) between the covariate and endpoint is mathematically related with variance reduction (Cochran, 1957). For instance, in a linear model, such as ANCOVA, the variance of the adjusted treatment effect estimator, $\text{Var}(\hat{\theta}_\text{adj})$, compared to the unadjusted estimator, $\text{Var}(\hat{\theta}_\text{unadj})$, is approximately:
+
+$$\text{Var}(\hat{\theta}_\text{adj}) \approx \text{Var}(\hat{\theta}_\text{unadj}) (1 - R^2)$$
+
+These simple formulas don't hold for typical analysis models used for non-continuous endpoints (although they can sometimes serve as useful approximations). Therefore, one should compute the adjusted and unadjusted variance estimates and compare these quantities directly. Even when only one historical trial is available, obtaining a confidence interval on the efficiency gain of covariate-adjusted analyses in future clinical trials is achievable via bootstrapping, or even a double bootstrap procedure (Li, 2023).
+
+Of course, understanding the relevance of historical data sources to the upcoming trial is crucial. The impact of covariate adjustment from historical data may not always translate well to the new trial (e.g., covariates that reduce efficiency in an adult trial may not help in a pediatric study of the same disease, where, for example, the covariate of age would have a narrower range in the pediatric population and be less likely to soak up residual variability). In addition, functional forms (linear, quadratic, log transforms, etc.) may dictate the magnitude of the efficiency gains, and the generalizability of these functional forms should be assessed in a similar manner to including the covariate itself.
+
+## Shift in Treatment Effect Estimate?
+
+An often neglected consideration is that one's treatment effect estimate will change in a covariate-adjusted analysis because it essentially adjusts for the chance imbalances of the covariates between arms. From a statistical theory perspective this is not an issue, given that the adjusted and unadjusted analyses typically target the same estimand (more on this below). But in practice the adjusted analysis corrects for random covariate imbalances, which shifts the point estimate of the treatment effect. Because random baseline imbalances have a 50/50 chance of favoring either treatment arm, adjusting for them may shift the point estimate towards the null and subsequently increase the $p$-value — an aspect which has concerned some stakeholders. To address such concerns, one may be interested to assess historical data and simulations to understand if the anticipated variance reduction is large enough to safeguard statistical power against potential shifts in the estimate. However, in general, if the chosen prognostic factors adjusted for are truly important to the outcome of interest, then the adjusted estimate should theoretically be more reliable from a causal perspective: adjusting corrects for any imbalances in these relevant factors across treatment arms, bringing the groups closer to an apples-to-apples comparison.
+
+In general, but especially when considering these shifts, one must be cautious of non-collapsibility in non-linear models -- e.g. logistic regression (Robinson and Jewell, 1991) or Cox proportional hazards (Gail et al., 1984) -- as the treatment effect is guaranteed to shift away from the null in an adjusted non-collapsible model. This, in part, has motivated uptake in the use of models targeting marginal effects such as standardization (g-computation) to analyze risk differences for binary endpoints or the covariate-adjusted log-rank test with time-to-event endpoints, which provides a corresponding marginal hazard ratio estimate.
+
+## Clinical Knowledge
+
+While candidate covariates could be identified in a data-driven manner using historical clinical trials, there is often a rich body of existing scientific knowledge to leverage regarding the clinical relevance of various baseline characteristics. This *a priori* clinical knowledge of the most relevant predictors can be used to pre-specify covariates. Depending on whether the outcome is continuous or binary etc. this bet is safer in some situations than in others. However, even if patient-level data is inaccessible, population-level summaries may be available in the scientific literature (e.g., publications on the prognostic value of biomarkers from other clinical trials), which could still inform anticipated variance reductions.
+
+We as statisticians often want the data to tell the whole story, but even with the availability of historical data, balancing data-driven covariate selection by statisticians with scientific understanding from clinicians remains a key consideration, especially when nuanced differences between historical trials and future designs could alter the anticipated prognostic strength or presence of a candidate covariate's effects.
+
+Aligning on candidate factors is already standard practice for drug development teams in the selection of stratification factors. Therefore, this exercise translates naturally to covariate adjustment as well. In fact, clinical science would often like to use more stratification factors than statistically permissible, and the remaining variables that are not used for stratified randomization may represent promising covariates in an adjusted analysis. A simple question to ask is, "would you feel comfortable if there was an imbalance of this factor between the treatment arms?" if not, then one should consider adjusting for it in some way.
+
+## Building (Super-)covariates
+
+Building super-covariates (or prognostic scores, PROCOVA, synthetic covariates) from machine learning models -- for which there exists a qualification opinion document from EMA in 2022 -- can be conducted with historical datasets; this has the advantage of spending fewer degrees of freedom, but has potentially less predictable behavior in variance reductions. In my empirical experience, super-covariates built with standard clinical variables typically yield modest gains in comparison to direct adjustment for the individual components, especially for non-continuous endpoints. However, when baseline measurements are unstructured and/or high-dimensional, such as from an image, algorithmic dimensionality reduction is not only promising, but often necessary.
+
+In a recent application to Geographic Atrophy at Roche (Schiffman et al., 2022), the super-covariate based on baseline images demonstrated an increase in the effective sample size by 90% (and sometimes more, depending on the validation dataset). That is, a trial with 100 patients that adjusts for this covariate is as powered as a trial with 190 patients that does not employ covariate adjustment. This large variance reduction was most likely due to its synthesis of a complex and clinically relevant image taken at baseline. The model for the super-covariate was a deep-learning model trained on both Fundus Auto-fluorescence and Optical Coherence Tomography images in historical data.
+
+## Simulation
+
+In addition, simulation studies can explore the effect of covariate adjustment across a range of potential correlations. Rules of thumb and theoretical results offer a good starting point, but simulation studies reflecting the anticipated study data can provide tailored recommendations for covariate adjustments. The parameters of the data-generating mechanisms in simulation studies are, of course, best informed by prior data. In the absence of historical data, literature and similar studies (perhaps in a related indication) could serve as anchors for simulation parameters.
+
+Simulation studies could for instance inform the following practical questions:
+
+- How prognostic must my covariate be in order to result in a meaningful variance reduction or effective sample size increase given my future study design? Simulation can help answer this question.
+- What is my covariate adjustment budget? At what point do I begin to seriously harm the analysis by including too much random noise? Simulation can address this as well.
+
+And many more. For a deeper dive into the importance of simulation, check out the companion blog on covariate adjustment in this series dedicated specifically to simulation by Daniel Backenroth.
+
+## Pre-specified data-driven covariate selection
+
+*[This subsection on data-driven covariate selection was contributed by Devan V. Mehrotra from Merck & Co., Inc., USA]*
+
+Current practice in RCTs entails pre-selecting covariates (including stratification factors) for use in the analysis model. However, due to probable knowledge gaps at the trial design stage, this risks inclusion of covariates that have weak prognostic associations with the endpoint and exclusion of those with potentially strong(er) associations. To address these limitations, a pre-specified algorithm can be used to select relevant covariates from the within-trial data for subsequent use in the analysis model, either individually or as elements of a compound covariate.
+
+Several recent proposals have considered data-driven approaches for covariate selection or adjustment (Bannick et al., 2026; Williams et al., 2022; Van Lancker et al., 2026). Some such approaches use treatment-unblinded data to model outcome-covariate relationships. In contrast, our preference is to use treatment-blinded (i.e., pooled) data to facilitate the selection of covariates that are observed to be jointly prognostic for the outcome of interest. The utility of blinded-data covariate selection has been demonstrated using simulations and real-data examples for time-to-event endpoints (Mehrotra & Marceau West, 2020 & 2024); a related manuscript focusing on continuous endpoints is currently under review.
+
+When implemented properly, both unblinded and blinded data-driven covariate-selection approaches can preserve the probability of falsely concluding that the test treatment is better than the control treatment at its nominal level. The treatment-blinded approach has the added advantage that the elements of pre-specification and use of treatment-blinded data make it compatible with the 2023 FDA guidance, which states: "Sponsors should prospectively specify the detailed procedures for executing covariate adjusted analysis before any unblinding of comparative data," supporting its validity and potential regulatory acceptability.
+
+## Time: The Most Precious Consideration
+
+Statistical purity often collides with operational timelines. Therefore, an important non-statistical consideration is time, which is perhaps the most precious resource a clinical trialist has to consider. Evaluating historical covariates takes time; one must wrangle, clean, and familiarize oneself with historical datasets. In addition, it takes time to learn new methodologies and software to perform the covariate adjustment.
+
+Training accurate prediction models for super-covariates is perhaps the most time-intensive approach to covariate adjustment; the potential gains need to be worth this effort. As stated before, the existence of high-dimensional covariates whose clinical relevance is well-founded may justify such explorations and many statisticians are growing their expertise in modeling high-dimensional imaging data.
+
+## Conclusions
+
+### Summary
+
+Determining "which covariates to adjust for" requires great care and thorough assessment. Historical data, clinical understanding, and simulation should jointly inform this crucial decision. There are also many practical considerations -- including time invested. The future will assess the promise of super-covariates as well as data-adaptive methods that learn covariates and their relationships from the current trial data at hand.
+
+### A call to action
+
+To improve selection of covariates in RCTs, this blog also calls for a consortium to be set up to decide on standardized lists of covariates to adjust for in common indications. If interested, please reach out to the ASA-BIOP Covariate Adjustment Scientific Working Group (<https://carswg.github.io/people.html>).
+
+## Acknowledgments
+
+A huge thanks to Sandra Siegfried, Markus Herrmann, Daniel Backenroth, Kelly Van Lancker, Vivian Lanius, Qing Wang, Richard Shu, Leiya Han, Helena Chang, and Jurgen Hummel who provided helpful comments and edits to the initial drafts. Special thanks to Devan V. Mehrotra for contributing the subsection on covariate-adaptive selection.
+
+## About the Author - Alex Ocampo
+
+I work in the statistical methodology group at Roche and am based in Basel, Switzerland. Prior to that, I was at Novartis, where I worked as a study statistician running late phase trials in Multiple Sclerosis. I obtained my Ph.D. in Biostatistics from Harvard University in 2020 and my Bachelor's degree in statistics at the University of Michigan in Ann Arbor, where I was born and raised. You can contact me at [alex.ocampo@roche.com](mailto:alex.ocampo@roche.com).
+
+## References
+
+1. Morris, T.P., Walker, A.S., Williamson, E.J. and White, I.R., 2022. Planning a method for covariate adjustment in individually randomised trials: a practical guide. *Trials*, 23(1), p.328.
+2. Pocock, S.J., 2026. Covariate adjustment in randomized trials: An overview. *Clinical Trials*, 23(3), pp.240-247.
+3. Qu, Y. (2011). "Issues for stratified randomization based on a factor derived from a continuous baseline variable." *Pharm Stat* 10(3): 232-235.
+4. Sullivan, T. R., T. P. Morris, B. C. Kahan, A. R. Cuthbert and L. N. Yelland (2024). "Categorisation of continuous covariates for stratified randomisation: How should we adjust?" *Stat Med*.
+5. Cochran, W.G., 1957. Analysis of covariance: Its nature and uses. *Biometrics*, 13(3), pp.261-281.
+6. Li, Xiudi, Sijia Li, and Alex Luedtke. "Estimating the efficiency gain of covariate-adjusted analyses in future clinical trials using external data." *Journal of the Royal Statistical Society Series B: Statistical Methodology* 85.2 (2023): 356-377.
+7. Robinson, Laurence D., and Nicholas P. Jewell. "Some surprising results about covariate adjustment in logistic regression models." *International Statistical Review/Revue Internationale de Statistique* (1991): 227-240.
+8. Gail, Mitchell H., Sam Wieand, and Steven Piantadosi. "Biased estimates of treatment effect in randomized experiments with nonlinear regressions and omitted covariates." *Biometrika* 71.3 (1984): 431-444.
+9. Qualification Opinion on Prognostic Covariate Adjustment (PROCOVA™). European Medicines Agency, 2022, <https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/qualification-opinion-prognostic-covariate-adjustment-procovatm_en.pdf>.
+10. Courtney Schiffman, Christina Rabe and Michel Friesenhahn. 2022. "How to Get the Most Out of Prognostic Baseline Variables in Clinical Trials. Effective Strategies for Employing Covariate Adjustment and Stratification." <https://stats4datascience.com/posts/covariate_adjustment/>.
+11. Marlena S. Bannick, Yanyao Yi, and Ting Ye. Covariate adjustment in randomized clinical trials: From general theory to practical insights. *Clinical Trials*. 2026;23:272-281.
+12. Nicholas Williams, Michael Rosenblum, and Iván Díaz. Optimising precision and power by machine learning in randomised trials with ordinal and time-to-event outcomes with an application to COVID-19. *Journal of the Royal Statistical Society: Series A*. 2022;185:2156-2178.
+13. Kelly Van Lancker, Iván Díaz, and Stijn Vansteelandt. Automated, efficient and model-free inference for randomized clinical trials via data-driven covariate adjustment. *The American Statistician*. 2026. doi:10.1080/00031305.2026.2700237.
+14. Mehrotra DV, Marceau West R. Survival analysis using a 5-step stratified testing and amalgamation routine (5-STAR) in randomized clinical trials. *Statistics in Medicine*. 2020;39:4724-4744.
+15. Mehrotra DV, West RM. Is inadequate risk stratification diluting hazard ratio estimates in randomized clinical trials? *Clinical Trials*. 2024;21:571-575.
+
+<script src="https://giscus.app/client.js"
+        data-repo="carswg/carswg.github.io"
+        data-repo-id="R_kgDOLX8xOg"
+        data-category="General"
+        data-category-id="DIC_kwDOLX8xOs4CeZQB"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light_high_contrast"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
