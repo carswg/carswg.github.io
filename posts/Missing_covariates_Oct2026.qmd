@@ -1,15 +1,16 @@
 ---
 title: "Missing covariates in RCTs - what to do, what to avoid, and what to prespecify"
+author: "Jiawei Wei"
+date: "11/09/2026"
 format:
   html:
     toc: true
     number-sections: false
     embed-resources: true
+    theme: cosmo
 execute:
   echo: false
 ---
-
-Jiawei Wei
 
 Covariate adjustment is now standard for primary and key secondary analyses in confirmatory trials, supported by recent regulatory guidance (FDA, 2023; EMA, 2015). Yet trial datasets are rarely complete: baseline covariates can be missing, questionnaires may be only partly completed, and scheduled measurements may fall outside protocol windows. When baseline covariates planned for adjustment are incomplete, analysts must choose among several strategies-restricting to complete cases, applying simple deterministic rules (single imputation), using the missingness indicator method (MIM), or implementing multiple imputation (MI). The challenge intensifies when outcomes are also subject to missingness.
 
