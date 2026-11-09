@@ -31,6 +31,9 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/Missing_covariates_Oct2026.html",
+      "/posts/which_covariates_to_adjust_for.html",
+      "/posts/simulation_studies_cov_adj.html",
       "/posts/cov_adj_sap_language.html",
       "/posts/blog_linear_model.html",
       "/posts/website_launch.html"

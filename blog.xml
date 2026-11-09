@@ -10,7 +10,447 @@
 <atom:link href="https://carswg.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Webpage for ASA-BIOP Covariate Adjustment SWG</description>
 <generator>quarto-1.11.9</generator>
-<lastBuildDate>Wed, 01 Jul 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 09 Nov 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Which Covariates to Adjust For?</title>
+  <dc:creator>Alex Ocampo</dc:creator>
+  <link>https://carswg.github.io/posts/which_covariates_to_adjust_for.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>The statistical literature is saturated with methodology for covariate adjustment in the analysis of randomized clinical trials (RCTs), but trialists are often faced with a much more practical consideration:</p>
+<div style="text-align: center; font-size: 1.3em; font-weight: bold; margin: 1.2em 0; letter-spacing: 0.03em;">
+<p><em>which</em> covariates to adjust for?</p>
+</div>
+<p>There are, however, a few notable papers that focus on such practical considerations regarding covariate adjustment, emphasizing the importance of adjusting for truly prognostic covariates.</p>
+<p>For instance, Morris et al., 2022 comment:</p>
+<blockquote class="blockquote">
+<p>“For adjustment to be worthwhile, the covariates to be included in the analysis must be prognostic: adjustment for a covariate that is not prognostic is essentially equivalent to an unadjusted analysis, though it can lose power in small samples.”</p>
+</blockquote>
+<p>Although they later clarify that, “It is not the purpose of this article to discuss which covariates to choose,” focusing instead on methodological best-practices.</p>
+<p>Similarly, in a very recent 2026 paper, Pocock states:</p>
+<blockquote class="blockquote">
+<p>“Priority should be given to covariates that are known (or thought likely) to influence patient prognosis, as manifested in the choice of primary outcome.”</p>
+</blockquote>
+<p>and goes on to say,</p>
+<blockquote class="blockquote">
+<p>“The challenge in any specific trial is to have the insight to pre-define covariates that collectively provide a sufficiently strong prognostic model that can achieve such efficiency gains.”</p>
+</blockquote>
+<p>A formidable challenge indeed. What, for instance, is to be considered sufficiently prognostic? The answer is not always so clear.</p>
+<p>The challenge to choose covariates for an upcoming study is the focus of this blog post. I aim to offer some practical considerations to guide the crucial consideration on which covariates to adjust for.</p>
+<section id="rules-of-thumb" class="level2">
+<h2 class="anchored" data-anchor-id="rules-of-thumb">Rules of Thumb</h2>
+<p>While there are no fully generalizable rules of thumb for covariate adjustment, two general pieces of advice seem consistent enough to almost always be worth considering:</p>
+<ol type="1">
+<li><p><strong>The “Golden Covariate” = Baseline Value</strong></p>
+<p>Adjusting for the baseline measurement of the primary endpoint is almost always the highest-yield decision. For instance in an Alzheimer’s clinical trial where the primary endpoint is change in the Clinical Dementia Rating Sum of Boxes (CDR-SB) score, one would include the CDR-SB score based on the clinical assessment at baseline in the model. Especially with continuous outcomes, the baseline value is a prudent default choice. Of course, a baseline measurement is not always available for certain endpoints, especially for time-to-event outcomes (overall survival being an obvious example, as everyone is alive at randomization). For progression-free survival, however, it is worth asking whether something close to a baseline counterpart exists — for instance, baseline disease burden as measured by the sum of longest diameters of target lesions.</p></li>
+<li><p><strong>Stratification Factors</strong></p>
+<p>The norm is that variables used for stratified randomization are included in the primary analysis model as it aligns with the “analyze how you randomize” principle. This may or may not increase efficiency, but typically stratification factors are already chosen due to consistent clinical prior knowledge of their prognostic effects as well as a desire to balance these factors across arms. So they are also generally a solid default. However, dichotomizing stratification factors can lose information and can be modeled more informatively via the underlying continuous variable (see, Qu, 2011; Sullivan, 2024).</p></li>
+</ol>
+<p>Apart from these two general starting points, other covariates may be additionally beneficial. In order to assess this, leveraging historical trial data often provides the most valuable insight.</p>
+</section>
+<section id="leveraging-historical-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="leveraging-historical-datasets">Leveraging Historical Datasets</h2>
+<p>Perhaps the best way to assess if a covariate will be useful in a future trial is to see it repeatedly reduce variance in similar historical trials. However, it is not guaranteed that a statistically significant (<img src="https://latex.codecogs.com/png.latex?p%3C0.05">) covariate (e.g.&nbsp;via a Wald-type test) will translate to a meaningful variance reduction in a clinical trial analysis. Therefore, % variance reduction and the associated gain in effective sample size are the best metrics to consider, not <img src="https://latex.codecogs.com/png.latex?p">-values or statistical significance.</p>
+<p>Luckily, the correlation (<img src="https://latex.codecogs.com/png.latex?R">) between the covariate and endpoint is mathematically related with variance reduction (Cochran, 1957). For instance, in a linear model, such as ANCOVA, the variance of the adjusted treatment effect estimator, <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BVar%7D(%5Chat%7B%5Ctheta%7D_%5Ctext%7Badj%7D)">, compared to the unadjusted estimator, <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BVar%7D(%5Chat%7B%5Ctheta%7D_%5Ctext%7Bunadj%7D)">, is approximately:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BVar%7D(%5Chat%7B%5Ctheta%7D_%5Ctext%7Badj%7D)%20%5Capprox%20%5Ctext%7BVar%7D(%5Chat%7B%5Ctheta%7D_%5Ctext%7Bunadj%7D)%20(1%20-%20R%5E2)"></p>
+<p>These simple formulas don’t hold for typical analysis models used for non-continuous endpoints (although they can sometimes serve as useful approximations). Therefore, one should compute the adjusted and unadjusted variance estimates and compare these quantities directly. Even when only one historical trial is available, obtaining a confidence interval on the efficiency gain of covariate-adjusted analyses in future clinical trials is achievable via bootstrapping, or even a double bootstrap procedure (Li, 2023).</p>
+<p>Of course, understanding the relevance of historical data sources to the upcoming trial is crucial. The impact of covariate adjustment from historical data may not always translate well to the new trial (e.g., covariates that reduce efficiency in an adult trial may not help in a pediatric study of the same disease, where, for example, the covariate of age would have a narrower range in the pediatric population and be less likely to soak up residual variability). In addition, functional forms (linear, quadratic, log transforms, etc.) may dictate the magnitude of the efficiency gains, and the generalizability of these functional forms should be assessed in a similar manner to including the covariate itself.</p>
+</section>
+<section id="shift-in-treatment-effect-estimate" class="level2">
+<h2 class="anchored" data-anchor-id="shift-in-treatment-effect-estimate">Shift in Treatment Effect Estimate?</h2>
+<p>An often neglected consideration is that one’s treatment effect estimate will change in a covariate-adjusted analysis because it essentially adjusts for the chance imbalances of the covariates between arms. From a statistical theory perspective this is not an issue, given that the adjusted and unadjusted analyses typically target the same estimand (more on this below). But in practice the adjusted analysis corrects for random covariate imbalances, which shifts the point estimate of the treatment effect. Because random baseline imbalances have a 50/50 chance of favoring either treatment arm, adjusting for them may shift the point estimate towards the null and subsequently increase the <img src="https://latex.codecogs.com/png.latex?p">-value — an aspect which has concerned some stakeholders. To address such concerns, one may be interested to assess historical data and simulations to understand if the anticipated variance reduction is large enough to safeguard statistical power against potential shifts in the estimate. However, in general, if the chosen prognostic factors adjusted for are truly important to the outcome of interest, then the adjusted estimate should theoretically be more reliable from a causal perspective: adjusting corrects for any imbalances in these relevant factors across treatment arms, bringing the groups closer to an apples-to-apples comparison.</p>
+<p>In general, but especially when considering these shifts, one must be cautious of non-collapsibility in non-linear models – e.g.&nbsp;logistic regression (Robinson and Jewell, 1991) or Cox proportional hazards (Gail et al., 1984) – as the treatment effect is guaranteed to shift away from the null in an adjusted non-collapsible model. This, in part, has motivated uptake in the use of models targeting marginal effects such as standardization (g-computation) to analyze risk differences for binary endpoints or the covariate-adjusted log-rank test with time-to-event endpoints, which provides a corresponding marginal hazard ratio estimate.</p>
+</section>
+<section id="clinical-knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="clinical-knowledge">Clinical Knowledge</h2>
+<p>While candidate covariates could be identified in a data-driven manner using historical clinical trials, there is often a rich body of existing scientific knowledge to leverage regarding the clinical relevance of various baseline characteristics. This <em>a priori</em> clinical knowledge of the most relevant predictors can be used to pre-specify covariates. Depending on whether the outcome is continuous or binary etc. this bet is safer in some situations than in others. However, even if patient-level data is inaccessible, population-level summaries may be available in the scientific literature (e.g., publications on the prognostic value of biomarkers from other clinical trials), which could still inform anticipated variance reductions.</p>
+<p>We as statisticians often want the data to tell the whole story, but even with the availability of historical data, balancing data-driven covariate selection by statisticians with scientific understanding from clinicians remains a key consideration, especially when nuanced differences between historical trials and future designs could alter the anticipated prognostic strength or presence of a candidate covariate’s effects.</p>
+<p>Aligning on candidate factors is already standard practice for drug development teams in the selection of stratification factors. Therefore, this exercise translates naturally to covariate adjustment as well. In fact, clinical science would often like to use more stratification factors than statistically permissible, and the remaining variables that are not used for stratified randomization may represent promising covariates in an adjusted analysis. A simple question to ask is, “would you feel comfortable if there was an imbalance of this factor between the treatment arms?” if not, then one should consider adjusting for it in some way.</p>
+</section>
+<section id="building-super-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="building-super-covariates">Building (Super-)covariates</h2>
+<p>Building super-covariates (or prognostic scores, PROCOVA, synthetic covariates) from machine learning models – for which there exists a qualification opinion document from EMA in 2022 – can be conducted with historical datasets; this has the advantage of spending fewer degrees of freedom, but has potentially less predictable behavior in variance reductions. In my empirical experience, super-covariates built with standard clinical variables typically yield modest gains in comparison to direct adjustment for the individual components, especially for non-continuous endpoints. However, when baseline measurements are unstructured and/or high-dimensional, such as from an image, algorithmic dimensionality reduction is not only promising, but often necessary.</p>
+<p>In a recent application to Geographic Atrophy at Roche (Schiffman et al., 2022), the super-covariate based on baseline images demonstrated an increase in the effective sample size by 90% (and sometimes more, depending on the validation dataset). That is, a trial with 100 patients that adjusts for this covariate is as powered as a trial with 190 patients that does not employ covariate adjustment. This large variance reduction was most likely due to its synthesis of a complex and clinically relevant image taken at baseline. The model for the super-covariate was a deep-learning model trained on both Fundus Auto-fluorescence and Optical Coherence Tomography images in historical data.</p>
+</section>
+<section id="simulation" class="level2">
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
+<p>In addition, simulation studies can explore the effect of covariate adjustment across a range of potential correlations. Rules of thumb and theoretical results offer a good starting point, but simulation studies reflecting the anticipated study data can provide tailored recommendations for covariate adjustments. The parameters of the data-generating mechanisms in simulation studies are, of course, best informed by prior data. In the absence of historical data, literature and similar studies (perhaps in a related indication) could serve as anchors for simulation parameters.</p>
+<p>Simulation studies could for instance inform the following practical questions:</p>
+<ul>
+<li>How prognostic must my covariate be in order to result in a meaningful variance reduction or effective sample size increase given my future study design? Simulation can help answer this question.</li>
+<li>What is my covariate adjustment budget? At what point do I begin to seriously harm the analysis by including too much random noise? Simulation can address this as well.</li>
+</ul>
+<p>And many more. For a deeper dive into the importance of simulation, check out the companion blog on covariate adjustment in this series dedicated specifically to simulation by Daniel Backenroth.</p>
+</section>
+<section id="pre-specified-data-driven-covariate-selection" class="level2">
+<h2 class="anchored" data-anchor-id="pre-specified-data-driven-covariate-selection">Pre-specified data-driven covariate selection</h2>
+<p><em>[This subsection on data-driven covariate selection was contributed by Devan V. Mehrotra from Merck &amp; Co., Inc., USA]</em></p>
+<p>Current practice in RCTs entails pre-selecting covariates (including stratification factors) for use in the analysis model. However, due to probable knowledge gaps at the trial design stage, this risks inclusion of covariates that have weak prognostic associations with the endpoint and exclusion of those with potentially strong(er) associations. To address these limitations, a pre-specified algorithm can be used to select relevant covariates from the within-trial data for subsequent use in the analysis model, either individually or as elements of a compound covariate.</p>
+<p>Several recent proposals have considered data-driven approaches for covariate selection or adjustment (Bannick et al., 2026; Williams et al., 2022; Van Lancker et al., 2026). Some such approaches use treatment-unblinded data to model outcome-covariate relationships. In contrast, our preference is to use treatment-blinded (i.e., pooled) data to facilitate the selection of covariates that are observed to be jointly prognostic for the outcome of interest. The utility of blinded-data covariate selection has been demonstrated using simulations and real-data examples for time-to-event endpoints (Mehrotra &amp; Marceau West, 2020 &amp; 2024); a related manuscript focusing on continuous endpoints is currently under review.</p>
+<p>When implemented properly, both unblinded and blinded data-driven covariate-selection approaches can preserve the probability of falsely concluding that the test treatment is better than the control treatment at its nominal level. The treatment-blinded approach has the added advantage that the elements of pre-specification and use of treatment-blinded data make it compatible with the 2023 FDA guidance, which states: “Sponsors should prospectively specify the detailed procedures for executing covariate adjusted analysis before any unblinding of comparative data,” supporting its validity and potential regulatory acceptability.</p>
+</section>
+<section id="time-the-most-precious-consideration" class="level2">
+<h2 class="anchored" data-anchor-id="time-the-most-precious-consideration">Time: The Most Precious Consideration</h2>
+<p>Statistical purity often collides with operational timelines. Therefore, an important non-statistical consideration is time, which is perhaps the most precious resource a clinical trialist has to consider. Evaluating historical covariates takes time; one must wrangle, clean, and familiarize oneself with historical datasets. In addition, it takes time to learn new methodologies and software to perform the covariate adjustment.</p>
+<p>Training accurate prediction models for super-covariates is perhaps the most time-intensive approach to covariate adjustment; the potential gains need to be worth this effort. As stated before, the existence of high-dimensional covariates whose clinical relevance is well-founded may justify such explorations and many statisticians are growing their expertise in modeling high-dimensional imaging data.</p>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>Determining “which covariates to adjust for” requires great care and thorough assessment. Historical data, clinical understanding, and simulation should jointly inform this crucial decision. There are also many practical considerations – including time invested. The future will assess the promise of super-covariates as well as data-adaptive methods that learn covariates and their relationships from the current trial data at hand.</p>
+</section>
+<section id="a-call-to-action" class="level3">
+<h3 class="anchored" data-anchor-id="a-call-to-action">A call to action</h3>
+<p>To improve selection of covariates in RCTs, this blog also calls for a consortium to be set up to decide on standardized lists of covariates to adjust for in common indications. If interested, please reach out to the ASA-BIOP Covariate Adjustment Scientific Working Group (<a href="https://carswg.github.io/people.html" class="uri">https://carswg.github.io/people.html</a>).</p>
+</section>
+</section>
+<section id="acknowledgments" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>A huge thanks to Sandra Siegfried, Markus Herrmann, Daniel Backenroth, Kelly Van Lancker, Vivian Lanius, Qing Wang, Richard Shu, Leiya Han, Helena Chang, and Jurgen Hummel who provided helpful comments and edits to the initial drafts. Special thanks to Devan V. Mehrotra for contributing the subsection on covariate-adaptive selection.</p>
+</section>
+<section id="about-the-author---alex-ocampo" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-author---alex-ocampo">About the Author - Alex Ocampo</h2>
+<p>I work in the statistical methodology group at Roche and am based in Basel, Switzerland. Prior to that, I was at Novartis, where I worked as a study statistician running late phase trials in Multiple Sclerosis. I obtained my Ph.D.&nbsp;in Biostatistics from Harvard University in 2020 and my Bachelor’s degree in statistics at the University of Michigan in Ann Arbor, where I was born and raised. You can contact me at <a href="mailto:alex.ocampo@roche.com">alex.ocampo@roche.com</a>.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Morris, T.P., Walker, A.S., Williamson, E.J. and White, I.R., 2022. Planning a method for covariate adjustment in individually randomised trials: a practical guide. <em>Trials</em>, 23(1), p.328.</li>
+<li>Pocock, S.J., 2026. Covariate adjustment in randomized trials: An overview. <em>Clinical Trials</em>, 23(3), pp.240-247.</li>
+<li>Qu, Y. (2011). “Issues for stratified randomization based on a factor derived from a continuous baseline variable.” <em>Pharm Stat</em> 10(3): 232-235.</li>
+<li>Sullivan, T. R., T. P. Morris, B. C. Kahan, A. R. Cuthbert and L. N. Yelland (2024). “Categorisation of continuous covariates for stratified randomisation: How should we adjust?” <em>Stat Med</em>.</li>
+<li>Cochran, W.G., 1957. Analysis of covariance: Its nature and uses. <em>Biometrics</em>, 13(3), pp.261-281.</li>
+<li>Li, Xiudi, Sijia Li, and Alex Luedtke. “Estimating the efficiency gain of covariate-adjusted analyses in future clinical trials using external data.” <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 85.2 (2023): 356-377.</li>
+<li>Robinson, Laurence D., and Nicholas P. Jewell. “Some surprising results about covariate adjustment in logistic regression models.” <em>International Statistical Review/Revue Internationale de Statistique</em> (1991): 227-240.</li>
+<li>Gail, Mitchell H., Sam Wieand, and Steven Piantadosi. “Biased estimates of treatment effect in randomized experiments with nonlinear regressions and omitted covariates.” <em>Biometrika</em> 71.3 (1984): 431-444.</li>
+<li>Qualification Opinion on Prognostic Covariate Adjustment (PROCOVA™). European Medicines Agency, 2022, <a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/qualification-opinion-prognostic-covariate-adjustment-procovatm_en.pdf" class="uri">https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/qualification-opinion-prognostic-covariate-adjustment-procovatm_en.pdf</a>.</li>
+<li>Courtney Schiffman, Christina Rabe and Michel Friesenhahn. 2022. “How to Get the Most Out of Prognostic Baseline Variables in Clinical Trials. Effective Strategies for Employing Covariate Adjustment and Stratification.” <a href="https://stats4datascience.com/posts/covariate_adjustment/" class="uri">https://stats4datascience.com/posts/covariate_adjustment/</a>.</li>
+<li>Marlena S. Bannick, Yanyao Yi, and Ting Ye. Covariate adjustment in randomized clinical trials: From general theory to practical insights. <em>Clinical Trials</em>. 2026;23:272-281.</li>
+<li>Nicholas Williams, Michael Rosenblum, and Iván Díaz. Optimising precision and power by machine learning in randomised trials with ordinal and time-to-event outcomes with an application to COVID-19. <em>Journal of the Royal Statistical Society: Series A</em>. 2022;185:2156-2178.</li>
+<li>Kelly Van Lancker, Iván Díaz, and Stijn Vansteelandt. Automated, efficient and model-free inference for randomized clinical trials via data-driven covariate adjustment. <em>The American Statistician</em>. 2026. doi:10.1080/00031305.2026.2700237.</li>
+<li>Mehrotra DV, Marceau West R. Survival analysis using a 5-step stratified testing and amalgamation routine (5-STAR) in randomized clinical trials. <em>Statistics in Medicine</em>. 2020;39:4724-4744.</li>
+<li>Mehrotra DV, West RM. Is inadequate risk stratification diluting hazard ratio estimates in randomized clinical trials? <em>Clinical Trials</em>. 2024;21:571-575.</li>
+</ol>
+<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+</section>
+
+ ]]></description>
+  <category>Covariate Adjustment</category>
+  <category>Study Design</category>
+  <category>Blog</category>
+  <guid>https://carswg.github.io/posts/which_covariates_to_adjust_for.html</guid>
+  <pubDate>Mon, 09 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Covariate adjustment simulation studies</title>
+  <dc:creator>Daniel Backenroth</dc:creator>
+  <link>https://carswg.github.io/posts/simulation_studies_cov_adj.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="why-simulate" class="level2">
+<h2 class="anchored" data-anchor-id="why-simulate">Why simulate?</h2>
+<p>When a sponsor wishes to include covariate adjustment in a trial protocol and statistical analysis plan, simulation studies can be useful both to select a covariate adjustment strategy and to justify to regulators that the selected strategy is appropriate. The questions that a simulation study can answer include:</p>
+<ul>
+<li>Does the testing strategy appropriately control type I error under a range of assumptions regarding the distributions of the covariates and their relationship to the outcome?</li>
+<li>Is the type I error rate adversely affected by using covariate adjustment in a group sequential design or by combining covariate adjustment with other adaptive trial design elements, e.g., information monitoring? (Tsiatis and Davidian, 2026; Van Lancker et al., 2025)</li>
+<li>How will study power and the time to the conclusion of the study be affected by the covariate adjustment strategy, including which covariates are adjusted for (see companion blog of Alex Ocampo) and how missing data are handled (see companion blog of Jiawei Wei)?</li>
+<li>How will covariate adjustment affect the properties of the treatment effect estimate?</li>
+</ul>
+</section>
+<section id="how-to-simulate" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-simulate">How to simulate</h2>
+<p>Trial elements to account for when carrying out a simulation study include:</p>
+<ul>
+<li>The stratification factors, if any, and the randomization ratio and scheme that will be used, e.g., stratified permuted block randomization</li>
+<li>The proposed adjustment set of covariate(s)</li>
+<li>The design, including group sequential design elements</li>
+<li>The number of patients, enrollment schedule and dropout rate</li>
+<li>If the endpoint type is continuous, its distribution in the various study arms (mean, variance, etc.)</li>
+<li>If the endpoint type is binary, its expected prevalence in the various study arms</li>
+<li>If the endpoint type is ordinal, the prevalence of the various categories and whether proportional odds is assumed to hold</li>
+<li>If the endpoint type is time-to-event, the baseline hazard function, whether proportional hazards is assumed to hold, the target number of events, etc.</li>
+<li>Whether the model used for analysis will be correctly specified</li>
+</ul>
+<p>Some considerations when specifying the relationship of covariates to the outcome include:</p>
+<ul>
+<li>The expected prognostic strength of the covariate</li>
+<li>Whether the relationship of covariates to the outcome is assumed to be the same across treatment arms</li>
+<li>Whether the distribution of covariates of patients changes with enrollment time</li>
+<li>In the case of time-to-event outcomes, whether and how the association between covariates and outcomes changes over time</li>
+</ul>
+<p>When carrying out a simulation study, it is important to compare operating characteristics to unadjusted methods. Some quantities that can be compared include:</p>
+<ul>
+<li>Standard errors (both their magnitude and whether they are consistent)</li>
+<li>Rejection probabilities under null and alternative hypotheses</li>
+<li>Bias in treatment effect estimates</li>
+<li>Confidence interval coverage</li>
+<li>Power</li>
+</ul>
+<p>It is recommended to include Monte Carlo confidence intervals for these quantities. Many replicates may be required to show that rejection probabilities under the null are well controlled. When evaluating bias in treatment effect estimates, calculating the “true” value of the treatment effect may be challenging if it is a complicated function of the parameters used to design the simulation study. In this case, Monte Carlo simulation or numerical integration methods (Ocampo et al., 2026) may be used.</p>
+<p>Although it is ideal for the simulation study to faithfully reflect aspects of the planned trial design, it may also be useful to simulate under different designs, e.g., it may be useful to simulate smaller or larger trials to further evaluate the finite sample size performance of the methods proposed to be used.</p>
+<p>Note that special challenges may arise when designing a simulation study when a conditional estimand is used, as the estimand itself may change when covariate adjustment is used.</p>
+<p>An alternative to simulation which may be more realistic as to the distribution of covariates and outcomes, but without incorporating all relevant features of a planned trial, is to resample from real trial data. For example, to evaluate the type I error rate of a method, we can use datasets repeatedly resampled from an actual trial with random assignment of treatment. This method will evaluate the type I error rate under a stricter null hypothesis than would normally be tested. For example, with time-to-event data, random assignment of treatment makes the censoring distribution identical between the arms, which may be unrealistic, and is not a required assumption for the log-rank test. It is more difficult to use resampling to study operating characteristics under a given alternative hypothesis. In this case, it may be useful to resample baseline covariates but simulate the outcome from a parametric model, see, e.g., Van Lancker et al.&nbsp;(2025).</p>
+</section>
+<section id="case-study" class="level2">
+<h2 class="anchored" data-anchor-id="case-study">Case study</h2>
+<p>We use a planned metastatic colorectal cancer (mCRC) trial with overall survival (OS) as the primary endpoint as a case study to illustrate some features of a covariate adjustment simulation study and to illustrate the resampling approach mentioned above. Our aims are to assess whether the proposed analysis methods control the type I error rate for the planned trial design, whether the hazard ratio estimate will be unbiased and have the right confidence interval coverage, and how power depends on the prognostic power of the covariate. Here, we are interested in power gains but also in whether power will be lost if the covariate turns out to have no prognostic power.</p>
+<p>We assume a median OS of 18 months in the control arm and a hazard ratio of 0.68 under the alternative. The trial uses an O’Brien-Fleming group sequential design with one interim analysis at 70% of information, 1:1 randomization, 2% annual dropout, and uniform enrollment over 12 months. We target 90% power at a two-sided significance level of 0.05. We assume that we are adjusting for one continuous covariate, which we assume is normally distributed.</p>
+<p>The design requires 287 events at the final analysis; we round up to <strong>300 events</strong> (interim at 210). We enroll <strong>600 patients</strong> over 12 months.</p>
+<section id="simulation-setup" class="level3">
+<h3 class="anchored" data-anchor-id="simulation-setup">Simulation setup</h3>
+<p>We simulate 600 patients enrolled uniformly over 12 months, with 2% annual dropout. Patients are assigned to one of four equally sized strata, and within each stratum treatment is assigned using 1:1 permuted block randomization with blocks of size 4. We adjust for a single continuous baseline covariate <img src="https://latex.codecogs.com/png.latex?X_i%20%5Csim%20N(0,1)">. Event times are generated from a proportional hazards model</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ah(t%20%5Cmid%20X_i)%20=%20h_0(t)%20%5Cexp(%5Cbeta%20X_i%20+%20%5Ctheta%20I_i),%0A"></p>
+<p>where <img src="https://latex.codecogs.com/png.latex?I_i%20%5Cin%20%5C%7B0,1%5C%7D"> is the treatment indicator, <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%20%5Clog(%5Ctext%7BHR%7D)"> is the log hazard ratio, and <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> controls the prognostic strength of the covariate. The only parameters we vary in this simulation study are <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> and <img src="https://latex.codecogs.com/png.latex?%5Ctheta">. We set <img src="https://latex.codecogs.com/png.latex?%5Cbeta%20%5Cin%20%5C%7B0,%200.5,%201%5C%7D"> and consider <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%200"> (null) and <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%20%5Clog(0.68)"> (alternative). The baseline hazard <img src="https://latex.codecogs.com/png.latex?h_0(t)"> is chosen so that event times are marginally exponentially distributed with median 18 months in the control arm, regardless of <img src="https://latex.codecogs.com/png.latex?%5Cbeta">. This is achieved using the inverse cumulative hazard method (Bender et al., 2005). Event times are simulated separately for each combination of stratum and arm. We assume the stratification variable does not affect survival, i.e., strata membership is ignored when simulating the outcomes.</p>
+<p>We evaluate the type I error rate of the unadjusted stratified log-rank test and the covariate-adjusted stratified log-rank test (Ye et al., 2024) at both the interim (210 events) and final (300 events) analyses, applying O’Brien-Fleming critical values. The covariate-adjusted stratified log-rank test tests exactly the same null hypothesis as the unadjusted stratified log-rank test. We evaluate the treatment effect using a stratified Cox proportional hazards model with only a term for treatment and also using the hazard ratio estimator under the stratified Cox proportional hazards model of Ye et al.&nbsp;(2024). The hazard ratio that is estimated is marginal with respect to the adjustment covariates. We evaluate its bias and the coverage of its confidence interval. We run 2,000,000 simulation replicates for each scenario. These covariate-adjusted methods are implemented in the R packages <code>RobinCar</code> and <code>RobinCar2</code>.</p>
+</section>
+<section id="simulation-results" class="level3">
+<h3 class="anchored" data-anchor-id="simulation-results">Simulation results</h3>
+<section id="type-i-error-at-the-final-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="type-i-error-at-the-final-analysis">Type I error at the final analysis</h4>
+<div id="tbl-type1-final" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-type1-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Type I error rate at the final analysis (300 events) by covariate effect size <img src="https://latex.codecogs.com/png.latex?%5Cbeta">. 95% Monte Carlo confidence intervals in parentheses.
+</figcaption>
+<div aria-describedby="tbl-type1-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?%5Cbeta"></th>
+<th>Unadjusted</th>
+<th>Adjusted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0251 (0.0249, 0.0253)</td>
+<td>0.0253 (0.0251, 0.0255)</td>
+</tr>
+<tr class="even">
+<td>0.5</td>
+<td>0.0250 (0.0248, 0.0252)</td>
+<td>0.0251 (0.0249, 0.0253)</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0.0251 (0.0249, 0.0253)</td>
+<td>0.0249 (0.0247, 0.0252)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>As can be seen in Table&nbsp;1, both the unadjusted and adjusted tests maintain type I error rates close to the nominal one-sided level of 0.025 across all values of <img src="https://latex.codecogs.com/png.latex?%5Cbeta">, including when the covariate is strongly prognostic (<img src="https://latex.codecogs.com/png.latex?%5Cbeta%20=%201">), although there is slight inflation of the type I error rate when the covariate is not prognostic at all (<img src="https://latex.codecogs.com/png.latex?%5Cbeta%20=%200">).</p>
+</section>
+<section id="type-i-error-in-the-group-sequential-design" class="level4">
+<h4 class="anchored" data-anchor-id="type-i-error-in-the-group-sequential-design">Type I error in the group sequential design</h4>
+<div id="tbl-type1-gsd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-type1-gsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Type I error rate (any rejection across interim and final analyses) in the group sequential design by <img src="https://latex.codecogs.com/png.latex?%5Cbeta">. 95% Monte Carlo confidence intervals in parentheses.
+</figcaption>
+<div aria-describedby="tbl-type1-gsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?%5Cbeta"></th>
+<th>Unadjusted</th>
+<th>Adjusted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0251 (0.0248, 0.0253)</td>
+<td>0.0253 (0.0251, 0.0255)</td>
+</tr>
+<tr class="even">
+<td>0.5</td>
+<td>0.0250 (0.0247, 0.0252)</td>
+<td>0.0253 (0.0250, 0.0255)</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0.0250 (0.0248, 0.0253)</td>
+<td>0.0257 (0.0255, 0.0259)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>As can be seen in Table&nbsp;2, when the covariate-adjusted log-rank test is embedded in a group sequential design, the type I error rate is slightly inflated, and the inflation is greater the more prognostic the covariate is. To avoid this inflation, the methods of Tsiatis and Davidian (2026) or Van Lancker et al.&nbsp;(2025) could be used.</p>
+</section>
+<section id="power-in-the-group-sequential-design" class="level4">
+<h4 class="anchored" data-anchor-id="power-in-the-group-sequential-design">Power in the group sequential design</h4>
+<div id="tbl-power-gsd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-power-gsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Power (any rejection across interim and final analyses) in the group sequential design by <img src="https://latex.codecogs.com/png.latex?%5Cbeta">. 95% Monte Carlo confidence intervals in parentheses.
+</figcaption>
+<div aria-describedby="tbl-power-gsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?%5Cbeta"></th>
+<th>Unadjusted</th>
+<th>Adjusted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.9092 (0.9088, 0.9096)</td>
+<td>0.9092 (0.9088, 0.9096)</td>
+</tr>
+<tr class="even">
+<td>0.5</td>
+<td>0.9095 (0.9091, 0.9099)</td>
+<td>0.9366 (0.9363, 0.9370)</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0.9093 (0.9089, 0.9097)</td>
+<td>0.9750 (0.9747, 0.9752)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Table&nbsp;3 shows that when the covariate has no prognostic value (<img src="https://latex.codecogs.com/png.latex?%5Cbeta%20=%200">), the adjusted and unadjusted tests have nearly identical power, consistent with the theoretical guarantee in Ye et al.&nbsp;(2024) that covariate adjustment does not reduce power asymptotically. The adjusted test gains substantial power over the unadjusted test. This illustrates the potential efficiency gains from adjusting for a strongly prognostic covariate, while indicating that efficiency is not expected to suffer if the covariate turns out not to have prognostic power.</p>
+</section>
+<section id="hazard-ratio-estimate-and-confidence-interval-coverage" class="level4">
+<h4 class="anchored" data-anchor-id="hazard-ratio-estimate-and-confidence-interval-coverage">Hazard ratio estimate and confidence interval coverage</h4>
+<div id="tbl-hr-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hr-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Mean estimated hazard ratio and 95% confidence interval coverage by <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> and scenario. 95% Monte Carlo confidence intervals in parentheses.
+</figcaption>
+<div aria-describedby="tbl-hr-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?%5Cbeta"></th>
+<th>Scenario</th>
+<th>Unadj. Mean HR</th>
+<th>Unadj. CI Coverage</th>
+<th>Adj. Mean HR</th>
+<th>Adj. CI Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Null</td>
+<td>1.000</td>
+<td>0.9503 (0.9500, 0.9506)</td>
+<td>1.000</td>
+<td>0.9502 (0.9499, 0.9505)</td>
+</tr>
+<tr class="even">
+<td>0.5</td>
+<td>Null</td>
+<td>1.000</td>
+<td>0.9505 (0.9502, 0.9508)</td>
+<td>1.000</td>
+<td>0.9503 (0.9500, 0.9506)</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>Null</td>
+<td>1.000</td>
+<td>0.9502 (0.9499, 0.9505)</td>
+<td>1.000</td>
+<td>0.9505 (0.9502, 0.9508)</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>Alternative</td>
+<td>0.680</td>
+<td>0.9503 (0.9500, 0.9506)</td>
+<td>0.680</td>
+<td>0.9501 (0.9498, 0.9504)</td>
+</tr>
+<tr class="odd">
+<td>0.5</td>
+<td>Alternative</td>
+<td>0.680</td>
+<td>0.9504 (0.9501, 0.9507)</td>
+<td>0.680</td>
+<td>0.9503 (0.9500, 0.9506)</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Alternative</td>
+<td>0.680</td>
+<td>0.9504 (0.9501, 0.9507)</td>
+<td>0.680</td>
+<td>0.9501 (0.9498, 0.9504)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>As shown in Table&nbsp;4, under both the null and alternative hypotheses, the mean estimated hazard ratio is close to the true value (1.0 and 0.68, respectively) for both the unadjusted and adjusted estimators. Confidence interval coverage is close to the nominal 95% level in all scenarios.</p>
+</section>
+</section>
+<section id="resampling-study" class="level3">
+<h3 class="anchored" data-anchor-id="resampling-study">Resampling study</h3>
+<p>To evaluate the Type I error rate of the covariate-adjusted log-rank test in a realistic setting, we apply a bootstrap resampling approach to data from an actual mCRC trial (NCT00339183, available from Project Data Sphere).</p>
+<p>For each replicate, patients are sampled with replacement from the trial data until the resampled dataset contains 300 events. Treatment labels are then randomly reassigned within each randomization stratum, replicating the stratified permuted block randomization used in the original trial. This enforces the strong null hypothesis — that each patient has the same hazard function under treatment and control — so any rejection of the null constitutes a type I error. The type I error rate is estimated over 500,000 replicates.</p>
+<p>We evaluate three analysis strategies: the unadjusted log-rank test (LR), the covariate-adjusted log-rank test adjusting for the Bachet prognostic score (PS), and the covariate-adjusted log-rank test adjusting for the individual component variables of the Bachet score added one at a time (1 through 7 variables). The Bachet score (Bachet et al., 2025, <em>Journal of Clinical Oncology</em>) is a composite prognostic score for overall survival in mCRC derived from seven baseline variables: alkaline phosphatase, hemoglobin, ECOG PS, lactate dehydrogenase, absolute neutrophil count, number of metastatic sites, and platelet count. When the component variables are added one at a time they are added in the above order, which was determined using an independent mCRC trial dataset via a Cox proportional hazards model with a LASSO penalty.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://carswg.github.io/posts/mcrc_type1_300_events.png" class="img-fluid figure-img"></p>
+<figcaption>Type I error rates. LR is the unadjusted log-rank test. PS adjusts for the Bachet prognostic score. The dashed lines adjust for increasing numbers of the Bachet score component variables (1 through 7, left to right). The nominal one-sided level is 0.025. Error bars are 95% Monte Carlo confidence intervals based on 500,000 bootstrap replicates.</figcaption>
+</figure>
+</div>
+<p>The unadjusted log-rank test and adjustment for the Bachet prognostic score both maintain type I error rates close to the nominal 0.025 level (see Figure 1). As more individual component variables are added, the type I error rate increases. A small sample size correction (Krotka and Magirr, 2026) might be helpful to control the type I error rate when many variables are adjusted for.</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><p>Bachet, J.-B., et al.&nbsp;(2025). Characteristics of patients and prognostic factors across treatment lines in metastatic colorectal cancer: an analysis from the Aide et Recherche en Cancérologie Digestive database. <em>Journal of Clinical Oncology</em>, 43(18), 2094–2106. <a href="https://doi.org/10.1200/JCO-24-01968" class="uri">https://doi.org/10.1200/JCO-24-01968</a></p></li>
+<li><p>Bender, R., Augustin, T., and Blettner, M. (2005). Generating survival times to simulate Cox proportional hazards models. <em>Statistics in Medicine</em>, 24(11), 1713–1723. <a href="https://doi.org/10.1002/sim.2059" class="uri">https://doi.org/10.1002/sim.2059</a></p></li>
+<li><p>Krotka, P and Magirr, D. (2026). Finite-sample correction for the covariate-adjusted log-rank test. <a href="https://arxiv.org/abs/2608.10923" class="uri">https://arxiv.org/abs/2608.10923</a></p></li>
+<li><p>Ocampo, A., Giudice, E., McCaw, Z. R., and Morris, T. P. (2026). Revealing the truth: calculating true values in causal inference simulation studies via Gaussian quadrature. <em>arXiv preprint</em> arXiv:2601.05128. <a href="https://doi.org/10.48550/arXiv.2601.05128" class="uri">https://doi.org/10.48550/arXiv.2601.05128</a></p></li>
+<li><p>Tsiatis, A. A. and Davidian, M. (2026). Independent increments and group sequential tests. <em>Statistics in Medicine</em>. <a href="https://doi.org/10.1002/sim.70307" class="uri">https://doi.org/10.1002/sim.70307</a></p></li>
+<li><p>Van Lancker, K., Betz, J. F., and Rosenblum, M. (2025). Combining covariate adjustment with group sequential, information-adaptive designs to improve randomized trial efficiency. <em>Biometrics</em>, 81(1), ujaf020. <a href="https://doi.org/10.1093/biomtc/ujaf020" class="uri">https://doi.org/10.1093/biomtc/ujaf020</a></p></li>
+<li><p>Ye, T., Shao, J., and Yi, Y. (2024). Covariate-adjusted log-rank test: guaranteed efficiency gain and universal applicability. <em>Biometrika</em>, 110(4), 1097–1110. <a href="https://doi.org/10.1093/biomet/asad045" class="uri">https://doi.org/10.1093/biomet/asad045</a></p></li>
+</ul>
+<script src="https://giscus.app/client.js" data-repo="carswg/carswg.github.io" data-repo-id="R_kgDOLX8xOg" data-category="General" data-category-id="DIC_kwDOLX8xOs4CeZQB" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://carswg.github.io/posts/simulation_studies_cov_adj.html</guid>
+  <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Template for Language for SAP/Protocol Incorporating Covariate Adjustment</title>
   <link>https://carswg.github.io/posts/cov_adj_sap_language.html</link>
@@ -955,6 +1395,113 @@ font-style: inherit;">3</span>)</span></code></pre></div></div>
  ]]></description>
   <guid>https://carswg.github.io/posts/website_launch.html</guid>
   <pubDate>Wed, 06 Mar 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Missing covariates in RCTs - what to do, what to avoid, and what to prespecify</title>
+  <link>https://carswg.github.io/posts/Missing_covariates_Oct2026.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Jiawei Wei</p>
+<p>Covariate adjustment is now standard for primary and key secondary analyses in confirmatory trials, supported by recent regulatory guidance (FDA, 2023; EMA, 2015). Yet trial datasets are rarely complete: baseline covariates can be missing, questionnaires may be only partly completed, and scheduled measurements may fall outside protocol windows. When baseline covariates planned for adjustment are incomplete, analysts must choose among several strategies-restricting to complete cases, applying simple deterministic rules (single imputation), using the missingness indicator method (MIM), or implementing multiple imputation (MI). The challenge intensifies when outcomes are also subject to missingness.</p>
+<p>ICH E9(R1) underscores the importance of these choices by emphasizing alignment between the statistical analysis and the targeted estimand, and by cautioning against unnecessary alterations to the target population that arise from post hoc restrictions of the analysis set. Excluding participants solely because of missing baseline covariate data can inadvertently shift the population under analysis, complicating interpretation and reducing comparability across endpoints. As a result, there has been renewed interest in methods for handling missing covariates that preserve the integrity of the randomized population while remaining practical to implement.</p>
+<p>This post focuses on a common confirmatory setting in which baseline covariates are included primarily to improve the precision of the estimated treatment effect. In that setting, the recent RCT-focused literature offers clearer guidance on which approaches perform well and which are best avoided.</p>
+<section id="what-has-changed-in-how-we-think-about-missing-baseline" class="level1">
+<h1>1 What has changed in how we think about missing baseline</h1>
+<p>covariates?</p>
+<p>For a long time, a common default was complete-case covariate adjustment: fitting the adjusted model only among participants with all adjustment covariates observed. While operationally simple, this approach can be poorly aligned with the objectives of a randomized trial. Excluding participants because of missing baseline covariates effectively shifts the analyzed population away from the randomized population, so that the resulting adjusted estimator targets the average treatment effect (ATE) in the complete-case subpopulation rather than in the full randomized sample. Recovery of the ATE in the original population then requires additional assumptions, such as covariate missingness being independent of the potential outcomes (Zhao and Ding, 2024). Complete-case adjustment also reduces the effective sample size and can meaningfully reduce precision, consistent with simulation findings in RCT-like settings (Kayembe et al., 2022, 2024).</p>
+<p>At the same time, the recent literature does not suggest that MI is the only valid option. MI remains widely used, but several recent contributions emphasize that simpler approaches are also valid. In particular, Zhao and Ding (2024) provide theoretical support for the missingness indicator method (MIM) when combined with covariate adjustment with the Huber-White sandwich standard error estimator of Lin et al.&nbsp;(2013), showing that this approach yields valid inference for the ATE in randomized trials irrespective of the missing-data mechanism. Complementing this, Song, Hughes, and Ye (2024) offer an efficiency-based framework that clarifies how different imputation choices-including simple ones-relate to efficiencyoptimal strategies for baseline covariates used to improve precision. Together, these results help reconcile previously inconsistent practice: the most appropriate choice depends on the estimand being targeted, on the estimator employed, and on how much missingness there is.</p>
+</section>
+<section id="practical-strategy-options-you-can-prespecify-in-the-sap" class="level1">
+<h1>2 Practical strategy options you can prespecify in the SAP</h1>
+<section id="multiple-imputation-mi-when-appropriate" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-imputation-mi-when-appropriate">2.1 Multiple imputation (MI) when appropriate</h2>
+<p>Multiple imputation (MI) is widely used in confirmatory trials and is often a strong choice when missingness is non-trivial, particularly when several covariates are affected or when the data include a mix of continuous and categorical variables. MI preserves the intended analysis set and reflects imputation uncertainty through Rubin’s combining rules.</p>
+<p>A widely accepted principle is that the imputation model should include all variables used in the analysis model and, where feasible, additional variables that are predictive of the missing covariate or of its missingness (the principle of congeniality between imputation and analysis models). When imputing baseline covariates only, treatment assignment should not be used as a predictor because by the randomization design it carries no information about the baseline covariate distribution; allowing arm-specific baseline imputations can also introduce chance treatment-group differences. The imputation model should instead include relevant baseline and design variables, such as stratification factors and site or region.</p>
+<p>The computational burden of MIM is usually limited when only a small number of baseline covariates are imputed. It can become material when not only baseline covariates are imputed and the imputation model jointly covers many endpoints, visits, or variables in a large dataset. When outcomes are also subject to missingness, analysts sometimes consider performing MI in multiple sequential steps; in many settings, however, this can be avoided by specifying a single, jointly coherent imputation model that simultaneously handles missing covariates and missing outcomes (see Section 3).</p>
+</section>
+<section id="missingness-indicator-method-mim-a-simple-option-with-rct-specific" class="level2">
+<h2 class="anchored" data-anchor-id="missingness-indicator-method-mim-a-simple-option-with-rct-specific">2.2 Missingness-indicator method (MIM): a simple option with RCT-specific</h2>
+<p>support Zhao and Ding (2024) provide theoretical justification for the use of missingness indicators in randomized experiments when combined with an appropriate covariate-adjusted estimator. They show that, under randomization, the missingness indicator method (MIM) paired with Lin’s (2013) regression adjustment yields consistent and asymptotically normal estimators of the average treatment effect, with potential precision gains, irrespective of the missing-data mechanism for the covariates. In practice, MIM replaces missing baseline covariate values with an arbitrary constant (commonly zero after centering, since the choice is absorbed by the indicator), augments the design matrix with the corresponding missingness indicators, and applies Lin-style regression adjustment (Lin et al.&nbsp;2013)-including treatment-covariate interactions-with heteroskedasticity-robust standard errors. The procedure is straightforward to implement, retains all randomized participants in the analysis, and can improve precision relative to analyses that ignore partially observed covariates (Zhao and Ding, 2024).</p>
+<p>Song, Hughes, and Ye (2024) offer a complementary efficiency-based perspective through their cross-world imputation framework, which clarifies the conditions under which MIM approximates an efficiency-optimal imputation strategy and how it relates to alternative imputation choices. From a practical standpoint, MIM is particularly appealing as a simple, prespecifiable analytic approach or as a sensitivity analysis, especially in settings where multiple imputation is operationally burdensome.</p>
+</section>
+<section id="single-imputation-mean-median-or-mode-a-pragmatic-option-requiring" class="level2">
+<h2 class="anchored" data-anchor-id="single-imputation-mean-median-or-mode-a-pragmatic-option-requiring">2.3 Single imputation (mean, median, or mode): a pragmatic option requiring</h2>
+<p>clear justification Single imputation is frequently criticized in the general missing-data literature because it does not naturally propagate imputation uncertainty, leading to underestimated standard errors and overly narrow confidence intervals (Little Rubin, 2019). The RCT-focused literature adds important nuance to this view. When covariates are used for adjustment in a randomized trial and the target estimand is the average treatment effect (ATE), simple imputation can yield valid inference (correct Type I error and CI coverage) when randomization is preserved, all randomized participants remain in the analysis, the imputations do not depend on treatment assignment or post-baseline outcomes, and the treatment effect is estimated with an appropriate covariate-adjusted estimator.. Moreover, Song, Hughes, and Ye (2024) show, within their efficiency-based framework, that certain simple imputation choices can approximate efficiency-optimal strategies for precision covariates. For example, if baseline age is used as an adjustment covariate and is missing for a small number of participants, a pre-specified mean imputation rule can preserve the full randomized analysis set and retain much of the precision benefit of covariate adjustment.</p>
+<p>Therefore, in confirmatory settings single imputation could also be considered in primary analysis when missingness is minimal. When used, the rationale, the imputation rule, and its role within the analytic strategy should be prespecified and clearly justified in the statistical analysis plan.</p>
+</section>
+<section id="complete-case-covariate-adjustment-generally-not-recommended" class="level2">
+<h2 class="anchored" data-anchor-id="complete-case-covariate-adjustment-generally-not-recommended">2.4 Complete-case covariate adjustment: generally not recommended</h2>
+<p>Complete-case covariate adjustment is operationally simple but, on both theoretical and empirical grounds, is generally a suboptimal choice for the primary analysis of a randomized trial. By analyzing only participants with complete covariate data, this approach effectively focuses on a subset of the randomized population. As a result, estimating the ATE for all randomized participants requires additional assumptions beyond randomization (Zhao Ding, 2024).In addition, the reduction in effective sample size can lead to meaningful losses in precision. Simulation studies in RCT-like settings have reported notable efficiency losses and weaker overall performance for complete-case adjustment under realistic missingness patterns, relative to methods that retain the full randomized sample (Kayembe et al., 2022, 2024).</p>
+<p>For these reasons, complete-case covariate adjustment is better positioned as a supplementary analysis rather than as the primary analytic strategy, except in settings where covariate missingness is negligible and plausibly unrelated to outcomes.</p>
+</section>
+</section>
+<section id="when-outcomes-are-also-missing-maintaining-a-coherent" class="level1">
+<h1>3 When outcomes are also missing: maintaining a coherent</h1>
+<section id="analytic-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="analytic-strategy">analytic strategy</h3>
+<p>Missing baseline covariates and missing outcomes frequently co-occur, much stronger assumptions are needed to estimate treatment effects when outcomes are missing than when only baseline covariates are missing, and analysts often raise concerns about the complexity of the resulting workflows. Two points are worth emphasizing.</p>
+<p>First, when multiple imputation (MI) is selected, sequential or multi-stage imputation procedures are generally not required. In most applications, a single MI run-for example, fully conditional specification (FCS, also known as chained equations)-can jointly impute missing baseline covariates and missing outcomes, producing a single set of m imputed datasets for analysis and pooling. A jointly specified imputation step is generally preferable to sequential procedures, which may introduce inconsistencies between imputation models (van Buuren, 2018).</p>
+<p>Second, the choice of covariate-adjusted estimator matters when outcomes are also missing. Recent work indicates that regression adjustment with missing outcomes does not necessarily retain the efficiency guarantees that hold in complete-data settings, whereas inverse probability weighting and doubly robust (augmented IPW) estimators can be more attractive under missing-at-random (MAR) assumptions for the outcome (Chang et al., 2023; Zhao, Ding and Li, 2024). The key implication for statistical analysis plans (SAPs) is that the missing-outcome strategy and the covariate-adjustment strategy should be specified jointly, so that they constitute a single coherent analytic framework aligned with the targeted estimand.</p>
+</section>
+</section>
+<section id="implementation-and-reporting-what-needs-to-be-prespecified" class="level1">
+<h1>4 Implementation and reporting: what needs to be prespecified</h1>
+<p>For methods to be adopted reliably, clarity and consistency in pre-specification are typically more important than additional technical sophistication.</p>
+<p>Reporting should include the proportion of missingness for each adjustment covariate, both overall and by treatment arm, together with confirmation that the prespecified analytic approach was implemented as planned.</p>
+<p>For multiple imputation, the SAP should prespecify:</p>
+<ul>
+<li>the imputation framework (e.g., FCS/MICE or joint modeling) and the form of the conditional models (e.g., predictive mean matching, logistic regression);</li>
+<li>the variables included in the imputation model-at minimum the analysis covariates, treatment assignment, and key design variables (e.g., stratification factors, site or region), together with any planned auxiliary variables, interactions, or nonlinear terms;</li>
+<li>the number of imputations m;</li>
+<li>convergence diagnostics (where applicable);</li>
+<li>the pooling procedure via Rubin’s combining rules; and</li>
+<li>whether heteroskedasticity-robust standard errors are computed within each imputed dataset prior to pooling. For the missingness indicator method (MIM) or single imputation, the SAP should</li>
+</ul>
+<p>document:</p>
+<ul>
+<li>the constant or deterministic rule used for imputation;</li>
+<li>the inclusion of missingness indicators (for MIM); and</li>
+<li>the paired estimator (e.g., Lin-style regression adjustment with treatment-covariate interactions and robust standard errors), since the validity of MIM depends on this pairing (Zhao and Ding, 2024). In addition, it is important to distinguish between missingness in stratification covariates</li>
+</ul>
+<p>and missingness in adjustment covariates, as the two raise fundamentally different concerns. Stratification covariates must be known at the time of randomization, since they determine the randomization stratum to which a patient is assigned. Missingness in stratification covariates is therefore not permitted by design - a patient with a missing stratification variable cannot be randomized in the first place. In contrast, adjustment covariates are used in the analysis model to improve precision but are not required for the randomization mechanism itself.</p>
+<p>Provided missingness is minimal and handled with a pre-specified, principled approach, missing adjustment covariates do not threaten the validity of inference for the ATE. Operationally, this distinction has implications for how adjustment covariates should be handled in the SAP. While missingness does not invalidate ATE inference, it does affect the precision gain that motivated adjustment in the first place. The magnitude of the loss depends on the proportion missing, the prognostic strength of the covariate, and the handling method; there is no universal percentage loss, so it should be assessed through trial-specific simulations when it could materially affect power. Adjustment covariates should therefore be designated as critical data elements, with enhanced monitoring, clear pre-specified time points (typically Day 0, with screening as a documented fallback), and a pre-specified imputation rule for the rare cases of missingness. In practice, stratification factors are almost always defined using screening values for operational reasons - the randomization system requires the stratum at the moment of assignment - whereas adjustment covariates are best taken from Day 0 when reliably available, since they more closely reflect the patient’s state at the start of treatment and yield greater precision. The SAP should also make explicit that stratified analyses use the as-randomized stratum value, even if a later measurement disagrees, while covariate adjustment uses the best available pre-randomization measurement.</p>
+<p>When the analysis adjusts for a supercovariate - a scalar summary constructed from multiple underlying covariates, such as a prognostic score, a risk index, or a model-based predicted outcome - a natural question is whether imputation should be performed at the level of the underlying component covariates or directly on the constructed supercovariate. The preferred approach is to impute at the underlying covariate level and then reconstruct the supercovariate from the imputed components. This preserves more information: each component carries its own distributional and correlational structure with other observed variables, which an imputation model can exploit, whereas imputing the supercovariate directly collapses these relationships into a single marginal distribution and discards the partial information available when only some components are missing. For example, if a prognostic score is built from five baseline variables and only one is missing for a given patient, imputing that single component uses the other four observed values as predictors, while imputing the score directly treats the entire score as missing and ignores the four observed components entirely. Component-level imputation is also more congenial with how the supercovariate is defined in the SAP - the score is a deterministic function of its inputs, so imputing inputs and then applying the function maintains internal consistency. The SAP should therefore pre-specify (i) the imputation strategy at the component level,</p>
+<ol type="1">
+<li>the deterministic rule for reconstructing the supercovariate from (possibly imputed)</li>
+</ol>
+<p>components. Finally, the SAP should be explicit about which analyses are primary and which are sensitivity, particularly when different missing-data strategies are applied to baseline covariates and to outcomes.</p>
+</section>
+<section id="closing-thoughts" class="level1">
+<h1>5 Closing thoughts</h1>
+<p>The recent RCT-focused literature conveys a consistent practical message. Complete-case covariate adjustment is difficult to justify as a primary analysis when reasoning within an estimand-aligned framework, as it can shift the target population away from the randomized sample (Zhao Ding, 2024). Multiple imputation remains an important and widely used option, particularly in more complex settings with multiple incomplete variables of mixed type. Alongside MI, simpler pre-specifiable approaches can also be reasonable for baselinecovariate adjustment in randomized trials: Zhao and Ding (2024) provide theoretical support for the missingness indicator method when paired with Lin-style covariate adjustment, and Song, Hughes, and Ye (2024) offer an efficiency-based framework that clarifies when simple imputation strategies approximate efficiency-optimal choices for precision covariates. When outcomes are also missing, the missing-outcome method and the covariate-adjustment method should be planned jointly, with recent work providing guidance on the relative merits of regression-based and weighting-based estimators in this setting (Chang et al., 2023).</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p>Chang, C.-R., Song, Y., Li, F., &amp; Wang, R. (2023). Covariate adjustment in randomized clinical trials with missing covariate and outcome data. Statistics in Medicine.</p>
+<p>EMA (2015) European Medicines Agency. (2015). Guideline on Adjustment for Baseline Covariates in Clinical Trials (EMA/CHMP/295050/2013). Committee for Medicinal Products for Human Use (CHMP). London: European Medicines Agency.</p>
+<p>FDA (2023) U.S. Food and Drug Administration. (2023). Adjusting for Covariates in</p>
+<p>Randomized Clinical Trials for Drugs and Biological Products: Guidance for Industry. Center for</p>
+<p>Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER). Silver Spring, MD: U.S. Department of Health and Human Services, Food and Drug Administration.</p>
+<p>Kayembe, M. T., Jolani, S., Tan, F. E. S., &amp; van Breukelen, G. J. P. (2022). Imputation of</p>
+<p>Missing Covariates in Randomized Controlled Trials with Continuous Outcomes: Simple, Unbiased and Efficient Methods. Journal of Biopharmaceutical Statistics.</p>
+<p>Kayembe, M. T., Tan, F. E. S., van Breukelen, G. J. P., &amp; Jolani, S. (2024). Dealing with missing observations in the outcome and covariates in randomized controlled trials. Journal of Statistical Computation and Simulation.</p>
+<p>Lin, W. (2013). Agnostic notes on regression adjustments to experimental data: Reexamining Freedman’s critique. The Annals of Applied Statistics, 7(1), 295-318. https: //doi.org/10.1214/12-AOAS583</p>
+<p>Little, R. J. A., &amp; Rubin, D. B. (2019). Statistical Analysis with Missing Data (3rd ed.).</p>
+<p>Hoboken, NJ: John Wiley &amp; Sons. https://doi.org/10.1002/9781119482260</p>
+<p>Song, Y., Hughes, J. P., &amp; Ye, T. (2024). Adjusting for Incomplete Baseline Covariates in</p>
+<p>Randomized Controlled Trials: A Cross-World Imputation Framework.</p>
+<p>Zhao, A., &amp; Ding, P. (2024). To adjust or not to adjust? Estimating the average treatment effect in randomized experiments with missing covariates. Journal of the American Statistical Association.</p>
+<p>Zhao, A., Ding, P., &amp; Li, F. (2024) Covariate adjustment in randomized experiments with missing outcomes and covariates https://arxiv.org/abs/2311.10877.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://carswg.github.io/posts/Missing_covariates_Oct2026.html</guid>
+  <pubDate>Mon, 09 Nov 2026 22:31:37 GMT</pubDate>
 </item>
 </channel>
 </rss>
