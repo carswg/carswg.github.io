@@ -1,0 +1,136 @@
+---
+title: "Missing covariates in RCTs - what to do, what to avoid, and what to prespecify"
+format:
+  html:
+    toc: true
+    number-sections: false
+    embed-resources: true
+  docx:
+    toc: true
+  pdf:
+    toc: true
+execute:
+  echo: false
+---
+
+Jiawei Wei
+
+Covariate adjustment is now standard for primary and key secondary analyses in confirmatory trials, supported by recent regulatory guidance (FDA, 2023; EMA, 2015). Yet trial datasets are rarely complete: baseline covariates can be missing, questionnaires may be only partly completed, and scheduled measurements may fall outside protocol windows. When baseline covariates planned for adjustment are incomplete, analysts must choose among several strategies-restricting to complete cases, applying simple deterministic rules (single imputation), using the missingness indicator method (MIM), or implementing multiple imputation (MI). The challenge intensifies when outcomes are also subject to missingness.
+
+ICH E9(R1) underscores the importance of these choices by emphasizing alignment between the statistical analysis and the targeted estimand, and by cautioning against unnecessary alterations to the target population that arise from post hoc restrictions of the analysis set. Excluding participants solely because of missing baseline covariate data can inadvertently shift the population under analysis, complicating interpretation and reducing comparability across endpoints. As a result, there has been renewed interest in methods for handling missing covariates that preserve the integrity of the randomized population while remaining practical to implement.
+
+This post focuses on a common confirmatory setting in which baseline covariates are included primarily to improve the precision of the estimated treatment effect. In that setting, the recent RCT-focused literature offers clearer guidance on which approaches perform well and which are best avoided.
+
+# 1 What has changed in how we think about missing baseline
+
+covariates?
+
+For a long time, a common default was complete-case covariate adjustment: fitting the adjusted model only among participants with all adjustment covariates observed. While operationally simple, this approach can be poorly aligned with the objectives of a randomized trial. Excluding participants because of missing baseline covariates effectively shifts the analyzed population away from the randomized population, so that the resulting adjusted estimator targets the average treatment effect (ATE) in the complete-case subpopulation rather than in the full randomized sample. Recovery of the ATE in the original population then requires additional assumptions, such as covariate missingness being independent of the potential outcomes (Zhao and Ding, 2024). Complete-case adjustment also reduces the effective sample size and can meaningfully reduce precision, consistent with simulation findings in RCT-like settings (Kayembe et al., 2022, 2024).
+
+At the same time, the recent literature does not suggest that MI is the only valid option. MI remains widely used, but several recent contributions emphasize that simpler approaches are also valid. In particular, Zhao and Ding (2024) provide theoretical support for the missingness indicator method (MIM) when combined with covariate adjustment with the Huber-White sandwich standard error estimator of Lin et al. (2013), showing that this approach yields valid inference for the ATE in randomized trials irrespective of the missing-data mechanism. Complementing this, Song, Hughes, and Ye (2024) offer an efficiency-based framework that clarifies how different imputation choices-including simple ones-relate to efficiencyoptimal strategies for baseline covariates used to improve precision. Together, these results help reconcile previously inconsistent practice: the most appropriate choice depends on the estimand being targeted, on the estimator employed, and on how much missingness there is.
+
+# 2 Practical strategy options you can prespecify in the SAP
+
+## 2.1 Multiple imputation (MI) when appropriate
+
+Multiple imputation (MI) is widely used in confirmatory trials and is often a strong choice when missingness is non-trivial, particularly when several covariates are affected or when the data include a mix of continuous and categorical variables. MI preserves the intended analysis set and reflects imputation uncertainty through Rubin's combining rules.
+
+A widely accepted principle is that the imputation model should include all variables used in the analysis model and, where feasible, additional variables that are predictive of the missing covariate or of its missingness (the principle of congeniality between imputation and analysis models). When imputing baseline covariates only, treatment assignment should not be used as a predictor because by the randomization design it carries no information about the baseline covariate distribution; allowing arm-specific baseline imputations can also introduce chance treatment-group differences. The imputation model should instead include relevant baseline and design variables, such as stratification factors and site or region.
+
+The computational burden of MIM is usually limited when only a small number of baseline covariates are imputed. It can become material when not only baseline covariates are imputed and the imputation model jointly covers many endpoints, visits, or variables in a large dataset. When outcomes are also subject to missingness, analysts sometimes consider performing MI in multiple sequential steps; in many settings, however, this can be avoided by specifying a single, jointly coherent imputation model that simultaneously handles missing covariates and missing outcomes (see Section 3).
+
+## 2.2 Missingness-indicator method (MIM): a simple option with RCT-specific
+
+support Zhao and Ding (2024) provide theoretical justification for the use of missingness indicators in randomized experiments when combined with an appropriate covariate-adjusted estimator. They show that, under randomization, the missingness indicator method (MIM) paired with Lin's (2013) regression adjustment yields consistent and asymptotically normal estimators of the average treatment effect, with potential precision gains, irrespective of the missing-data mechanism for the covariates. In practice, MIM replaces missing baseline covariate values with an arbitrary constant (commonly zero after centering, since the choice is absorbed by the indicator), augments the design matrix with the corresponding missingness indicators, and applies Lin-style regression adjustment (Lin et al. 2013)-including treatment-covariate interactions-with heteroskedasticity-robust standard errors. The procedure is straightforward to implement, retains all randomized participants in the analysis, and can improve precision relative to analyses that ignore partially observed covariates (Zhao and Ding, 2024).
+
+Song, Hughes, and Ye (2024) offer a complementary efficiency-based perspective through their cross-world imputation framework, which clarifies the conditions under which MIM approximates an efficiency-optimal imputation strategy and how it relates to alternative imputation choices. From a practical standpoint, MIM is particularly appealing as a simple, prespecifiable analytic approach or as a sensitivity analysis, especially in settings where multiple imputation is operationally burdensome.
+
+## 2.3 Single imputation (mean, median, or mode): a pragmatic option requiring
+
+clear justification Single imputation is frequently criticized in the general missing-data literature because it does not naturally propagate imputation uncertainty, leading to underestimated standard errors and overly narrow confidence intervals (Little Rubin, 2019). The RCT-focused literature adds important nuance to this view. When covariates are used for adjustment in a randomized trial and the target estimand is the average treatment effect (ATE), simple imputation can yield valid inference (correct Type I error and CI coverage) when randomization is preserved, all randomized participants remain in the analysis, the imputations do not depend on treatment assignment or post-baseline outcomes, and the treatment effect is estimated with an appropriate covariate-adjusted estimator.. Moreover, Song, Hughes, and Ye (2024) show, within their efficiency-based framework, that certain simple imputation choices can approximate efficiency-optimal strategies for precision covariates. For example, if baseline age is used as an adjustment covariate and is missing for a small number of participants, a pre-specified mean imputation rule can preserve the full randomized analysis set and retain much of the precision benefit of covariate adjustment.
+
+Therefore, in confirmatory settings single imputation could also be considered in primary analysis when missingness is minimal. When used, the rationale, the imputation rule, and its role within the analytic strategy should be prespecified and clearly justified in the statistical analysis plan.
+
+## 2.4 Complete-case covariate adjustment: generally not recommended
+
+Complete-case covariate adjustment is operationally simple but, on both theoretical and empirical grounds, is generally a suboptimal choice for the primary analysis of a randomized trial. By analyzing only participants with complete covariate data, this approach effectively focuses on a subset of the randomized population. As a result, estimating the ATE for all randomized participants requires additional assumptions beyond randomization (Zhao Ding, 2024).In addition, the reduction in effective sample size can lead to meaningful losses in precision. Simulation studies in RCT-like settings have reported notable efficiency losses and weaker overall performance for complete-case adjustment under realistic missingness patterns, relative to methods that retain the full randomized sample (Kayembe et al., 2022, 2024).
+
+For these reasons, complete-case covariate adjustment is better positioned as a supplementary analysis rather than as the primary analytic strategy, except in settings where covariate missingness is negligible and plausibly unrelated to outcomes.
+
+# 3 When outcomes are also missing: maintaining a coherent
+
+### analytic strategy
+
+Missing baseline covariates and missing outcomes frequently co-occur, much stronger assumptions are needed to estimate treatment effects when outcomes are missing than when only baseline covariates are missing, and analysts often raise concerns about the complexity of the resulting workflows. Two points are worth emphasizing.
+
+First, when multiple imputation (MI) is selected, sequential or multi-stage imputation procedures are generally not required. In most applications, a single MI run-for example, fully conditional specification (FCS, also known as chained equations)-can jointly impute missing baseline covariates and missing outcomes, producing a single set of m imputed datasets for analysis and pooling. A jointly specified imputation step is generally preferable to sequential procedures, which may introduce inconsistencies between imputation models (van Buuren, 2018).
+
+Second, the choice of covariate-adjusted estimator matters when outcomes are also missing. Recent work indicates that regression adjustment with missing outcomes does not necessarily retain the efficiency guarantees that hold in complete-data settings, whereas inverse probability weighting and doubly robust (augmented IPW) estimators can be more attractive under missing-at-random (MAR) assumptions for the outcome (Chang et al., 2023; Zhao, Ding and Li, 2024). The key implication for statistical analysis plans (SAPs) is that the missing-outcome strategy and the covariate-adjustment strategy should be specified jointly, so that they constitute a single coherent analytic framework aligned with the targeted estimand.
+
+# 4 Implementation and reporting: what needs to be prespecified
+
+For methods to be adopted reliably, clarity and consistency in pre-specification are typically more important than additional technical sophistication.
+
+Reporting should include the proportion of missingness for each adjustment covariate, both overall and by treatment arm, together with confirmation that the prespecified analytic approach was implemented as planned.
+
+For multiple imputation, the SAP should prespecify:
+
+- the imputation framework (e.g., FCS/MICE or joint modeling) and the form of the conditional models (e.g., predictive mean matching, logistic regression);
+- the variables included in the imputation model-at minimum the analysis covariates, treatment assignment, and key design variables (e.g., stratification factors, site or region), together with any planned auxiliary variables, interactions, or nonlinear terms;
+- the number of imputations m;
+- convergence diagnostics (where applicable);
+- the pooling procedure via Rubin's combining rules; and
+- whether heteroskedasticity-robust standard errors are computed within each imputed dataset prior to pooling. For the missingness indicator method (MIM) or single imputation, the SAP should
+
+document:
+
+- the constant or deterministic rule used for imputation;
+- the inclusion of missingness indicators (for MIM); and
+- the paired estimator (e.g., Lin-style regression adjustment with treatment-covariate interactions and robust standard errors), since the validity of MIM depends on this pairing (Zhao and Ding, 2024). In addition, it is important to distinguish between missingness in stratification covariates
+
+and missingness in adjustment covariates, as the two raise fundamentally different concerns. Stratification covariates must be known at the time of randomization, since they determine the randomization stratum to which a patient is assigned. Missingness in stratification covariates is therefore not permitted by design - a patient with a missing stratification variable cannot be randomized in the first place. In contrast, adjustment covariates are used in the analysis model to improve precision but are not required for the randomization mechanism itself.
+
+Provided missingness is minimal and handled with a pre-specified, principled approach, missing adjustment covariates do not threaten the validity of inference for the ATE. Operationally, this distinction has implications for how adjustment covariates should be handled in the SAP. While missingness does not invalidate ATE inference, it does affect the precision gain that motivated adjustment in the first place. The magnitude of the loss depends on the proportion missing, the prognostic strength of the covariate, and the handling method; there is no universal percentage loss, so it should be assessed through trial-specific simulations when it could materially affect power. Adjustment covariates should therefore be designated as critical data elements, with enhanced monitoring, clear pre-specified time points (typically Day 0, with screening as a documented fallback), and a pre-specified imputation rule for the rare cases of missingness. In practice, stratification factors are almost always defined using screening values for operational reasons - the randomization system requires the stratum at the moment of assignment - whereas adjustment covariates are best taken from Day 0 when reliably available, since they more closely reflect the patient's state at the start of treatment and yield greater precision. The SAP should also make explicit that stratified analyses use the as-randomized stratum value, even if a later measurement disagrees, while covariate adjustment uses the best available pre-randomization measurement.
+
+When the analysis adjusts for a supercovariate - a scalar summary constructed from multiple underlying covariates, such as a prognostic score, a risk index, or a model-based predicted outcome - a natural question is whether imputation should be performed at the level of the underlying component covariates or directly on the constructed supercovariate. The preferred approach is to impute at the underlying covariate level and then reconstruct the supercovariate from the imputed components. This preserves more information: each component carries its own distributional and correlational structure with other observed variables, which an imputation model can exploit, whereas imputing the supercovariate directly collapses these relationships into a single marginal distribution and discards the partial information available when only some components are missing. For example, if a prognostic score is built from five baseline variables and only one is missing for a given patient, imputing that single component uses the other four observed values as predictors, while imputing the score directly treats the entire score as missing and ignores the four observed components entirely. Component-level imputation is also more congenial with how the supercovariate is defined in the SAP - the score is a deterministic function of its inputs, so imputing inputs and then applying the function maintains internal consistency. The SAP should therefore pre-specify (i) the imputation strategy at the component level,
+
+1. the deterministic rule for reconstructing the supercovariate from (possibly imputed)
+
+components. Finally, the SAP should be explicit about which analyses are primary and which are sensitivity, particularly when different missing-data strategies are applied to baseline covariates and to outcomes.
+
+# 5 Closing thoughts
+
+The recent RCT-focused literature conveys a consistent practical message. Complete-case covariate adjustment is difficult to justify as a primary analysis when reasoning within an estimand-aligned framework, as it can shift the target population away from the randomized sample (Zhao Ding, 2024). Multiple imputation remains an important and widely used option, particularly in more complex settings with multiple incomplete variables of mixed type. Alongside MI, simpler pre-specifiable approaches can also be reasonable for baselinecovariate adjustment in randomized trials: Zhao and Ding (2024) provide theoretical support for the missingness indicator method when paired with Lin-style covariate adjustment, and Song, Hughes, and Ye (2024) offer an efficiency-based framework that clarifies when simple imputation strategies approximate efficiency-optimal choices for precision covariates. When outcomes are also missing, the missing-outcome method and the covariate-adjustment method should be planned jointly, with recent work providing guidance on the relative merits of regression-based and weighting-based estimators in this setting (Chang et al., 2023).
+
+# References
+
+Chang, C.-R., Song, Y., Li, F., & Wang, R. (2023). Covariate adjustment in randomized clinical trials with missing covariate and outcome data. Statistics in Medicine.
+
+EMA (2015) European Medicines Agency. (2015). Guideline on Adjustment for Baseline Covariates in Clinical Trials (EMA/CHMP/295050/2013). Committee for Medicinal Products for Human Use (CHMP). London: European Medicines Agency.
+
+FDA (2023) U.S. Food and Drug Administration. (2023). Adjusting for Covariates in
+
+Randomized Clinical Trials for Drugs and Biological Products: Guidance for Industry. Center for
+
+Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER). Silver Spring, MD: U.S. Department of Health and Human Services, Food and Drug Administration.
+
+Kayembe, M. T., Jolani, S., Tan, F. E. S., & van Breukelen, G. J. P. (2022). Imputation of
+
+Missing Covariates in Randomized Controlled Trials with Continuous Outcomes: Simple, Unbiased and Efficient Methods. Journal of Biopharmaceutical Statistics.
+
+Kayembe, M. T., Tan, F. E. S., van Breukelen, G. J. P., & Jolani, S. (2024). Dealing with missing observations in the outcome and covariates in randomized controlled trials. Journal of Statistical Computation and Simulation.
+
+Lin, W. (2013). Agnostic notes on regression adjustments to experimental data: Reexamining Freedman's critique. The Annals of Applied Statistics, 7(1), 295-318. https: //doi.org/10.1214/12-AOAS583
+
+Little, R. J. A., & Rubin, D. B. (2019). Statistical Analysis with Missing Data (3rd ed.).
+
+Hoboken, NJ: John Wiley & Sons. https://doi.org/10.1002/9781119482260
+
+Song, Y., Hughes, J. P., & Ye, T. (2024). Adjusting for Incomplete Baseline Covariates in
+
+Randomized Controlled Trials: A Cross-World Imputation Framework.
+
+Zhao, A., & Ding, P. (2024). To adjust or not to adjust? Estimating the average treatment effect in randomized experiments with missing covariates. Journal of the American Statistical Association.
+
+Zhao, A., Ding, P., & Li, F. (2024) Covariate adjustment in randomized experiments with missing outcomes and covariates https://arxiv.org/abs/2311.10877.
+
